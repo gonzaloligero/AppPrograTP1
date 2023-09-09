@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GestorDeArticulos.Entidades
 {
-    internal class Articulo
+    public class Articulo
     {
         public Articulo()
         {
-            CodigoArt = 0;
+            CodigoArt = "";
             NombreArt = "";
             DescripcionArt = "";
             MarcaArt = new Marca();
@@ -18,7 +18,7 @@ namespace GestorDeArticulos.Entidades
             Precio = 0;
         }
 
-        public Articulo(int codigoArt, string nombreArt, string descripcionArt, Marca marcaArt, Categoria categoriaArt, List<string> imagenes, decimal precio)
+        public Articulo(string codigoArt, string nombreArt, string descripcionArt, Marca marcaArt, Categoria categoriaArt, List<string> imagenes, decimal precio)
         {
             CodigoArt = codigoArt;
             NombreArt = nombreArt;
@@ -29,7 +29,7 @@ namespace GestorDeArticulos.Entidades
             Precio = precio;
         }
 
-        public int CodigoArt { get; set; }
+        public string CodigoArt { get; set; }
         public string NombreArt { get; set; }
         public string DescripcionArt { get; set; }
         public Marca MarcaArt { get; set; }

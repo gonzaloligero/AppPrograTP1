@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace GestorDeArticulos.Entidades
 {
-    internal class Marca
+    public class Marca
     {
         public Marca() 
         {
             Id = 0;
-            Nombre = "";
+            Descripcion = "";
         }
-        public Marca(int id, string nombre)
+        public Marca(int id, string descripcion)
         {
             this.Id = id;
-            this.Nombre = nombre;
+            this.Descripcion = descripcion;
         }
         public int Id { get; set; }
-        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
         
     }
 }

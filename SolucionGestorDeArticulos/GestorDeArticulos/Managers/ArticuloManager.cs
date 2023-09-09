@@ -21,7 +21,7 @@ namespace GestorDeArticulos.Managers
         //------------------------------------------------------------------------
 
         //Busca un articulo por codigo
-        public Articulo getArticuloPorCodigo(int codigo)
+        public Articulo getArticuloPorCodigo(string codigo)
         {
             return listaArticulos.FirstOrDefault(a => a.CodigoArt ==  codigo);
         }
@@ -74,7 +74,7 @@ namespace GestorDeArticulos.Managers
         }
 
         //Metodo para eliminar un articulo de la lista
-        public void EliminarArticulo(int codigo)
+        public void EliminarArticulo(string codigo)
         {
             var articuloExistente = listaArticulos.FirstOrDefault(a => a.CodigoArt == codigo);
             if (articuloExistente != null) listaArticulos.Remove(articuloExistente);

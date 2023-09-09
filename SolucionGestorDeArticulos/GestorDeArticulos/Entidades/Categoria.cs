@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace GestorDeArticulos.Entidades
 {
-    internal class Categoria
+    public class Categoria
     {
         public Categoria()
         {
             Id = 0;
-            Nombre = "";
+            Descripcion = "";
         }
-        public Categoria(int id, string nombre)
+        public Categoria(int id, string descripcion)
         {
             this.Id = id;
-            this.Nombre = nombre;
+            this.Descripcion = descripcion;
         }
         public int Id { get; set; }
-        public string Nombre { get; set;}
+        public string Descripcion { get; set;}
 
     }
 }

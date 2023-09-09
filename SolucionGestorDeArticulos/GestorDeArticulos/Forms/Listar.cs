@@ -16,5 +16,10 @@ namespace GestorDeArticulos.Forms
         {
             InitializeComponent();
         }
+
+        private void frmListar_Load(object sender, EventArgs e)
+        {
+            return;
+        }
     }
 }
