@@ -12,13 +12,16 @@ namespace GestorDeArticulos.Managers
     internal class ArticuloManager
     {
         private List<Articulo> lista = new List<Articulo>();
+        private List<Categoria> listaCategorias = new List<Categoria>();
+        private List<Marca> listaMarcas = new List<Marca>();
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;
+       
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -55,6 +58,65 @@ namespace GestorDeArticulos.Managers
                 throw ex;
             }
         }
+
+        public List<Categoria> ListarCategorias()
+        {
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT * FROM CATEGORIAS";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Categoria aux = new Categoria();
+                    aux.Id = (int)lector["Id"];
+                    aux.Descripcion = (string)lector["Descripcion"];
+                    
+                    listaCategorias.Add(aux);
+                }
+
+                conexion.Close();
+                return listaCategorias;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public List<Marca> ListarMarcas()
+        {
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT * FROM MARCAS";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Marca aux = new Marca();
+                    aux.Id = (int)lector["Id"];
+                    aux.Descripcion = (string)lector["Descripcion"];
+
+                    listaMarcas.Add(aux);
+                }
+
+                conexion.Close();
+                return listaMarcas;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 
         public List<Articulo> buscarArticulo(string buscar)
         {
@@ -95,6 +157,75 @@ namespace GestorDeArticulos.Managers
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        public void setearConsulta(string query)
+        {
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = query;
+        }
+
+        public void ejecutarLectura()
+        {
+            comando.Connection = conexion;
+            try
+            {
+                conexion.Open();
+                lector = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
+        public void ejecutarAccion()
+        {
+            comando.Connection = conexion;
+            
+            try
+            {
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre,valor);
+        }
+
+        public void agregarArticulo(GestorDeArticulos.Entidades.Articulo nuevoArticulo)
+        {
+           
+            try
+            {
+                setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@Precio)");
+                //setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
+                setearParametro("@Codigo", nuevoArticulo.CodigoArt);
+                setearParametro("@Nombre", nuevoArticulo.NombreArt);
+                setearParametro("@Descripcion", nuevoArticulo.DescripcionArt);
+                //setearParametro("@IdMarca", nuevoArticulo.MarcaArt);
+                //setearParametro("@IdCategoria", nuevoArticulo.CategoriaArt);
+                setearParametro("Precio", nuevoArticulo.Precio);
+                ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
             }
         }
 

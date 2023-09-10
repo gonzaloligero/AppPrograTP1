@@ -31,9 +31,11 @@ namespace GestorDeArticulos
                 nuevoArticulo.CodigoArt = txtCodigoArticulo.Text;
                 nuevoArticulo.NombreArt = txtNombreArticulo.Text;
                 nuevoArticulo.DescripcionArt = txtDescripcion.Text;
-                nuevoArticulo.MarcaArt.Descripcion = txtMarca.Text;
-                nuevoArticulo.CategoriaArt.Descripcion = txtCategoria.Text;
                 nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
+
+                nuevoManager.agregarArticulo(nuevoArticulo);
+                MessageBox.Show("Artículo agregado exitosamente");
+                Close();
 
             }
             catch (Exception ex)
@@ -41,6 +43,23 @@ namespace GestorDeArticulos
 
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void frmAgregar_Load(object sender, EventArgs e)
+        {
+            GestorDeArticulos.Managers.ArticuloManager negocio = new GestorDeArticulos.Managers.ArticuloManager();
+
+            try
+            {
+                cboCategorias.DataSource = negocio.ListarCategorias();
+                cboMarcas.DataSource = negocio.ListarMarcas();
+            }
+            catch (Exception ex )
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
         }
     }
 }

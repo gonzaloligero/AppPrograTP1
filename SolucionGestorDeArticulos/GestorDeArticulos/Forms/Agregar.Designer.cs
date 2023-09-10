@@ -45,8 +45,8 @@ namespace GestorDeArticulos
             this.btConfirmar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.btSubirImagenes = new System.Windows.Forms.Button();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
+            this.cboMarcas = new System.Windows.Forms.ComboBox();
+            this.cboCategorias = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -185,27 +185,31 @@ namespace GestorDeArticulos
             this.btSubirImagenes.Text = "Subir imagen";
             this.btSubirImagenes.UseVisualStyleBackColor = true;
             // 
-            // txtMarca
+            // cboMarcas
             // 
-            this.txtMarca.Location = new System.Drawing.Point(334, 148);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(166, 20);
-            this.txtMarca.TabIndex = 20;
+            this.cboMarcas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarcas.FormattingEnabled = true;
+            this.cboMarcas.Location = new System.Drawing.Point(334, 148);
+            this.cboMarcas.Name = "cboMarcas";
+            this.cboMarcas.Size = new System.Drawing.Size(166, 21);
+            this.cboMarcas.TabIndex = 20;
             // 
-            // txtCategoria
+            // cboCategorias
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(334, 180);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(166, 20);
-            this.txtCategoria.TabIndex = 21;
+            this.cboCategorias.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategorias.FormattingEnabled = true;
+            this.cboCategorias.Location = new System.Drawing.Point(334, 180);
+            this.cboCategorias.Name = "cboCategorias";
+            this.cboCategorias.Size = new System.Drawing.Size(166, 21);
+            this.cboCategorias.TabIndex = 21;
             // 
             // frmAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtCategoria);
-            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.cboCategorias);
+            this.Controls.Add(this.cboMarcas);
             this.Controls.Add(this.btSubirImagenes);
             this.Controls.Add(this.btCancelar);
             this.Controls.Add(this.btConfirmar);
@@ -224,6 +228,7 @@ namespace GestorDeArticulos
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAgregar";
             this.Text = "Agregar artículo";
+            this.Load += new System.EventHandler(this.frmAgregar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -247,7 +252,7 @@ namespace GestorDeArticulos
         private System.Windows.Forms.Button btConfirmar;
         private System.Windows.Forms.Button btCancelar;
         private System.Windows.Forms.Button btSubirImagenes;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.ComboBox cboMarcas;
+        private System.Windows.Forms.ComboBox cboCategorias;
     }
 }
