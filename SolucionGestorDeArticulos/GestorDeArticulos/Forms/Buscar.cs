@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorDeArticulos.Managers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace GestorDeArticulos.Forms
         public frmBuscar()
         {
             InitializeComponent();
+        }
+
+        private void btnBuscarBuscar_Click(object sender, EventArgs e)
+        {
+            string buscar = (string)txtBuscar.Text;
+            ArticuloManager articuloManager = new ArticuloManager();
+            dgvBuscar.DataSource = articuloManager.buscarArticulo(buscar);
         }
     }
 }

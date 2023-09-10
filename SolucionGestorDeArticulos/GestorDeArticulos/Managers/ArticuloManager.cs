@@ -4,85 +4,101 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace GestorDeArticulos.Managers
 {
     internal class ArticuloManager
     {
-        private List<Articulo> listaArticulos = new List<Articulo>();
+        private List<Articulo> lista = new List<Articulo>();
+        private SqlConnection conexion;
+        private SqlCommand comando;
+        private SqlDataReader lector;
 
-        public ArticuloManager(List<Articulo> listaArticulos)
+        public ArticuloManager()
         {
-            this.listaArticulos = listaArticulos;
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            comando = new SqlCommand();
         }
 
-        //Listado de Articulos.
-        public List<Articulo> getListaArticulos() { return  listaArticulos; }
-        //------------------------------------------------------------------------
 
-        //Busca un articulo por codigo
-        public Articulo getArticuloPorCodigo(string codigo)
+        public List<Articulo> ListarArticulos()
         {
-            return listaArticulos.FirstOrDefault(a => a.CodigoArt ==  codigo);
-        }
-
-        //Busca un articulo por nombre
-        public Articulo getArticuloPorNombre(string nombre)
-        {
-            return listaArticulos.FirstOrDefault(n => n.NombreArt ==  nombre);
-        }
-
-        //Busca un articulo por descripcion
-        public Articulo getArticuloPorDescripcion(string descripcion)
-        {
-            return listaArticulos.FirstOrDefault(d => d.DescripcionArt ==  descripcion);
-        }
-
-        //Busca todos los articulos de la misma marca
-        public List<Articulo> getArticulosPorMarca(int idMarca)
-        {
-            return listaArticulos.Where(m => m.MarcaArt.Id == idMarca).ToList();
-        }
-
-        //Busca todos los articulos de la misma Categoria
-        public List<Articulo> getArticulosPorCategoria(int idCategoria)
-        {
-            return listaArticulos.Where(c => c.CategoriaArt.Id == idCategoria).ToList();
-        }
-        //-------------------------------------------------------------------------------
-
-        //Metodo para agregar un articulo a la lista
-        public void AgrergarArticulo(Articulo articulo)
-        {
-            listaArticulos.Add(articulo);
-        }
-
-        //Metodo para modificar un articulo de la lista
-        public void ModificarArticulo(Articulo articulo)
-        {
-            var articuloExistente = listaArticulos.FirstOrDefault(a => a.CodigoArt == articulo.CodigoArt);
-
-            if (articuloExistente != null)
+            try
             {
-                articuloExistente.NombreArt = articulo.NombreArt;
-                articuloExistente.DescripcionArt = articulo.DescripcionArt;
-                articuloExistente.MarcaArt = articulo.MarcaArt;
-                articuloExistente.CategoriaArt = articulo.CategoriaArt;
-                articuloExistente.Imagenes = articulo.Imagenes;
-                articuloExistente.Precio = articulo.Precio;
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, Precio FROM ARTICULOS A, MARCAS M , CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.CodigoArt = (string)lector["Codigo"];
+                    aux.NombreArt = (string)lector["Nombre"];
+                    aux.DescripcionArt = (string)lector["Descripcion"];
+                    aux.MarcaArt.Descripcion = (string)lector["Marca"];
+                    aux.CategoriaArt.Descripcion = (string)lector["Categoria"];
+                    aux.Precio = (decimal)lector["Precio"];
+
+                    lista.Add(aux);
+                }
+
+                conexion.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
-        //Metodo para eliminar un articulo de la lista
-        public void EliminarArticulo(string codigo)
+        public List<Articulo> buscarArticulo(string buscar)
         {
-            var articuloExistente = listaArticulos.FirstOrDefault(a => a.CodigoArt == codigo);
-            if (articuloExistente != null) listaArticulos.Remove(articuloExistente);
-            
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio FROM ARTICULOS WHERE Codigo LIKE @Codigo";
+                comando.Parameters.AddWithValue("@Codigo", "%" + buscar + "%");
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                List<Articulo> lista = new List<Articulo>();
+
+                while (lector.Read())
+                {
+                    string codigoArticulo = (string)lector["Codigo"];
+
+                    // Verifica si el código del artículo contiene la cadena de búsqueda
+                    if (codigoArticulo.Contains(buscar))
+                    {
+                        Articulo aux = new Articulo();
+                        aux.CodigoArt = codigoArticulo;
+                        aux.NombreArt = (string)lector["Nombre"];
+                        aux.DescripcionArt = (string)lector["Descripcion"];
+                        aux.MarcaArt.Id = (int)lector["IdMarca"];
+                        aux.CategoriaArt.Id = (int)lector["IdCategoria"];
+                        aux.Precio = (decimal)lector["Precio"];
+
+                        lista.Add(aux);
+                    }
+                }
+
+                conexion.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
-
-
     }
-
 }
+
+

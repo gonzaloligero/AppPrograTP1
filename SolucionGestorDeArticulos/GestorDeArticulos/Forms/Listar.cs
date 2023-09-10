@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorDeArticulos.Managers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,11 @@ namespace GestorDeArticulos.Forms
 
         private void frmListar_Load(object sender, EventArgs e)
         {
-            return;
+            ArticuloManager articuloManager = new ArticuloManager();
+            dgvArticulos.DataSource = articuloManager.ListarArticulos();
+            
         }
+
+       
     }
 }

@@ -44,10 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\dominio\GestorDatabase.csproj">
-      <Project>{50deb0e5-8811-4533-b6ee-28083fb862f2}</Project>
-      <Name>GestorDatabase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GestorDeArticulos\GestorDeArticulos.csproj">
       <Project>{50f43a16-93d9-492b-893f-0de9fb96b8c1}</Project>
       <Name>GestorDeArticulos</Name>

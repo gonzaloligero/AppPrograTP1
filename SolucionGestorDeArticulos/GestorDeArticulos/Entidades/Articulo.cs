@@ -15,6 +15,7 @@ namespace GestorDeArticulos.Entidades
             DescripcionArt = "";
             MarcaArt = new Marca();
             CategoriaArt = new Categoria();
+            Imagenes = new List<string>();
             Precio = 0;
         }
 
