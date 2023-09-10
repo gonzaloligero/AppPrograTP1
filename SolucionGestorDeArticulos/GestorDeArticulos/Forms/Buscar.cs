@@ -24,5 +24,10 @@ namespace GestorDeArticulos.Forms
             ArticuloManager articuloManager = new ArticuloManager();
             dgvBuscar.DataSource = articuloManager.buscarArticulo(buscar);
         }
+
+        private void btVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

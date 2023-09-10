@@ -16,5 +16,10 @@ namespace GestorDeArticulos.Forms
         {
             InitializeComponent();
         }
+
+        private void btCancelarCambios_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
