@@ -22,44 +22,50 @@ namespace manager
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
 
         public List<Articulo> ListarArticulos()
         {
+            List<Articulo> lista = new List<Articulo> ();
+            AccesoDatos datos = new AccesoDatos ();
+
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, Precio, ImagenUrl FROM ARTICULOS A, MARCAS M , CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id AND I.IdArticulo = A.Id";
-                comando.Connection = conexion;
+                datos.setearConsulta("SELECT A.Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.ejecutarLectura();
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.Codigo = (string)lector["Codigo"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    aux.Marca.Descripcion = (string)lector["Marca"];
-                    aux.Categoria.Descripcion = (string)lector["Categoria"];
-                    aux.Precio = (decimal)lector["Precio"];
-                    aux.Imagen = (string)lector["ImagenUrl"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
+                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+
+                    
+                    if (!Convert.IsDBNull(datos.Lector["Categoria"])) aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    else aux.Categoria.Descripcion = "Sin categoría";                   
+
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.Imagen = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
-
-                conexion.Close();
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally
+            {
+                datos.cerrarConexion();
+            }
         }
+
 
         public List<Categoria> ListarCategorias()
         {
@@ -170,7 +176,7 @@ namespace manager
                 {
                     string codigoArticulo = (string)lector["Codigo"];
 
-                    // Verifica si el código del artículo contiene la cadena de búsqueda
+                    
                     if (codigoArticulo.Contains(buscar))
                     {
                         Articulo aux = new Articulo();
