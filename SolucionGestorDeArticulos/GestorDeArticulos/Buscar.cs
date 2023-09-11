@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using manager;
 
-namespace winform_app.Forms
+namespace winform_app
 {
     public partial class frmBuscar : Form
     {

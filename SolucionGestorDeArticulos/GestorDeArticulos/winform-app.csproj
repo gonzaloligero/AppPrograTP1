@@ -46,60 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\Agregar.cs">
+    <Compile Include="Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Agregar.Designer.cs">
+    <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Buscar.cs">
+    <Compile Include="Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Buscar.Designer.cs">
+    <Compile Include="Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Detallar.cs">
+    <Compile Include="Detallar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Detallar.Designer.cs">
+    <Compile Include="Detallar.Designer.cs">
       <DependentUpon>Detallar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form1.cs">
+    <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
+    <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Listar.cs">
+    <Compile Include="Listar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Listar.Designer.cs">
+    <Compile Include="Listar.Designer.cs">
       <DependentUpon>Listar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Modificar.cs">
+    <Compile Include="Modificar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Modificar.Designer.cs">
+    <Compile Include="Modificar.Designer.cs">
       <DependentUpon>Modificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\Agregar.resx">
+    <EmbeddedResource Include="Agregar.resx">
       <DependentUpon>Agregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Buscar.resx">
+    <EmbeddedResource Include="Buscar.resx">
       <DependentUpon>Buscar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Detallar.resx">
+    <EmbeddedResource Include="Detallar.resx">
       <DependentUpon>Detallar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
+    <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Listar.resx">
+    <EmbeddedResource Include="Listar.resx">
       <DependentUpon>Listar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Modificar.resx">
+    <EmbeddedResource Include="Modificar.resx">
       <DependentUpon>Modificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

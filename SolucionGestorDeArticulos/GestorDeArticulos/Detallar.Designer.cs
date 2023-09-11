@@ -1,4 +1,4 @@
-﻿namespace winform_app.Forms
+﻿namespace winform_app
 {
     partial class frmDetallar
     {

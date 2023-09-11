@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winform_app.Forms
+namespace winform_app
 {
-    public partial class frmDetallar : Form
+    public partial class frmModificar : Form
     {
-        public frmDetallar()
+        public frmModificar()
         {
             InitializeComponent();
+        }
+
+        private void btCancelarCambios_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

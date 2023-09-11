@@ -1,4 +1,4 @@
-﻿using winform_app.Forms;
+﻿using winform_app;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
