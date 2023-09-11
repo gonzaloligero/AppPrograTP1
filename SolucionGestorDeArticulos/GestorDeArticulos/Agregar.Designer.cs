@@ -193,7 +193,7 @@ namespace winform_app
             this.cboMarcas.Name = "cboMarcas";
             this.cboMarcas.Size = new System.Drawing.Size(166, 21);
             this.cboMarcas.TabIndex = 20;
-           
+            
             // 
             // cboCategorias
             // 

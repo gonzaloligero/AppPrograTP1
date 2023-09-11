@@ -22,7 +22,7 @@ namespace manager
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -124,7 +124,7 @@ namespace manager
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT Codigo FROM ARTICULOS";
+                comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, Precio, ImagenUrl FROM ARTICULOS A, MARCAS M , CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id AND I.IdArticulo = A.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -134,7 +134,11 @@ namespace manager
                 {
                     Articulo aux = new Articulo();
                     aux.Codigo = (string)lector["Codigo"];
-                 
+                    aux.Nombre = (string)lector["Nombre"];
+                    aux.Descripcion = (string)lector["Descripcion"];
+                
+                    aux.Precio = (decimal)lector["Precio"];
+                   
 
                     lista.Add(aux);
                 }
