@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GestorDeArticulos.Properties
+namespace winform_app.Properties
 {
 
 

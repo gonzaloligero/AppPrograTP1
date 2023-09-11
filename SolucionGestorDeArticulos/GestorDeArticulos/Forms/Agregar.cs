@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using manager;
 
-namespace GestorDeArticulos
+namespace winform_app
 {
     public partial class frmAgregar : Form
     {
@@ -24,8 +26,8 @@ namespace GestorDeArticulos
 
         private void btConfirmar_Click(object sender, EventArgs e)
         {
-            GestorDeArticulos.Entidades.Articulo nuevoArticulo = new GestorDeArticulos.Entidades.Articulo();
-            GestorDeArticulos.Managers.ArticuloManager nuevoManager = new GestorDeArticulos.Managers.ArticuloManager();
+            dominio.Articulo nuevoArticulo = new dominio.Articulo();
+            manager.ArticuloManager nuevoManager = new manager.ArticuloManager();
             try
             {
                 nuevoArticulo.Codigo = txtCodigoArticulo.Text;
@@ -46,7 +48,7 @@ namespace GestorDeArticulos
 
         private void frmAgregar_Load(object sender, EventArgs e)
         {
-            GestorDeArticulos.Managers.ArticuloManager negocio = new GestorDeArticulos.Managers.ArticuloManager();
+            manager.ArticuloManager negocio = new manager.ArticuloManager();
 
             try
             {

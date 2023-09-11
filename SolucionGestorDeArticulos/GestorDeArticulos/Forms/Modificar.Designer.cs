@@ -1,4 +1,4 @@
-﻿namespace GestorDeArticulos.Forms
+﻿namespace winform_app.Forms
 {
     partial class frmModificar
     {

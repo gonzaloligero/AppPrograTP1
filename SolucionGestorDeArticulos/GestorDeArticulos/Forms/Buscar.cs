@@ -1,4 +1,4 @@
-﻿using GestorDeArticulos.Managers;
+﻿//using winform_app.Managers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using manager;
 
-namespace GestorDeArticulos.Forms
+namespace winform_app.Forms
 {
     public partial class frmBuscar : Form
     {
@@ -33,7 +34,7 @@ namespace GestorDeArticulos.Forms
 
         private void frmBuscar_Load(object sender, EventArgs e)
         { 
-            GestorDeArticulos.Managers.ArticuloManager negocio = new GestorDeArticulos.Managers.ArticuloManager();
+            manager.ArticuloManager negocio = new manager.ArticuloManager();
             
             try
             {

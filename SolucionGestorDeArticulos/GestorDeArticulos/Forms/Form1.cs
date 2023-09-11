@@ -1,4 +1,4 @@
-﻿using GestorDeArticulos.Forms;
+﻿using winform_app.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GestorDeArticulos
+
+namespace winform_app
 {
     public partial class frmPantallaPrincipal : Form
     {

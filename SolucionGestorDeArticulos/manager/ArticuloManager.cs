@@ -1,15 +1,16 @@
-﻿using GestorDeArticulos.Entidades;
+﻿//using winform_app;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-using System.Windows.Forms;
+//using System.Windows.Forms;
+using dominio;
 
-namespace GestorDeArticulos.Managers
+namespace manager
 {
-    internal class ArticuloManager
+    public class ArticuloManager
     {
         private List<Articulo> lista = new List<Articulo>();
         private List<Categoria> listaCategorias = new List<Categoria>();
@@ -21,7 +22,7 @@ namespace GestorDeArticulos.Managers
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -233,7 +234,7 @@ namespace GestorDeArticulos.Managers
             comando.Parameters.AddWithValue(nombre,valor);
         }
 
-        public void agregarArticulo(GestorDeArticulos.Entidades.Articulo nuevoArticulo)
+        public void agregarArticulo(dominio.Articulo nuevoArticulo)
         {
 
             try

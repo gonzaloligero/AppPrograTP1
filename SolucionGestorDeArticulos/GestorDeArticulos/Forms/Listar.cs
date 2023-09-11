@@ -1,5 +1,5 @@
-﻿using GestorDeArticulos.Entidades;
-using GestorDeArticulos.Managers;
+﻿using winform_app;
+//using winform_app.Managers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,8 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using manager;
 
-namespace GestorDeArticulos.Forms
+namespace winform_app.Forms
 {
     public partial class frmListar : Form
     {

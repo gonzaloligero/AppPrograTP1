@@ -1,4 +1,4 @@
-﻿namespace GestorDeArticulos
+﻿namespace winform_app
 {
     partial class frmPantallaPrincipal
     {

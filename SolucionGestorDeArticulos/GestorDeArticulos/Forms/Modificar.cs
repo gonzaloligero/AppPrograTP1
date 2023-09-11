@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GestorDeArticulos.Forms
+namespace winform_app.Forms
 {
     public partial class frmModificar : Form
     {
