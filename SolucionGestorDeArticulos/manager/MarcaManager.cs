@@ -2,26 +2,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace manager
 {
-    public class CategoriaManager
+    public class MarcaManager
     {
-        public List<Categoria> ListarCategorias()
+        public List<Marca> ListarMarcas()
         {
-            List<Categoria> lista = new List<Categoria>();
+            List<Marca> lista = new List<Marca>();
             AccesoDatos datos = new AccesoDatos();
             try
             {
-                datos.setearConsulta("SELECT * FROM CATEGORIAS");
+                datos.setearConsulta("SELECT * FROM MARCAS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
-                    Categoria aux = new Categoria();
+                    Marca aux = new Marca();
                     aux.Id = (int)datos.Lector["Id"];
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
 
@@ -38,8 +37,9 @@ namespace manager
             {
                 datos.cerrarConexion();
             }
-            
+
         }
 
     }
+
 }

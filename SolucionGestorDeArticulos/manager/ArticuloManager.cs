@@ -67,64 +67,6 @@ namespace manager
         }
 
 
-        public List<Categoria> ListarCategorias()
-        {
-            try
-            {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT * FROM CATEGORIAS";
-                comando.Connection = conexion;
-
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    Categoria aux = new Categoria();
-                    aux.Id = (int)lector["Id"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    
-                    listaCategorias.Add(aux);
-                }
-
-                conexion.Close();
-                return listaCategorias;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public List<Marca> ListarMarcas()
-        {
-            try
-            {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT * FROM MARCAS";
-                comando.Connection = conexion;
-
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
-                {
-                    Marca aux = new Marca();
-                    aux.Id = (int)lector["Id"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-
-                    listaMarcas.Add(aux);
-                }
-
-                conexion.Close();
-                return listaMarcas;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public List<Articulo> ListarCodigoArticulo()
         {
             try

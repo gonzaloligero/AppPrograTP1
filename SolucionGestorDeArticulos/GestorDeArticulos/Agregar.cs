@@ -48,11 +48,12 @@ namespace winform_app
 
         private void frmAgregar_Load(object sender, EventArgs e)
         {
-            manager.ArticuloManager negocio = new manager.ArticuloManager();
+            manager.CategoriaManager negocioCat = new manager.CategoriaManager();
+            manager.MarcaManager negocio = new manager.MarcaManager();
 
             try
             {
-                cboCategorias.DataSource = negocio.ListarCategorias();
+                cboCategorias.DataSource = negocioCat.ListarCategorias();
                 cboMarcas.DataSource = negocio.ListarMarcas();
             }
             catch (Exception ex )
