@@ -21,7 +21,7 @@ namespace GestorDeArticulos.Managers
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -31,7 +31,7 @@ namespace GestorDeArticulos.Managers
             try
             {
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, Precio FROM ARTICULOS A, MARCAS M , CATEGORIAS C WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id";
+                comando.CommandText = "SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, Precio, ImagenUrl FROM ARTICULOS A, MARCAS M , CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id AND I.IdArticulo = A.Id";
                 comando.Connection = conexion;
 
                 conexion.Open();
@@ -40,12 +40,13 @@ namespace GestorDeArticulos.Managers
                 while (lector.Read())
                 {
                     Articulo aux = new Articulo();
-                    aux.CodigoArt = (string)lector["Codigo"];
-                    aux.NombreArt = (string)lector["Nombre"];
-                    aux.DescripcionArt = (string)lector["Descripcion"];
-                    aux.MarcaArt.Descripcion = (string)lector["Marca"];
-                    aux.CategoriaArt.Descripcion = (string)lector["Categoria"];
+                    aux.Codigo = (string)lector["Codigo"];
+                    aux.Nombre = (string)lector["Nombre"];
+                    aux.Descripcion = (string)lector["Descripcion"];
+                    aux.Marca.Descripcion = (string)lector["Marca"];
+                    aux.Categoria.Descripcion = (string)lector["Categoria"];
                     aux.Precio = (decimal)lector["Precio"];
+                    aux.Imagen = (string)lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
@@ -140,11 +141,11 @@ namespace GestorDeArticulos.Managers
                     if (codigoArticulo.Contains(buscar))
                     {
                         Articulo aux = new Articulo();
-                        aux.CodigoArt = codigoArticulo;
-                        aux.NombreArt = (string)lector["Nombre"];
-                        aux.DescripcionArt = (string)lector["Descripcion"];
-                        aux.MarcaArt.Id = (int)lector["IdMarca"];
-                        aux.CategoriaArt.Id = (int)lector["IdCategoria"];
+                        aux.Codigo = codigoArticulo;
+                        aux.Nombre = (string)lector["Nombre"];
+                        aux.Descripcion = (string)lector["Descripcion"];
+                        aux.Marca.Id = (int)lector["IdMarca"];
+                        aux.Categoria.Id = (int)lector["IdCategoria"];
                         aux.Precio = (decimal)lector["Precio"];
 
                         lista.Add(aux);
@@ -210,11 +211,11 @@ namespace GestorDeArticulos.Managers
             {
                 setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@Precio)");
                 //setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
-                setearParametro("@Codigo", nuevoArticulo.CodigoArt);
-                setearParametro("@Nombre", nuevoArticulo.NombreArt);
-                setearParametro("@Descripcion", nuevoArticulo.DescripcionArt);
-                //setearParametro("@IdMarca", nuevoArticulo.MarcaArt);
-                //setearParametro("@IdCategoria", nuevoArticulo.CategoriaArt);
+                setearParametro("@Codigo", nuevoArticulo.Codigo);
+                setearParametro("@Nombre", nuevoArticulo.Nombre);
+                setearParametro("@Descripcion", nuevoArticulo.Descripcion);
+                //setearParametro("@IdMarca", nuevoArticulo.Marca);
+                //setearParametro("@IdCategoria", nuevoArticulo.Categoria);
                 setearParametro("Precio", nuevoArticulo.Precio);
                 ejecutarAccion();
             }

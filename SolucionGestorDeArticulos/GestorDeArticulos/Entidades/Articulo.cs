@@ -10,32 +10,32 @@ namespace GestorDeArticulos.Entidades
     {
         public Articulo()
         {
-            CodigoArt = "";
-            NombreArt = "";
-            DescripcionArt = "";
-            MarcaArt = new Marca();
-            CategoriaArt = new Categoria();
-            Imagenes = new List<string>();
+            Codigo = "";
+            Nombre = "";
+            Descripcion = "";
+            Marca = new Marca();
+            Categoria = new Categoria();
+            Imagen = "";
             Precio = 0;
         }
 
-        public Articulo(string codigoArt, string nombreArt, string descripcionArt, Marca marcaArt, Categoria categoriaArt, List<string> imagenes, decimal precio)
+        public Articulo(string codigoArt, string nombreArt, string descripcionArt, Marca marcaArt, Categoria categoriaArt, string imagenes, decimal precio)
         {
-            CodigoArt = codigoArt;
-            NombreArt = nombreArt;
-            DescripcionArt = descripcionArt;
-            MarcaArt = marcaArt;
-            CategoriaArt = categoriaArt;
-            Imagenes = imagenes;
+            Codigo = codigoArt;
+            Nombre = nombreArt;
+            Descripcion = descripcionArt;
+            Marca = marcaArt;
+            Categoria = categoriaArt;
+            Imagen = imagenes;
             Precio = precio;
         }
 
-        public string CodigoArt { get; set; }
-        public string NombreArt { get; set; }
-        public string DescripcionArt { get; set; }
-        public Marca MarcaArt { get; set; }
-        public Categoria CategoriaArt { get; set; }
-        public List<string> Imagenes { get; set; }
+        public string Codigo { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
+        public Marca Marca { get; set; }
+        public Categoria Categoria { get; set; }
+        public string Imagen { get; set; }
         public decimal Precio { get; set; }
 
     }

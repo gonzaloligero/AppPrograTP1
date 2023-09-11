@@ -28,3 +28,18 @@ C:\Users\Gonzalo\Desktop\AppPrograTP1\main\SolucionGestorDeArticulos\GestorDeArt
 C:\Users\Gonzalo\Desktop\AppPrograTP1\main\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.csproj.CoreCompileInputs.cache
 C:\Users\Gonzalo\Desktop\AppPrograTP1\main\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.exe
 C:\Users\Gonzalo\Desktop\AppPrograTP1\main\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.pdb
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\GestorDeArticulos.exe.config
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\GestorDeArticulos.exe
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\GestorDeArticulos.pdb
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.csproj.AssemblyReference.cache
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregar.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.Forms.frmBuscar.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.Forms.frmDetallar.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmPantallaPrincipal.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.Forms.frmListar.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.Forms.frmModificar.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.Properties.Resources.resources
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.csproj.GenerateResource.cache
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.csproj.CoreCompileInputs.cache
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.exe
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.pdb

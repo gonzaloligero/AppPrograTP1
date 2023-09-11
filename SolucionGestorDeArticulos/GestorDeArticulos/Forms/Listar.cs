@@ -1,4 +1,5 @@
-﻿using GestorDeArticulos.Managers;
+﻿using GestorDeArticulos.Entidades;
+using GestorDeArticulos.Managers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace GestorDeArticulos.Forms
 {
     public partial class frmListar : Form
     {
+        private List<Articulo> listaArticulo;
+
         public frmListar()
         {
             InitializeComponent();
@@ -21,13 +24,33 @@ namespace GestorDeArticulos.Forms
         private void frmListar_Load(object sender, EventArgs e)
         {
             ArticuloManager articuloManager = new ArticuloManager();
-            dgvArticulos.DataSource = articuloManager.ListarArticulos();
-            
+            listaArticulo = articuloManager.ListarArticulos();
+            dgvArticulos.DataSource = listaArticulo;
+            dgvArticulos.Columns[5].Visible = false;
+            cargarImagen(listaArticulo[0].Imagen);
         }
 
         private void btVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            cargarImagen(seleccionado.Imagen);
+        }
+        private void cargarImagen(string imagen)
+        {
+            try
+            {
+                pbxArticulo.Load(imagen);
+            }
+            catch (Exception ex)
+            {
+                pbxArticulo.Load("https://i.pinimg.com/564x/a5/6e/f6/a56ef61429307a58fbcbb16139d623f6.jpg");
+
+            }
         }
     }
 }

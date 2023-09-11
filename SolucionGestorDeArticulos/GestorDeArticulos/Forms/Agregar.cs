@@ -28,9 +28,9 @@ namespace GestorDeArticulos
             GestorDeArticulos.Managers.ArticuloManager nuevoManager = new GestorDeArticulos.Managers.ArticuloManager();
             try
             {
-                nuevoArticulo.CodigoArt = txtCodigoArticulo.Text;
-                nuevoArticulo.NombreArt = txtNombreArticulo.Text;
-                nuevoArticulo.DescripcionArt = txtDescripcion.Text;
+                nuevoArticulo.Codigo = txtCodigoArticulo.Text;
+                nuevoArticulo.Nombre = txtNombreArticulo.Text;
+                nuevoArticulo.Descripcion = txtDescripcion.Text;
                 nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
