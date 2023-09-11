@@ -21,7 +21,7 @@ namespace GestorDeArticulos.Managers
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -118,6 +118,34 @@ namespace GestorDeArticulos.Managers
             }
         }
 
+        public List<Articulo> ListarCodigoArticulo()
+        {
+            try
+            {
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT Codigo FROM ARTICULOS";
+                comando.Connection = conexion;
+
+                conexion.Open();
+                lector = comando.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Codigo = (string)lector["Codigo"];
+                 
+
+                    lista.Add(aux);
+                }
+
+                conexion.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public List<Articulo> buscarArticulo(string buscar)
         {
@@ -190,6 +218,7 @@ namespace GestorDeArticulos.Managers
             try
             {
                 conexion.Open();
+
                 comando.ExecuteNonQuery();
             }
             catch (Exception ex)
@@ -206,17 +235,17 @@ namespace GestorDeArticulos.Managers
 
         public void agregarArticulo(GestorDeArticulos.Entidades.Articulo nuevoArticulo)
         {
-           
+
             try
             {
-                setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@Precio)");
-                //setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
+                setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
                 setearParametro("@Codigo", nuevoArticulo.Codigo);
                 setearParametro("@Nombre", nuevoArticulo.Nombre);
                 setearParametro("@Descripcion", nuevoArticulo.Descripcion);
-                //setearParametro("@IdMarca", nuevoArticulo.Marca);
-                //setearParametro("@IdCategoria", nuevoArticulo.Categoria);
-                setearParametro("Precio", nuevoArticulo.Precio);
+                setearParametro("@IdMarca", nuevoArticulo.Marca.Id);
+                setearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
+                setearParametro("@Precio", nuevoArticulo.Precio);
+                conexion.Close();
                 ejecutarAccion();
             }
             catch (Exception ex)
@@ -230,7 +259,10 @@ namespace GestorDeArticulos.Managers
             }
         }
 
+
     }
+
+    
 }
 
 

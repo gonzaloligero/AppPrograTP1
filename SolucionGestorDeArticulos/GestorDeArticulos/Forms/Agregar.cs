@@ -35,8 +35,7 @@ namespace GestorDeArticulos
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
                 MessageBox.Show("Artículo agregado exitosamente");
-                Close();
-
+                
             }
             catch (Exception ex)
             {
@@ -61,5 +60,7 @@ namespace GestorDeArticulos
             }
 
         }
+
+       
     }
 }

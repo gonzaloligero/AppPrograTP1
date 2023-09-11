@@ -20,7 +20,7 @@ namespace GestorDeArticulos.Forms
 
         private void btnBuscarBuscar_Click(object sender, EventArgs e)
         {
-            string buscar = (string)txtBuscar.Text;
+            string buscar = (string)cboBuscar.Text;
             ArticuloManager articuloManager = new ArticuloManager();
             dgvBuscar.DataSource = articuloManager.buscarArticulo(buscar);
         }
@@ -28,6 +28,27 @@ namespace GestorDeArticulos.Forms
         private void btVolver_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+
+        private void frmBuscar_Load(object sender, EventArgs e)
+        { 
+            GestorDeArticulos.Managers.ArticuloManager negocio = new GestorDeArticulos.Managers.ArticuloManager();
+            
+            try
+            {
+               
+                ArticuloManager articuloManager = new ArticuloManager();
+                cboBuscar.DataSource = negocio.ListarCodigoArticulo();
+    
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
     }
 }
