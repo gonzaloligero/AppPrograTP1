@@ -30,5 +30,21 @@ namespace GestorDeArticulos
             dgvEliminar.Columns[5].Visible = false;
             //cargar(listaArticulo[0].Imagen);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ArticuloManager articulo = new ArticuloManager();
+            Articulo seleccionado;
+            try
+            {
+                seleccionado = dgvEliminar.CurrentRow.DataBoundItem as Articulo;
+                articulo.eliminarArticulo(seleccionado.Id);
+                MessageBox.Show("Articulo eliminado");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());              
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ namespace dominio
     {
         public Articulo()
         {
+            Id = 0;
             Codigo = "";
             Nombre = "";
             Descripcion = "";
@@ -29,7 +30,7 @@ namespace dominio
             Imagen = imagenes;
             Precio = precio;
         }
-
+        public int Id { get; set; }
         public string Codigo { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
