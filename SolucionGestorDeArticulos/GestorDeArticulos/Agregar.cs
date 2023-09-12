@@ -30,9 +30,36 @@ namespace winform_app
             manager.ArticuloManager nuevoManager = new manager.ArticuloManager();
             try
             {
-                nuevoArticulo.Codigo = txtCodigoArticulo.Text;
+                if(nuevoManager.verificadorDeCodigos(nuevoArticulo.Codigo) == true)
+                {
+                    MessageBox.Show("El codigo ya existe. Ingrese otro");
+                }
+                else
+                {
+                    nuevoArticulo.Codigo = txtCodigoArticulo.Text;
+                }
+
+                if (string.IsNullOrEmpty(nuevoArticulo.Codigo))
+                {
+                    nuevoArticulo.Codigo = "";
+                }
+               
                 nuevoArticulo.Nombre = txtNombreArticulo.Text;
                 nuevoArticulo.Descripcion = txtDescripcion.Text;
+                
+                if(cboCategorias.SelectedValue != null)
+                {
+                    nuevoArticulo.Categoria.Id = (int)cboCategorias.SelectedValue;
+                }
+
+                if(cboMarcas.SelectedValue != null)
+                {
+                    nuevoArticulo.Marca.Id = (int)cboMarcas.SelectedValue;
+                }
+
+                nuevoArticulo.Imagen = (string)txtUrlImagen.Text;
+                
+
                 nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
@@ -53,7 +80,11 @@ namespace winform_app
 
             try
             {
+                cboCategorias.DisplayMember = "Nombre";
+                cboCategorias.ValueMember = "Id";
                 cboCategorias.DataSource = negocioCat.ListarCategorias();
+                cboMarcas.ValueMember = "Id";
+                cboMarcas.DisplayMember = "Nombre";
                 cboMarcas.DataSource = negocio.ListarMarcas();
             }
             catch (Exception ex )
@@ -64,6 +95,29 @@ namespace winform_app
 
         }
 
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
+        }
 
+       private void cargarImagen(string imagen)
+          {
+             try
+              {
+                 pbxArticulo.Load(imagen);}
+                 catch (Exception)
+              { pbxArticulo.Load("https://i.pinimg.com/564x/a5/6e/f6/a56ef61429307a58fbcbb16139d623f6.jpg");}
+                        }
+
+        private void txtCodigoArticulo_Leave(object sender, EventArgs e)
+        {
+            ArticuloManager verificador = new ArticuloManager();
+            if(verificador.verificadorDeCodigos(txtCodigoArticulo.Text) == true)
+            {
+                MessageBox.Show("Codigo existente. Ingrese otro");
+                txtCodigoArticulo.Clear();
+            }
+            
+        }
     }
 }

@@ -43,22 +43,23 @@
             this.tsbContacto = new System.Windows.Forms.ToolStripButton();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.tsmArticulos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmMarcas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmCategorias = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmContacto = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgregarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListarArticulos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBuscarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmDetallarArticulo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmMarcas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCrearMarca = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListarMarcas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarMarca = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEliminarMarca = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCrearCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmListarCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBorrarCategoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmContacto = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEliminarArticulo = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -78,9 +79,9 @@
             this.tsbDetallar,
             this.toolStripSeparator5,
             this.tsbContacto});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 24);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(935, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(1247, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -90,7 +91,7 @@
             this.tsbAgregar.Image = ((System.Drawing.Image)(resources.GetObject("tsbAgregar.Image")));
             this.tsbAgregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAgregar.Name = "tsbAgregar";
-            this.tsbAgregar.Size = new System.Drawing.Size(24, 24);
+            this.tsbAgregar.Size = new System.Drawing.Size(29, 24);
             this.tsbAgregar.Text = "Agregar Artículo";
             this.tsbAgregar.Click += new System.EventHandler(this.tsbAgregar_Click);
             // 
@@ -105,7 +106,7 @@
             this.tsbListar.Image = ((System.Drawing.Image)(resources.GetObject("tsbListar.Image")));
             this.tsbListar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbListar.Name = "tsbListar";
-            this.tsbListar.Size = new System.Drawing.Size(24, 24);
+            this.tsbListar.Size = new System.Drawing.Size(29, 24);
             this.tsbListar.Text = "Listar Artículos";
             this.tsbListar.Click += new System.EventHandler(this.tsbListar_Click);
             // 
@@ -120,7 +121,7 @@
             this.tsbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("tsbBuscar.Image")));
             this.tsbBuscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbBuscar.Name = "tsbBuscar";
-            this.tsbBuscar.Size = new System.Drawing.Size(24, 24);
+            this.tsbBuscar.Size = new System.Drawing.Size(29, 24);
             this.tsbBuscar.Text = "Buscar Artículo";
             this.tsbBuscar.Click += new System.EventHandler(this.tsbBuscar_Click);
             // 
@@ -135,7 +136,7 @@
             this.tsbModificar.Image = ((System.Drawing.Image)(resources.GetObject("tsbModificar.Image")));
             this.tsbModificar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbModificar.Name = "tsbModificar";
-            this.tsbModificar.Size = new System.Drawing.Size(24, 24);
+            this.tsbModificar.Size = new System.Drawing.Size(29, 24);
             this.tsbModificar.Text = "Modificar Artículo";
             this.tsbModificar.Click += new System.EventHandler(this.tsbModificar_Click);
             // 
@@ -150,7 +151,7 @@
             this.tsbDetallar.Image = ((System.Drawing.Image)(resources.GetObject("tsbDetallar.Image")));
             this.tsbDetallar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbDetallar.Name = "tsbDetallar";
-            this.tsbDetallar.Size = new System.Drawing.Size(24, 24);
+            this.tsbDetallar.Size = new System.Drawing.Size(29, 24);
             this.tsbDetallar.Text = "Detallar Artículo";
             this.tsbDetallar.Click += new System.EventHandler(this.tsbDetallar_Click);
             // 
@@ -165,12 +166,13 @@
             this.tsbContacto.Image = ((System.Drawing.Image)(resources.GetObject("tsbContacto.Image")));
             this.tsbContacto.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbContacto.Name = "tsbContacto";
-            this.tsbContacto.Size = new System.Drawing.Size(24, 24);
+            this.tsbContacto.Size = new System.Drawing.Size(29, 24);
             this.tsbContacto.Text = "Contacto";
             this.tsbContacto.Click += new System.EventHandler(this.tsbContacto_Click);
             // 
             // menuStrip2
             // 
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmArticulos,
             this.tsmMarcas,
@@ -178,7 +180,7 @@
             this.tsmContacto});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(935, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(1247, 28);
             this.menuStrip2.TabIndex = 3;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -189,11 +191,47 @@
             this.tsmListarArticulos,
             this.tsmBuscarArticulo,
             this.tsmModificarArticulo,
-            this.tsmDetallarArticulo});
+            this.tsmDetallarArticulo,
+            this.tsmEliminarArticulo});
             this.tsmArticulos.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmArticulos.Name = "tsmArticulos";
-            this.tsmArticulos.Size = new System.Drawing.Size(82, 20);
+            this.tsmArticulos.Size = new System.Drawing.Size(104, 24);
             this.tsmArticulos.Text = "Artículos";
+            // 
+            // tsmAgregarArticulo
+            // 
+            this.tsmAgregarArticulo.Name = "tsmAgregarArticulo";
+            this.tsmAgregarArticulo.Size = new System.Drawing.Size(224, 26);
+            this.tsmAgregarArticulo.Text = "Agregar";
+            this.tsmAgregarArticulo.Click += new System.EventHandler(this.tsmAgregarArticulo_Click);
+            // 
+            // tsmListarArticulos
+            // 
+            this.tsmListarArticulos.Name = "tsmListarArticulos";
+            this.tsmListarArticulos.Size = new System.Drawing.Size(224, 26);
+            this.tsmListarArticulos.Text = "Listar";
+            this.tsmListarArticulos.Click += new System.EventHandler(this.tsmListarArticulos_Click);
+            // 
+            // tsmBuscarArticulo
+            // 
+            this.tsmBuscarArticulo.Name = "tsmBuscarArticulo";
+            this.tsmBuscarArticulo.Size = new System.Drawing.Size(224, 26);
+            this.tsmBuscarArticulo.Text = "Buscar";
+            this.tsmBuscarArticulo.Click += new System.EventHandler(this.tsmBuscarArticulo_Click);
+            // 
+            // tsmModificarArticulo
+            // 
+            this.tsmModificarArticulo.Name = "tsmModificarArticulo";
+            this.tsmModificarArticulo.Size = new System.Drawing.Size(224, 26);
+            this.tsmModificarArticulo.Text = "Modificar";
+            this.tsmModificarArticulo.Click += new System.EventHandler(this.tsmModificarArticulo_Click);
+            // 
+            // tsmDetallarArticulo
+            // 
+            this.tsmDetallarArticulo.Name = "tsmDetallarArticulo";
+            this.tsmDetallarArticulo.Size = new System.Drawing.Size(224, 26);
+            this.tsmDetallarArticulo.Text = "Detallar";
+            this.tsmDetallarArticulo.Click += new System.EventHandler(this.tsmDetallarArticulo_Click);
             // 
             // tsmMarcas
             // 
@@ -204,8 +242,32 @@
             this.tsmEliminarMarca});
             this.tsmMarcas.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmMarcas.Name = "tsmMarcas";
-            this.tsmMarcas.Size = new System.Drawing.Size(61, 20);
+            this.tsmMarcas.Size = new System.Drawing.Size(77, 24);
             this.tsmMarcas.Text = "Marcas";
+            // 
+            // tsmCrearMarca
+            // 
+            this.tsmCrearMarca.Name = "tsmCrearMarca";
+            this.tsmCrearMarca.Size = new System.Drawing.Size(263, 26);
+            this.tsmCrearMarca.Text = "Crear marca";
+            // 
+            // tsmListarMarcas
+            // 
+            this.tsmListarMarcas.Name = "tsmListarMarcas";
+            this.tsmListarMarcas.Size = new System.Drawing.Size(263, 26);
+            this.tsmListarMarcas.Text = "Listar todas";
+            // 
+            // tsmModificarMarca
+            // 
+            this.tsmModificarMarca.Name = "tsmModificarMarca";
+            this.tsmModificarMarca.Size = new System.Drawing.Size(263, 26);
+            this.tsmModificarMarca.Text = "Modificar una marca";
+            // 
+            // tsmEliminarMarca
+            // 
+            this.tsmEliminarMarca.Name = "tsmEliminarMarca";
+            this.tsmEliminarMarca.Size = new System.Drawing.Size(263, 26);
+            this.tsmEliminarMarca.Text = "Eliminar una marca";
             // 
             // tsmCategorias
             // 
@@ -216,109 +278,58 @@
             this.tsmBorrarCategoria});
             this.tsmCategorias.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmCategorias.Name = "tsmCategorias";
-            this.tsmCategorias.Size = new System.Drawing.Size(89, 20);
+            this.tsmCategorias.Size = new System.Drawing.Size(113, 24);
             this.tsmCategorias.Text = "Categorías";
-            // 
-            // tsmContacto
-            // 
-            this.tsmContacto.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tsmContacto.Name = "tsmContacto";
-            this.tsmContacto.Size = new System.Drawing.Size(75, 20);
-            this.tsmContacto.Text = "Contacto";
-            this.tsmContacto.Click += new System.EventHandler(this.tsmContacto_Click_1);
-            // 
-            // tsmAgregarArticulo
-            // 
-            this.tsmAgregarArticulo.Name = "tsmAgregarArticulo";
-            this.tsmAgregarArticulo.Size = new System.Drawing.Size(180, 22);
-            this.tsmAgregarArticulo.Text = "Agregar";
-            this.tsmAgregarArticulo.Click += new System.EventHandler(this.tsmAgregarArticulo_Click);
-            // 
-            // tsmListarArticulos
-            // 
-            this.tsmListarArticulos.Name = "tsmListarArticulos";
-            this.tsmListarArticulos.Size = new System.Drawing.Size(180, 22);
-            this.tsmListarArticulos.Text = "Listar";
-            this.tsmListarArticulos.Click += new System.EventHandler(this.tsmListarArticulos_Click);
-            // 
-            // tsmBuscarArticulo
-            // 
-            this.tsmBuscarArticulo.Name = "tsmBuscarArticulo";
-            this.tsmBuscarArticulo.Size = new System.Drawing.Size(180, 22);
-            this.tsmBuscarArticulo.Text = "Buscar";
-            this.tsmBuscarArticulo.Click += new System.EventHandler(this.tsmBuscarArticulo_Click);
-            // 
-            // tsmModificarArticulo
-            // 
-            this.tsmModificarArticulo.Name = "tsmModificarArticulo";
-            this.tsmModificarArticulo.Size = new System.Drawing.Size(180, 22);
-            this.tsmModificarArticulo.Text = "Modificar";
-            this.tsmModificarArticulo.Click += new System.EventHandler(this.tsmModificarArticulo_Click);
-            // 
-            // tsmDetallarArticulo
-            // 
-            this.tsmDetallarArticulo.Name = "tsmDetallarArticulo";
-            this.tsmDetallarArticulo.Size = new System.Drawing.Size(180, 22);
-            this.tsmDetallarArticulo.Text = "Detallar";
-            this.tsmDetallarArticulo.Click += new System.EventHandler(this.tsmDetallarArticulo_Click);
-            // 
-            // tsmCrearMarca
-            // 
-            this.tsmCrearMarca.Name = "tsmCrearMarca";
-            this.tsmCrearMarca.Size = new System.Drawing.Size(214, 22);
-            this.tsmCrearMarca.Text = "Crear marca";
-            // 
-            // tsmListarMarcas
-            // 
-            this.tsmListarMarcas.Name = "tsmListarMarcas";
-            this.tsmListarMarcas.Size = new System.Drawing.Size(214, 22);
-            this.tsmListarMarcas.Text = "Listar todas";
-            // 
-            // tsmModificarMarca
-            // 
-            this.tsmModificarMarca.Name = "tsmModificarMarca";
-            this.tsmModificarMarca.Size = new System.Drawing.Size(214, 22);
-            this.tsmModificarMarca.Text = "Modificar una marca";
-            // 
-            // tsmEliminarMarca
-            // 
-            this.tsmEliminarMarca.Name = "tsmEliminarMarca";
-            this.tsmEliminarMarca.Size = new System.Drawing.Size(214, 22);
-            this.tsmEliminarMarca.Text = "Eliminar una marca";
             // 
             // tsmCrearCategoria
             // 
             this.tsmCrearCategoria.Name = "tsmCrearCategoria";
-            this.tsmCrearCategoria.Size = new System.Drawing.Size(200, 22);
+            this.tsmCrearCategoria.Size = new System.Drawing.Size(245, 26);
             this.tsmCrearCategoria.Text = "Crear categoría";
             // 
             // tsmListarCategorias
             // 
             this.tsmListarCategorias.Name = "tsmListarCategorias";
-            this.tsmListarCategorias.Size = new System.Drawing.Size(200, 22);
+            this.tsmListarCategorias.Size = new System.Drawing.Size(245, 26);
             this.tsmListarCategorias.Text = "Listar categorías";
             // 
             // tsmModificarCategoria
             // 
             this.tsmModificarCategoria.Name = "tsmModificarCategoria";
-            this.tsmModificarCategoria.Size = new System.Drawing.Size(200, 22);
+            this.tsmModificarCategoria.Size = new System.Drawing.Size(245, 26);
             this.tsmModificarCategoria.Text = "Modificar";
             // 
             // tsmBorrarCategoria
             // 
             this.tsmBorrarCategoria.Name = "tsmBorrarCategoria";
-            this.tsmBorrarCategoria.Size = new System.Drawing.Size(200, 22);
+            this.tsmBorrarCategoria.Size = new System.Drawing.Size(245, 26);
             this.tsmBorrarCategoria.Text = "Borrar categoría";
+            // 
+            // tsmContacto
+            // 
+            this.tsmContacto.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsmContacto.Name = "tsmContacto";
+            this.tsmContacto.Size = new System.Drawing.Size(95, 24);
+            this.tsmContacto.Text = "Contacto";
+            this.tsmContacto.Click += new System.EventHandler(this.tsmContacto_Click_1);
+            // 
+            // tsmEliminarArticulo
+            // 
+            this.tsmEliminarArticulo.Name = "tsmEliminarArticulo";
+            this.tsmEliminarArticulo.Size = new System.Drawing.Size(224, 26);
+            this.tsmEliminarArticulo.Text = "Eliminar";
+            this.tsmEliminarArticulo.Click += new System.EventHandler(this.tsmEliminarArticulo_Click);
             // 
             // frmPantallaPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 444);
+            this.ClientSize = new System.Drawing.Size(1247, 546);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmPantallaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MG Solutions";
@@ -363,6 +374,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmModificarCategoria;
         private System.Windows.Forms.ToolStripMenuItem tsmBorrarCategoria;
         private System.Windows.Forms.ToolStripMenuItem tsmContacto;
+        private System.Windows.Forms.ToolStripMenuItem tsmEliminarArticulo;
     }
 }
 

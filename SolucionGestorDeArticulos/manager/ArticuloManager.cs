@@ -16,7 +16,7 @@ namespace manager
         private List<Categoria> listaCategorias = new List<Categoria>();
         private List<Marca> listaMarcas = new List<Marca>();
         private SqlConnection conexion;
-        private SqlCommand comando;
+        public SqlCommand comando;
         private SqlDataReader lector;
        
 
@@ -43,14 +43,40 @@ namespace manager
                     aux.Codigo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
-                    aux.Marca.Descripcion = (string)datos.Lector["Marca"];
 
-                    
-                    if (!Convert.IsDBNull(datos.Lector["Categoria"])) aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
-                    else aux.Categoria.Descripcion = "Sin categoría";                   
+
+                    if (!Convert.IsDBNull(datos.Lector["Marca"]))
+                    {
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    else
+                    {
+                        aux.Marca.Descripcion = "" ;
+                    }
+
+                    //aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+
+                    if (!Convert.IsDBNull(datos.Lector["Categoria"]))
+                    {
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    }
+                    else{
+                        aux.Categoria.Descripcion = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542"; 
+                    }
+                                                
 
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.Imagen = (string)datos.Lector["ImagenUrl"];
+
+                    if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
+                    {
+                        aux.Imagen = (string)datos.Lector["ImagenUrl"];
+                    }
+                    else
+                    {
+
+                    }
+
+                    //aux.Imagen = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
@@ -213,8 +239,56 @@ namespace manager
         }
 
 
+        public bool verificadorDeCodigos(string codigo)
+    {
+        List<Articulo> lista = new List<Articulo>();
+        AccesoDatos datos = new AccesoDatos();
+            
+            
+        try
+        {
+             
+            datos.setearConsulta("SELECT COUNT(*) FROM ARTICULOS WHERE Codigo = @Codigo");
+            datos.comando.Parameters.AddWithValue("@Codigo", codigo);
+            datos.ejecutarLectura();
+
+                if (datos.Lector.Read())
+                {
+                    int count = datos.Lector.GetInt32(0);
+                    return count > 0;
+                }
+                else
+                {
+                    return false;
+                }
+
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+
     }
 
+        public void eliminarArticulo(int id)
+        {
+            try
+            {
+                AccesoDatos datos = new AccesoDatos();
+                datos.setearConsulta("DELETE FROM ARTICULOS WHERE Id = @Id");
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+       
+
+    } 
     
 }
 
