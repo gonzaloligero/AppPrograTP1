@@ -40,11 +40,16 @@ namespace GestorDeArticulos
                 seleccionado = dgvEliminar.CurrentRow.DataBoundItem as Articulo;
                 articulo.eliminarArticulo(seleccionado.Id);
                 MessageBox.Show("Articulo eliminado");
+                
+                listaArticulo = articulo.ListarArticulos();
+                dgvEliminar.DataSource = listaArticulo;
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());              
             }
+
         }
     }
 }
