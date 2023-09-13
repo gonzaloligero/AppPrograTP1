@@ -242,12 +242,18 @@ namespace manager
             }
         }
 
+        
         public void agregarImagenes(Articulo nuevoArticulo)
         {
+
+            Articulo articulo = new Articulo();
+            articulo = ListarArticulos().Last();
+            
             try
             {
+                
                 //int idArticulo = Convert.ToInt32(comando.ExecuteScalar());
-                int idArticulo = 82;
+                int idArticulo = articulo.Id;
                 setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
                 setearParametro("@IdArticulo", idArticulo);
                 setearParametro("@ImagenUrl", nuevoArticulo.Imagen);
