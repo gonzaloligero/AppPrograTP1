@@ -34,7 +34,9 @@ namespace winform_app
         private void btConfirmar_Click(object sender, EventArgs e)
         {
             dominio.Articulo nuevoArticulo = new dominio.Articulo();
+            Imagen nuevaImagen = new Imagen();
             manager.ArticuloManager nuevoManager = new manager.ArticuloManager();
+            ArticuloManager imagenes = new ArticuloManager();
             try
             {
                 if(nuevoManager.verificadorDeCodigos(nuevoArticulo.Codigo) == true)
@@ -70,6 +72,7 @@ namespace winform_app
                 nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
+                imagenes.agregarImagenes(nuevoArticulo);
                 MessageBox.Show("Artículo agregado exitosamente");
                 
             }

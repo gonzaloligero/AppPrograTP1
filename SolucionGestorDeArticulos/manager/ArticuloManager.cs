@@ -219,12 +219,15 @@ namespace manager
             try
             {
                 setearConsulta("INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio) VALUES (@Codigo,@Nombre,@Descripcion,@IdMarca,@IdCategoria,@Precio)");
+
                 setearParametro("@Codigo", nuevoArticulo.Codigo);
                 setearParametro("@Nombre", nuevoArticulo.Nombre);
                 setearParametro("@Descripcion", nuevoArticulo.Descripcion);
                 setearParametro("@IdMarca", nuevoArticulo.Marca.Id);
                 setearParametro("@IdCategoria", nuevoArticulo.Categoria.Id);
                 setearParametro("@Precio", nuevoArticulo.Precio);
+                
+
                 conexion.Close();
                 ejecutarAccion();
             }
@@ -237,6 +240,31 @@ namespace manager
             {
                 conexion.Close();
             }
+        }
+
+        public void agregarImagenes(Articulo nuevoArticulo)
+        {
+            try
+            {
+                //int idArticulo = Convert.ToInt32(comando.ExecuteScalar());
+                int idArticulo = 82;
+                setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
+                setearParametro("@IdArticulo", idArticulo);
+                setearParametro("@ImagenUrl", nuevoArticulo.Imagen);
+
+                conexion.Close();
+                ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
         }
 
 
