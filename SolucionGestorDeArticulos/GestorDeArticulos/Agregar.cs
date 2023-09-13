@@ -14,9 +14,16 @@ namespace winform_app
 {
     public partial class frmAgregar : Form
     {
+        private Articulo articulo = null;
+
         public frmAgregar()
         {
             InitializeComponent();
+        }
+        public frmAgregar(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
@@ -80,12 +87,22 @@ namespace winform_app
 
             try
             {
+        
                 cboCategorias.DisplayMember = "Nombre";
                 cboCategorias.ValueMember = "Id";
                 cboCategorias.DataSource = negocioCat.ListarCategorias();
                 cboMarcas.ValueMember = "Id";
                 cboMarcas.DisplayMember = "Nombre";
                 cboMarcas.DataSource = negocio.ListarMarcas();
+
+                if(articulo != null)
+                {
+                    txtNombreArticulo.Text = articulo.Nombre;
+                    txtCodigoArticulo.Text = articulo.Codigo;
+                    txtUrlImagen.Text = articulo.Imagen;
+                    txtPrecio.Text = articulo.Precio.ToString();
+                   
+                }
             }
             catch (Exception ex )
             {

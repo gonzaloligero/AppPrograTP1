@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using dominio;
 
 namespace manager
 {
@@ -19,7 +20,7 @@ namespace manager
 
         public AccesoDatos()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -69,6 +70,14 @@ namespace manager
             if(lector != null) 
                 lector.Close();
             conexion.Close();
+        }
+
+        public void buscarArticulo(string codigo)
+        {
+            AccesoDatos rastreador = new AccesoDatos();
+            Articulo articuloElegido = new Articulo();
+            setearConsulta("SELECT * FROM ARTICULOS WHERE Codigo = @Codigo");
+
         }
     }
 }

@@ -275,6 +275,19 @@ namespace winform_app
             ventana.Show();
         }
 
-
+        private void tsbEliminar_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmEliminar))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmEliminar ventana = new frmEliminar();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }

@@ -155,7 +155,7 @@ namespace winform_app
             this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxArticulo.Location = new System.Drawing.Point(359, 57);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(414, 246);
+            this.pbxArticulo.Size = new System.Drawing.Size(414, 344);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 14;
             this.pbxArticulo.TabStop = false;
