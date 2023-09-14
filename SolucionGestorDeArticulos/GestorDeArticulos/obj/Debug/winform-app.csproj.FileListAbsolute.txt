@@ -81,3 +81,4 @@ C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\Ges
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform-app.csproj.CopyComplete
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.exe
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.pdb
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregarMarca.resources
