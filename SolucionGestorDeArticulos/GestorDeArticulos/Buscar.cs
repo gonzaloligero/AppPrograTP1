@@ -28,39 +28,35 @@ namespace winform_app
 
         private void frmBuscar_Load(object sender, EventArgs e)
         {
+            
             try
             {
+               
+                
                 ArticuloManager articuloManager = new ArticuloManager();
                 MarcaManager marcaManager = new MarcaManager();
-
+                CategoriaManager categoriaManager = new CategoriaManager();
                 
+
                 listaArticulo = articuloManager.ListarArticulos();
                 
-
-                // Configura el origen de datos para el DataGridView
                 dgvBuscar.DataSource = listaArticulo;
 
-                // Oculta la columna en la posición 6 (suponiendo que la columna a ocultar sea la 7ma)
                 dgvBuscar.Columns[6].Visible = false;
 
-                // Obtiene el artículo seleccionado actualmente en el DataGridView
-                //Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow?.DataBoundItem;
 
-                // Si se seleccionó un artículo, carga su imagen
                 pbxArticulo.Load(listaArticulo[0].Imagen);
                 
-                //cargarImagen(seleccionado.Imagen);
-
-                // Configura el origen de datos para el ComboBox
                 cboCodigo.DisplayMember = "Codigo";
                 cboMarca.DataSource = marcaManager.ListarMarcas();
-                cboCodigo.DataSource = listaArticulo; // Puedes ajustar esto según tus necesidades
+                cboCodigo.DataSource = listaArticulo; 
+                cboCategoria.DataSource = categoriaManager.ListarCategorias();
+                
                 
 
             }
             catch (Exception ex)
             {
-                // Maneja las excepciones de manera adecuada (registra el error o muestra un mensaje amigable)
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -71,7 +67,6 @@ namespace winform_app
             Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen);
 
-            //cargarImagen(seleccionado.Imagen);
         }
 
         private void cargarImagen(string imagen)
@@ -110,6 +105,19 @@ namespace winform_app
 
             string codigo = marca.Descripcion;
             lista = listaArticulo.buscarMarca(codigo);
+
+            dgvBuscar.DataSource = lista;
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            ArticuloManager listaArticulo = new ArticuloManager();
+
+            Categoria categoria = (Categoria)cboCategoria.SelectedItem;
+
+            string codigo = categoria.Descripcion;
+            lista = listaArticulo.buscarCategoria(codigo);
 
             dgvBuscar.DataSource = lista;
         }

@@ -38,6 +38,10 @@
             this.btnBuscarCodigo = new System.Windows.Forms.Button();
             this.btnBuscarMarca = new System.Windows.Forms.Button();
             this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.btnCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -140,11 +144,54 @@
             this.cboMarca.Size = new System.Drawing.Size(149, 24);
             this.cboMarca.TabIndex = 12;
             // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(143, 131);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(80, 22);
+            this.lblMarca.TabIndex = 13;
+            this.lblMarca.Text = "Marca: ";
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Cascadia Mono", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(109, 178);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(120, 22);
+            this.lblCategoria.TabIndex = 14;
+            this.lblCategoria.Text = "Categoria: ";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(240, 175);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(149, 24);
+            this.cboCategoria.TabIndex = 15;
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.Location = new System.Drawing.Point(434, 176);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(153, 23);
+            this.btnCategoria.TabIndex = 16;
+            this.btnCategoria.Text = "Buscar por Categoria";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 624);
+            this.Controls.Add(this.btnCategoria);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.cboMarca);
             this.Controls.Add(this.btnBuscarMarca);
             this.Controls.Add(this.btnBuscarCodigo);
@@ -176,5 +223,9 @@
         private System.Windows.Forms.Button btnBuscarCodigo;
         private System.Windows.Forms.Button btnBuscarMarca;
         private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }

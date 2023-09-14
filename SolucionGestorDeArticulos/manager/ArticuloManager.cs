@@ -62,7 +62,7 @@ namespace manager
                         aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     }
                     else{
-                        aux.Categoria.Descripcion = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542"; 
+                        aux.Categoria.Descripcion = "Sin Categoria"; 
                     }
                                                 
 
@@ -196,7 +196,7 @@ namespace manager
             }
             finally { datos.cerrarConexion(); }
         }
-        //-------------------------------------------
+        
         public List<Articulo> buscarMarca(string buscar)
         {
             List<Articulo> lista = new List<Articulo>();
@@ -266,7 +266,69 @@ namespace manager
             }
             finally { datos.cerrarConexion(); }
         }
-        //***********************************************************************************
+
+
+        public List<Articulo> buscarCategoria(string buscar)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE C.Descripcion LIKE @Categoria");
+                datos.setearParametro("@Categoria", "%" + buscar + "%");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
+
+                    if (datos.Lector["Marca"] != DBNull.Value)
+                    {
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    else
+                    {
+                        aux.Marca.Descripcion = "Sin Marca";
+                    }
+
+                    if (datos.Lector["Categoria"] != DBNull.Value)
+                    {
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    }
+                    else
+                    {
+                        aux.Categoria.Descripcion = "Sin Categoria";
+                    }
+
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    if (datos.Lector["ImagenUrl"] != DBNull.Value)
+                    {
+                        aux.Imagen = (string)datos.Lector["ImagenUrl"];
+                    }
+                
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+  
+
 
         public void setearConsulta(string query)
         {
