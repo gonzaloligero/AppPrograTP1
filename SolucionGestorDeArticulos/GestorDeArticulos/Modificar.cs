@@ -49,10 +49,22 @@ namespace winform_app
 
         private void frmModificar_Load(object sender, EventArgs e)
         {
+            manager.CategoriaManager negocioCat = new manager.CategoriaManager();
+            manager.MarcaManager negocio = new manager.MarcaManager();
+            Articulo seleccionado = new Articulo();
             ArticuloManager articuloManager = new ArticuloManager();
+            
             listaArticulo = articuloManager.ListarArticulos();
             dgvArticulos.DataSource = listaArticulo;
             dgvArticulos.Columns[6].Visible = false;
+            cboCategorias.ValueMember = "Id";
+            cboCategorias.DisplayMember = "Descripcion";
+            cboCategorias.DataSource = negocioCat.ListarCategorias();
+            cboMarcas.ValueMember = "Id";
+            cboMarcas.DisplayMember = "Nombre";
+            cboMarcas.DataSource = negocio.ListarMarcas();
+            cboCategorias.SelectedValue = seleccionado.Categoria.Id;
+            cboMarcas.SelectedValue = seleccionado.Marca.Id;
             cargarImagen(listaArticulo[2].Imagen);
         }
 
