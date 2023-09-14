@@ -33,7 +33,7 @@ namespace winform_app
                 ArticuloManager articuloManager = new ArticuloManager();
                 MarcaManager marcaManager = new MarcaManager();
 
-                // Carga la lista de artículos desde el gestor
+                
                 listaArticulo = articuloManager.ListarArticulos();
                 
 
