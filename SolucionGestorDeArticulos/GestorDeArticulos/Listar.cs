@@ -28,7 +28,6 @@ namespace winform_app
             ArticuloManager articuloManager = new ArticuloManager();
             listaArticulo = articuloManager.ListarArticulos();
             dgvArticulos.DataSource = listaArticulo;
-            //dgvArticulos.Columns[0].Visible = false;
             dgvArticulos.Columns[6].Visible = false;
             cargarImagen(listaArticulo[0].Imagen);
         }

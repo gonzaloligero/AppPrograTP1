@@ -34,7 +34,10 @@
             this.lbCodigoArticulo = new System.Windows.Forms.Label();
             this.pbxArticulo = new System.Windows.Forms.PictureBox();
             this.btVolver = new System.Windows.Forms.Button();
-            this.cboBuscar = new System.Windows.Forms.ComboBox();
+            this.cboCodigo = new System.Windows.Forms.ComboBox();
+            this.btnBuscarCodigo = new System.Windows.Forms.Button();
+            this.btnBuscarMarca = new System.Windows.Forms.Button();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulo)).BeginInit();
             this.SuspendLayout();
@@ -43,23 +46,25 @@
             // 
             this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvBuscar.Location = new System.Drawing.Point(11, 176);
-            this.dgvBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvBuscar.Location = new System.Drawing.Point(15, 217);
+            this.dgvBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvBuscar.MultiSelect = false;
             this.dgvBuscar.Name = "dgvBuscar";
             this.dgvBuscar.RowHeadersWidth = 51;
             this.dgvBuscar.RowTemplate.Height = 24;
             this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvBuscar.Size = new System.Drawing.Size(404, 320);
+            this.dgvBuscar.Size = new System.Drawing.Size(1035, 274);
             this.dgvBuscar.TabIndex = 2;
+            this.dgvBuscar.SelectionChanged += new System.EventHandler(this.dgvBuscar_SelectionChanged);
             // 
             // lbBuscarArticulo
             // 
             this.lbBuscarArticulo.AutoSize = true;
             this.lbBuscarArticulo.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuscarArticulo.Location = new System.Drawing.Point(302, 21);
+            this.lbBuscarArticulo.Location = new System.Drawing.Point(403, 26);
+            this.lbBuscarArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBuscarArticulo.Name = "lbBuscarArticulo";
-            this.lbBuscarArticulo.Size = new System.Drawing.Size(270, 32);
+            this.lbBuscarArticulo.Size = new System.Drawing.Size(320, 45);
             this.lbBuscarArticulo.TabIndex = 3;
             this.lbBuscarArticulo.Text = "BUSCAR ARTÍCULO";
             // 
@@ -67,52 +72,90 @@
             // 
             this.lbCodigoArticulo.AutoSize = true;
             this.lbCodigoArticulo.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCodigoArticulo.Location = new System.Drawing.Point(188, 92);
+            this.lbCodigoArticulo.Location = new System.Drawing.Point(13, 89);
+            this.lbCodigoArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCodigoArticulo.Name = "lbCodigoArticulo";
-            this.lbCodigoArticulo.Size = new System.Drawing.Size(168, 16);
+            this.lbCodigoArticulo.Size = new System.Drawing.Size(210, 22);
             this.lbCodigoArticulo.TabIndex = 4;
             this.lbCodigoArticulo.Text = "Codigo de artículo: ";
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(443, 177);
+            this.pbxArticulo.Location = new System.Drawing.Point(1087, 217);
+            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(383, 318);
+            this.pbxArticulo.Size = new System.Drawing.Size(380, 391);
+            this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 7;
             this.pbxArticulo.TabStop = false;
+            this.pbxArticulo.Click += new System.EventHandler(this.dgvBuscar_SelectionChanged);
             // 
             // btVolver
             // 
-            this.btVolver.Location = new System.Drawing.Point(612, 127);
+            this.btVolver.Location = new System.Drawing.Point(17, 583);
+            this.btVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btVolver.Name = "btVolver";
-            this.btVolver.Size = new System.Drawing.Size(75, 23);
+            this.btVolver.Size = new System.Drawing.Size(100, 28);
             this.btVolver.TabIndex = 8;
             this.btVolver.Text = "Volver";
             this.btVolver.UseVisualStyleBackColor = true;
             this.btVolver.Click += new System.EventHandler(this.btVolver_Click);
             // 
-            // cboBuscar
+            // cboCodigo
             // 
-            this.cboBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBuscar.FormattingEnabled = true;
-            this.cboBuscar.Location = new System.Drawing.Point(345, 91);
-            this.cboBuscar.Name = "cboBuscar";
-            this.cboBuscar.Size = new System.Drawing.Size(342, 21);
-            this.cboBuscar.TabIndex = 9;
+            this.cboCodigo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCodigo.FormattingEnabled = true;
+            this.cboCodigo.Location = new System.Drawing.Point(240, 90);
+            this.cboCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.cboCodigo.Name = "cboCodigo";
+            this.cboCodigo.Size = new System.Drawing.Size(149, 24);
+            this.cboCodigo.TabIndex = 9;
+            // 
+            // btnBuscarCodigo
+            // 
+            this.btnBuscarCodigo.Location = new System.Drawing.Point(434, 91);
+            this.btnBuscarCodigo.Name = "btnBuscarCodigo";
+            this.btnBuscarCodigo.Size = new System.Drawing.Size(153, 23);
+            this.btnBuscarCodigo.TabIndex = 10;
+            this.btnBuscarCodigo.Text = "Buscar por codigo";
+            this.btnBuscarCodigo.UseVisualStyleBackColor = true;
+            this.btnBuscarCodigo.Click += new System.EventHandler(this.btnBuscarCodigo_Click);
+            // 
+            // btnBuscarMarca
+            // 
+            this.btnBuscarMarca.Location = new System.Drawing.Point(434, 133);
+            this.btnBuscarMarca.Name = "btnBuscarMarca";
+            this.btnBuscarMarca.Size = new System.Drawing.Size(153, 23);
+            this.btnBuscarMarca.TabIndex = 11;
+            this.btnBuscarMarca.Text = "Buscar por Marca";
+            this.btnBuscarMarca.UseVisualStyleBackColor = true;
+            this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click);
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(240, 133);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(149, 24);
+            this.cboMarca.TabIndex = 12;
             // 
             // frmBuscar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 507);
-            this.Controls.Add(this.cboBuscar);
+            this.ClientSize = new System.Drawing.Size(1496, 624);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.btnBuscarMarca);
+            this.Controls.Add(this.btnBuscarCodigo);
+            this.Controls.Add(this.cboCodigo);
             this.Controls.Add(this.btVolver);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.lbCodigoArticulo);
             this.Controls.Add(this.lbBuscarArticulo);
             this.Controls.Add(this.dgvBuscar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmBuscar";
             this.Text = "Buscar artículo";
             this.Load += new System.EventHandler(this.frmBuscar_Load);
@@ -129,6 +172,9 @@
         private System.Windows.Forms.Label lbCodigoArticulo;
         private System.Windows.Forms.PictureBox pbxArticulo;
         private System.Windows.Forms.Button btVolver;
-        private System.Windows.Forms.ComboBox cboBuscar;
+        private System.Windows.Forms.ComboBox cboCodigo;
+        private System.Windows.Forms.Button btnBuscarCodigo;
+        private System.Windows.Forms.Button btnBuscarMarca;
+        private System.Windows.Forms.ComboBox cboMarca;
     }
 }
