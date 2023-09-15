@@ -290,16 +290,25 @@ namespace winform_app
             ventana.Show();
         }
 
+<<<<<<< HEAD
         private void tsmCrearCategoria_Click(object sender, EventArgs e)
         {
             foreach (var item in Application.OpenForms)
             {
                 if (item.GetType() == typeof(frmCrearCategoria))
+=======
+        private void tsmCrearMarca_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmAgregarMarca))
+>>>>>>> 0c437d870b65a7f0b90d5a55aa79c9ac36dd581d
                 {
                     MessageBox.Show("No es posible abrir otra ventana");
                     return;
                 }
             }
+<<<<<<< HEAD
             frmCrearCategoria ventana = new frmCrearCategoria();
             ventana.MdiParent = this;
             ventana.Show();
@@ -346,6 +355,9 @@ namespace winform_app
                 }
             }
             frmModificarCategoria ventana = new frmModificarCategoria();
+=======
+            frmAgregarMarca ventana = new frmAgregarMarca();
+>>>>>>> 0c437d870b65a7f0b90d5a55aa79c9ac36dd581d
             ventana.MdiParent = this;
             ventana.Show();
         }

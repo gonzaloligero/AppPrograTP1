@@ -22,7 +22,7 @@ namespace manager
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -62,7 +62,7 @@ namespace manager
                         aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
                     }
                     else{
-                        aux.Categoria.Descripcion = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542"; 
+                        aux.Categoria.Descripcion = "Sin Categoria"; 
                     }
                                                 
 
@@ -129,45 +129,206 @@ namespace manager
 
         public List<Articulo> buscarArticulo(string buscar)
         {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
             try
             {
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio FROM ARTICULOS WHERE Codigo LIKE @Codigo";
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.ejecutarLectura();
                 comando.Parameters.AddWithValue("@Codigo", "%" + buscar + "%");
-                comando.Connection = conexion;
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                List<Articulo> lista = new List<Articulo>();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
-                    string codigoArticulo = (string)lector["Codigo"];
+                    string codigoArticulo = (string)datos.Lector["Codigo"];
 
                     
                     if (codigoArticulo.Contains(buscar))
                     {
                         Articulo aux = new Articulo();
-                        aux.Codigo = codigoArticulo;
-                        aux.Nombre = (string)lector["Nombre"];
-                        aux.Descripcion = (string)lector["Descripcion"];
-                        aux.Marca.Id = (int)lector["IdMarca"];
-                        aux.Categoria.Id = (int)lector["IdCategoria"];
-                        aux.Precio = (decimal)lector["Precio"];
+                        aux.Id = (int)datos.Lector["Id"];
+                        aux.Codigo = (string)datos.Lector["Codigo"];
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                        aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
 
+
+                        if (!Convert.IsDBNull(datos.Lector["Marca"]))
+                        {
+                            aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                        }
+                        else
+                        {
+                            aux.Marca.Descripcion = "";
+                        }
+
+                        
+
+                        if (!Convert.IsDBNull(datos.Lector["Categoria"]))
+                        {
+                            aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                        }
+                        else
+                        {
+                            aux.Categoria.Descripcion = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542";
+                        }
+
+
+                        aux.Precio = (decimal)datos.Lector["Precio"];
+
+                        if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
+                        {
+                            aux.Imagen = (string)datos.Lector["ImagenUrl"];
+                        }
+                        else
+                        {
+
+                        }                      
                         lista.Add(aux);
                     }
                 }
 
-                conexion.Close();
+                
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
+            finally { datos.cerrarConexion(); }
         }
+        
+        public List<Articulo> buscarMarca(string buscar)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo");
+                datos.ejecutarLectura();
+                comando.Parameters.AddWithValue("@Marca", "%" + buscar + "%");
+
+                while (datos.Lector.Read())
+                {
+                    string codigoArticulo = (string)datos.Lector["Marca"];
+
+
+                    if (codigoArticulo.Contains(buscar))
+                    {
+                        Articulo aux = new Articulo();
+                        aux.Id = (int)datos.Lector["Id"];
+                        aux.Codigo = (string)datos.Lector["Codigo"];
+                        aux.Nombre = (string)datos.Lector["Nombre"];
+                        aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
+
+
+                        if (!Convert.IsDBNull(datos.Lector["Marca"]))
+                        {
+                            aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                        }
+                        else
+                        {
+                            aux.Marca.Descripcion = "";
+                        }
+
+
+
+                        if (!Convert.IsDBNull(datos.Lector["Categoria"]))
+                        {
+                            aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                        }
+                        else
+                        {
+                            aux.Categoria.Descripcion = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542";
+                        }
+
+
+                        aux.Precio = (decimal)datos.Lector["Precio"];
+
+                        if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
+                        {
+                            aux.Imagen = (string)datos.Lector["ImagenUrl"];
+                        }
+                        else
+                        {
+
+                        }
+                        lista.Add(aux);
+                    }
+                }
+
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+        }
+
+
+        public List<Articulo> buscarCategoria(string buscar)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+
+            try
+            {
+                datos.setearConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A LEFT JOIN MARCAS M ON A.IdMarca = M.Id LEFT JOIN CATEGORIAS C ON A.IdCategoria = C.Id LEFT JOIN IMAGENES I ON A.Id = I.IdArticulo WHERE C.Descripcion LIKE @Categoria");
+                datos.setearParametro("@Categoria", "%" + buscar + "%");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
+
+                    if (datos.Lector["Marca"] != DBNull.Value)
+                    {
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    else
+                    {
+                        aux.Marca.Descripcion = "Sin Marca";
+                    }
+
+                    if (datos.Lector["Categoria"] != DBNull.Value)
+                    {
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    }
+                    else
+                    {
+                        aux.Categoria.Descripcion = "Sin Categoria";
+                    }
+
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    if (datos.Lector["ImagenUrl"] != DBNull.Value)
+                    {
+                        aux.Imagen = (string)datos.Lector["ImagenUrl"];
+                    }
+                
+
+                    lista.Add(aux);
+                }
+
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+  
+
 
         public void setearConsulta(string query)
         {

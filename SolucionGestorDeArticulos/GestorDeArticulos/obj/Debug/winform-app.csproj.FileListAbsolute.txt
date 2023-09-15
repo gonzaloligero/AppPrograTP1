@@ -81,7 +81,11 @@ C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\Ges
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform-app.csproj.CopyComplete
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.exe
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.pdb
+<<<<<<< HEAD
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmCrearCategoria.resources
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmListarCategorias.resources
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmEliminarCategoria.resources
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmModificarCategoria.resources
+=======
+C:\Users\erica\Desktop\Programacion 3\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregarMarca.resources
+>>>>>>> 0c437d870b65a7f0b90d5a55aa79c9ac36dd581d

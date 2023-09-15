@@ -28,33 +28,45 @@ namespace winform_app
 
         private void frmBuscar_Load(object sender, EventArgs e)
         {
-            ArticuloManager articuloManager = new ArticuloManager();
-            listaArticulo = articuloManager.ListarArticulos();
-            dgvBuscar.DataSource = listaArticulo;
-            dgvBuscar.Columns[5].Visible = false;
-            cargarImagen(listaArticulo[2].Imagen);
-            manager.ArticuloManager negocio = new manager.ArticuloManager();
-            Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen);
-
+            
             try
             {
-                cboBuscar.DisplayMember = "Codigo";
-                dgvBuscar.DataSource = negocio.ListarCodigoArticulo();
-                cboBuscar.DataSource = negocio.ListarArticulos();
+               
+                
+                ArticuloManager articuloManager = new ArticuloManager();
+                MarcaManager marcaManager = new MarcaManager();
+                CategoriaManager categoriaManager = new CategoriaManager();
+                
+
+                listaArticulo = articuloManager.ListarArticulos();
+                
+                dgvBuscar.DataSource = listaArticulo;
+
+                dgvBuscar.Columns[6].Visible = false;
+
+
+                pbxArticulo.Load(listaArticulo[0].Imagen);
+                
+                cboCodigo.DisplayMember = "Codigo";
+                cboMarca.DataSource = marcaManager.ListarMarcas();
+                cboCodigo.DataSource = listaArticulo; 
+                cboCategoria.DataSource = categoriaManager.ListarCategorias();
+                
+                
+
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void dgvBuscar_SelectionChanged(object sender, EventArgs e)
         {
+            
             Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen);
+
         }
 
         private void cargarImagen(string imagen)
@@ -62,6 +74,7 @@ namespace winform_app
             try
             {
                 pbxArticulo.Load(imagen);
+
             }
             catch (Exception)
             {
@@ -69,6 +82,45 @@ namespace winform_app
 
             }
         }
+
+        private void btnBuscarCodigo_Click(object sender, EventArgs e)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            ArticuloManager listaArticulo = new ArticuloManager();
+
+            Articulo articulo = (Articulo)cboCodigo.SelectedItem;
+
+            string codigo = articulo.Codigo;
+            lista = listaArticulo.buscarArticulo(codigo);
+
+            dgvBuscar.DataSource = lista;
+        }
+
+        private void btnBuscarMarca_Click(object sender, EventArgs e)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            ArticuloManager listaArticulo = new ArticuloManager();
+
+            Marca marca = (Marca)cboMarca.SelectedItem;
+
+            string codigo = marca.Descripcion;
+            lista = listaArticulo.buscarMarca(codigo);
+
+            dgvBuscar.DataSource = lista;
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            ArticuloManager listaArticulo = new ArticuloManager();
+
+            Categoria categoria = (Categoria)cboCategoria.SelectedItem;
+
+            string codigo = categoria.Descripcion;
+            lista = listaArticulo.buscarCategoria(codigo);
+
+            dgvBuscar.DataSource = lista;
+        }
     }
-    }
+}
 
