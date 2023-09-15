@@ -289,5 +289,65 @@ namespace winform_app
             ventana.MdiParent = this;
             ventana.Show();
         }
+
+        private void tsmCrearCategoria_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmCrearCategoria))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmCrearCategoria ventana = new frmCrearCategoria();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsmListarCategorias_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmListarCategorias))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmListarCategorias ventana = new frmListarCategorias();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsmBorrarCategoria_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmEliminarCategoria))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmEliminarCategoria ventana = new frmEliminarCategoria();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsmModificarCategoria_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmModificarCategoria))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmModificarCategoria ventana = new frmModificarCategoria();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }

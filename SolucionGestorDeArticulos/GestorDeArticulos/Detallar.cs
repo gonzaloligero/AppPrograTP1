@@ -41,11 +41,7 @@ namespace winform_app
         private void btnDetallar_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dgvArticulos.CurrentRow;
-
-            // Obtén los datos de la fila seleccionada (deberías tener una clase que represente estos datos)
             Articulo articuloElegido = (Articulo)selectedRow.DataBoundItem;
-
-            // Configura el DataSource del segundo DataGridView (dgvDetalle) con el objeto Articulo seleccionado
             dgvDetalle.DataSource = new List<Articulo> { articuloElegido };
             pbxArticulo.ImageLocation = articuloElegido.Imagen;
         }
