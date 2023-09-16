@@ -17,8 +17,6 @@ namespace GestorDeArticulos
     public partial class frmMostrarImagenes : Form
     {
         private List<Articulo> listaArticulo;
-
-
         public frmMostrarImagenes()
         {
             InitializeComponent();
@@ -29,7 +27,7 @@ namespace GestorDeArticulos
             Close();
         }
 
-        private void cargarImagen(string imagen)
+                private void cargarImagen(string imagen)
         {
             try
             {
@@ -43,15 +41,20 @@ namespace GestorDeArticulos
         }
 
 
+
         private void frmMostrarImagenes_Load(object sender, EventArgs e)
         {
             ArticuloManager articuloManager = new ArticuloManager();
-            List<Imagen> seleccion = new List<Imagen>();
             listaArticulo = articuloManager.ListarArticulos();
-
-            cboCodigoYNombre.DisplayMember = "Nombre";
-            cboCodigoYNombre.ValueMember = "Codigo";
-            cboCodigoYNombre.DataSource = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+            //listaArticulo = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+            dgvListaArticulos.DataSource = listaArticulo;
+            dgvListaArticulos.Columns[3].Visible = false;
+            dgvListaArticulos.Columns[4].Visible = false;
+            dgvListaArticulos.Columns[5].Visible = false;
+            dgvListaArticulos.Columns[6].Visible = false;
+            dgvListaArticulos.Columns[7].Visible = false;
+            cargarImagen(listaArticulo[0].Imagen);
+          
 
         }
 
@@ -61,23 +64,7 @@ namespace GestorDeArticulos
             cargarImagen(seleccionado.Imagen);
         }
 
-        private void cboCodigoYNombre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (cboCodigoYNombre.SelectedItem != null)
-            {
-                string codigoSeleccionado = cboCodigoYNombre.SelectedValue.ToString();
-
-                List<Articulo> articulosFiltrados = listaArticulo.Where(a => a.Codigo == codigoSeleccionado).ToList();
-
-                dgvListaArticulos.DataSource = articulosFiltrados;
-                dgvListaArticulos.Columns[3].Visible = false;
-                dgvListaArticulos.Columns[4].Visible = false;
-                dgvListaArticulos.Columns[5].Visible = false;
-                dgvListaArticulos.Columns[6].Visible = false;
-                dgvListaArticulos.Columns[7].Visible = false;
-            }
-        }
+        
     }
 
 

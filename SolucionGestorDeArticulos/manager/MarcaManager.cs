@@ -9,19 +9,13 @@ namespace manager
 {
     public class MarcaManager
     {
-        private SqlConnection conexion;
-        public SqlCommand comando;
-        private SqlDataReader lector;
 
-        public MarcaManager()
-        {
-            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
-            comando = new SqlCommand();
-        }
+        //**********************************************************************************
+        AccesoDatos datos = new AccesoDatos();
+        //*********************************************************************************
         public List<Marca> ListarMarcas()
         {
             List<Marca> lista = new List<Marca>();
-            AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("SELECT * FROM MARCAS");
@@ -48,120 +42,60 @@ namespace manager
             }
 
         }
-
-        public bool verificadorMarcas(string descripcion)
+        //***********************************************************************************
+        public void agregarMarcas(Marca nueva)
         {
-            List<Marca> listaMarcas = new List<Marca>();
             AccesoDatos datos = new AccesoDatos();
-
-
             try
             {
-
-                datos.setearConsulta("SELECT COUNT(*) FROM MARCAS WHERE Descripcion = @Descripcion");
-                datos.comando.Parameters.AddWithValue("@Descripcion", descripcion);
-                datos.ejecutarLectura();
-
-                if (datos.Lector.Read())
-                {
-                    int count = datos.Lector.GetInt32(0);
-                    return count > 0;
-                }
-                else
-                {
-                    return false;
-                }
-
+                datos.setearConsulta("insert into MARCAS VALUES ('" + nueva.Descripcion + "')");
+                datos.ejecutarAccion();
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-        }
-        public void setearConsulta(string query)
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = query;
-        }
-
-        public void ejecutarLectura()
-        {
-            comando.Connection = conexion;
-            try
-            {
-                conexion.Open();
-                lector = comando.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            finally { datos.cerrarConexion(); }
 
         }
-
-        public void ejecutarAccion()
-        {
-            comando.Connection = conexion;
-
-            try
-            {
-                conexion.Open();
-
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-        public void setearParametro(string nombre, object valor)
-        {
-            comando.Parameters.AddWithValue(nombre, valor);
-        }
-        public void agregarMarcas(Marca nuevaMarca)
-        {
-            try
-            {
-                setearConsulta("INSERT INTO MARCAS (Descripcion) VALUES (@Descripcion)");
-                setearParametro("@Descripcion", nuevaMarca.Descripcion);
-                conexion.Close();
-                ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                conexion.Close();
-            }
-
-
-        }
+        //***************************************************************************************
 
         public void modificarMarca(Marca nuevaMarca)
         {
-
             try
             {
-                setearConsulta("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
-                setearParametro("@Id", nuevaMarca.Id);
-                setearParametro("@Descripcion", nuevaMarca.Descripcion);
-                conexion.Close();
-                ejecutarAccion();
+                datos.setearConsulta("UPDATE MARCAS SET Descripcion = @Descripcion WHERE Id = @Id");
+                datos.setearParametro("@Id", nuevaMarca.Id);
+                datos.setearParametro("@Descripcion", nuevaMarca.Descripcion);
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally { datos.cerrarConexion(); }
+
+
+        }
+        //********************************************************************************************
+        public void eliminarMarca(int id)
+        {
+            try
+            {
+                datos.setearConsulta("DELETE FROM MARCAS WHERE Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-
-
         }
+        //**********************************************************************************************
+
 
     }
 

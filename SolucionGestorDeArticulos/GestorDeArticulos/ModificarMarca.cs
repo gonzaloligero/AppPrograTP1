@@ -37,14 +37,24 @@ namespace GestorDeArticulos
         {
             Marca nuevaMarca = new Marca();
             MarcaManager adminMarcas = new MarcaManager();
-            ArticuloManager listaArticulos = new ArticuloManager();
+
+            ArticuloManager articuloManager = new ArticuloManager();
+            List<Articulo> listaArticulos = articuloManager.ListarArticulos();          
+
             string descripcion;
 
+
+
+
+   
             try
             {
                 descripcion = txtMarca.Text;
-                adminMarcas.verificadorMarcas(descripcion);
-                if (adminMarcas.verificadorMarcas(descripcion) == true)
+
+                bool validar = listaArticulos.Any(item => item.Marca.Descripcion == descripcion);
+
+
+                if (validar)
                 {
                     MessageBox.Show("Ya existe esa marca");
                 }

@@ -22,3 +22,9 @@ C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDe
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.dll
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.pdb
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\dominio\bin\Debug\dominio.dll
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\dominio\bin\Debug\dominio.pdb
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.csproj.AssemblyReference.cache
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.csproj.CoreCompileInputs.cache
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.dll
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\dominio\obj\Debug\dominio.pdb

@@ -247,7 +247,7 @@ namespace manager
         {
 
             Articulo articulo = new Articulo();
-            articulo = ListarArticulos().Last() ;
+            articulo = ListarArticulos().Last();
             
             try
             {

@@ -35,32 +35,34 @@ namespace GestorDeArticulos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Marca nuevaMarca = new Marca();
-            MarcaManager adminMarcas = new MarcaManager();
+            Marca nueva = new Marca();
+            MarcaManager manager = new MarcaManager();
+            List<Marca> lista = new List<Marca>();
 
+            lista = manager.ListarMarcas();
 
             try
             {
-                nuevaMarca.Descripcion = txtAgregarMarca.Text;
-                if (adminMarcas.verificadorMarcas(nuevaMarca.Descripcion) == true)
+                nueva.Descripcion = txtAgregarMarca.Text;
+                if(nueva.Descripcion == "")
                 {
-                    MessageBox.Show("Ya existe una marca con esa descripcion");
-                }
-                else if (string.IsNullOrEmpty(nuevaMarca.Descripcion))
-                {
-                    MessageBox.Show("No es posible incluir una marca vacia");
+                    MessageBox.Show("El campo no puede estar vacio!");
                 }
                 else
                 {
+                    if (!lista.Any(m => m.Descripcion.Equals(nueva.Descripcion, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        manager.agregarMarcas(nueva);
+                        MessageBox.Show("Agregada");
+                        Close();
+                    }
+                    else { MessageBox.Show("Esa marca ya existe"); }
 
-                    adminMarcas.agregarMarcas(nuevaMarca);
-                    MessageBox.Show("Marca creada con éxito");
                 }
 
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
         }

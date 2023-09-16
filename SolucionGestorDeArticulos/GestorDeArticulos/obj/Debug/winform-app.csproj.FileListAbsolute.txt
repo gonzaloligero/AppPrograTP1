@@ -115,3 +115,34 @@ C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDe
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmModificarMarca.resources
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregarImagenes.resources
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmMostrarImagenes.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\GestorDeArticulos.exe.config
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\GestorDeArticulos.exe
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\GestorDeArticulos.pdb
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\dominio.dll
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\manager.dll
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\dominio.pdb
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\bin\Debug\manager.pdb
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform-app.csproj.AssemblyReference.cache
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform_app.frmAgregar.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregarImagenes.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregarMarca.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform_app.frmBuscar.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmCrearCategoria.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform_app.frmDetallar.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmEliminar.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmEliminarCategoria.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform_app.frmPantallaPrincipal.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform_app.frmListar.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmListarCategorias.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmListarMarcas.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform_app.frmModificar.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmModificarCategoria.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmModificarMarca.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmMostrarImagenes.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.Properties.Resources.resources
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform-app.csproj.GenerateResource.cache
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform-app.csproj.CoreCompileInputs.cache
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\winform-app.csproj.CopyComplete
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.exe
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.pdb
+C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmEliminarMarca.resources

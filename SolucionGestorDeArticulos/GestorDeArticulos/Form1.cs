@@ -455,6 +455,21 @@ namespace winform_app
             ventana.Show();
         }
 
+        private void tsmEliminarMarca_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmEliminarMarca))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmEliminarMarca ventana = new frmEliminarMarca();
+            ventana.MdiParent = this;
+            ventana.Show();
+
+        }
         private void tsbYouTube_Click(object sender, EventArgs e)
         {
             MessageBox.Show("youtube.com/@MaxiPrograma");
@@ -474,5 +489,6 @@ namespace winform_app
         {
             MessageBox.Show("linkedin.com/maximilianofacundosoria");
         }
+
     }
 }

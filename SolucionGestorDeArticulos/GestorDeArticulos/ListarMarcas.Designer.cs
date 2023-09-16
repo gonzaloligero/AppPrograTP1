@@ -40,25 +40,31 @@ namespace GestorDeArticulos
             // 
             this.lbListarMarcas.AutoSize = true;
             this.lbListarMarcas.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListarMarcas.Location = new System.Drawing.Point(93, 27);
+            this.lbListarMarcas.Location = new System.Drawing.Point(124, 33);
+            this.lbListarMarcas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbListarMarcas.Name = "lbListarMarcas";
-            this.lbListarMarcas.Size = new System.Drawing.Size(223, 32);
+            this.lbListarMarcas.Size = new System.Drawing.Size(280, 45);
             this.lbListarMarcas.TabIndex = 0;
             this.lbListarMarcas.Text = "LISTAR MARCAS";
             // 
             // dgvListarMarcas
             // 
             this.dgvListarMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListarMarcas.Location = new System.Drawing.Point(86, 73);
+            this.dgvListarMarcas.Location = new System.Drawing.Point(115, 90);
+            this.dgvListarMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvListarMarcas.Name = "dgvListarMarcas";
-            this.dgvListarMarcas.Size = new System.Drawing.Size(240, 150);
+            this.dgvListarMarcas.ReadOnly = true;
+            this.dgvListarMarcas.RowHeadersWidth = 51;
+            this.dgvListarMarcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListarMarcas.Size = new System.Drawing.Size(359, 185);
             this.dgvListarMarcas.TabIndex = 1;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(169, 243);
+            this.btnVolver.Location = new System.Drawing.Point(225, 299);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -66,13 +72,14 @@ namespace GestorDeArticulos
             // 
             // frmListarMarcas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 304);
+            this.ClientSize = new System.Drawing.Size(557, 374);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvListarMarcas);
             this.Controls.Add(this.lbListarMarcas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmListarMarcas";
             this.Text = "Listar Marcas";
             this.Load += new System.EventHandler(this.frmListarMarcas_Load);
