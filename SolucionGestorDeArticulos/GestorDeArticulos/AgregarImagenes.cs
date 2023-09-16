@@ -23,8 +23,10 @@ namespace GestorDeArticulos
         public frmAgregarImagenes()
         {
             InitializeComponent();
+            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
+            comando = new SqlCommand();
         }
-
+        
         private void btnVolver_Click(object sender, EventArgs e)
         {
             Close();
@@ -82,19 +84,19 @@ namespace GestorDeArticulos
         {
             comando.Parameters.AddWithValue(nombre, valor);
         }
-        public void agregarImagenes(Articulo nuevoArticulo)
+        public void agregarImagenes(Articulo articulo)
         {
-            Articulo articulo = new Articulo();
-            articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            
+            //articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
 
             try
             {
 
 
-                int idArticulo = articulo.Id;
+                
                 setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
-                setearParametro("@IdArticulo", idArticulo);
-                setearParametro("@ImagenUrl", nuevoArticulo.Imagen);
+                setearParametro("@IdArticulo", articulo.Id);
+                setearParametro("@ImagenUrl", articulo.Imagen);
 
                 conexion.Close();
                 ejecutarAccion();
@@ -116,22 +118,37 @@ namespace GestorDeArticulos
         {
             ArticuloManager articuloManager = new ArticuloManager();
             listaArticulo = articuloManager.ListarArticulos();
-            var articulosAgrupados = listaArticulo.GroupBy(a => a.Id).Select(g => g.First()).ToList();
-            dgvArticulos.DataSource = articulosAgrupados;
- 
+
+            cboArticulos.DisplayMember = "Id";
+            cboArticulos.ValueMember = "Id";
+            cboArticulos.DataSource = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+            
+
+                dgvArticulos.DataSource = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+                dgvArticulos.Columns[3].Visible = false;
+                dgvArticulos.Columns[4].Visible = false;
+                dgvArticulos.Columns[5].Visible = false;
+                dgvArticulos.Columns[6].Visible = false;
+                dgvArticulos.Columns[7].Visible = false;
+
+           
+
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new dominio.Articulo();
+            Articulo seleccionado = new Articulo();
             Imagen nuevaImagen = new Imagen();
             ArticuloManager imagenes = new ArticuloManager();
 
             try
             {
-                articulo.Imagen = (string)txtUrlImagen.Text;
-                imagenes.agregarImagen(articulo);
-                MessageBox.Show("Nueva imagen agregada al articulo con codigo " + articulo.Codigo.ToString());
+                seleccionado.Imagen = txtUrlImagen.Text;
+                seleccionado.Id = int.Parse(cboArticulos.Text);
+
+                
+                agregarImagenes(seleccionado);
+                MessageBox.Show("Nueva imagen agregada al articulo");
             }
             catch (Exception ex)
             {

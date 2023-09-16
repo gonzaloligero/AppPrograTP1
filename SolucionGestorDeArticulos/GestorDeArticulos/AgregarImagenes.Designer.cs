@@ -37,6 +37,8 @@ namespace GestorDeArticulos
             this.lbUrlImagen = new System.Windows.Forms.Label();
             this.pbxImagenes = new System.Windows.Forms.PictureBox();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.lbArticulo = new System.Windows.Forms.Label();
+            this.cboArticulos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenes)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +47,7 @@ namespace GestorDeArticulos
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 21);
+            this.label1.Location = new System.Drawing.Point(249, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 32);
             this.label1.TabIndex = 0;
@@ -54,15 +56,15 @@ namespace GestorDeArticulos
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(2, 92);
+            this.dgvArticulos.Location = new System.Drawing.Point(12, 154);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(245, 299);
+            this.dgvArticulos.Size = new System.Drawing.Size(342, 255);
             this.dgvArticulos.TabIndex = 2;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(608, 406);
+            this.btnVolver.Location = new System.Drawing.Point(697, 415);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(75, 23);
             this.btnVolver.TabIndex = 3;
@@ -72,7 +74,7 @@ namespace GestorDeArticulos
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(360, 63);
+            this.txtUrlImagen.Location = new System.Drawing.Point(290, 56);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(245, 20);
             this.txtUrlImagen.TabIndex = 4;
@@ -82,7 +84,7 @@ namespace GestorDeArticulos
             // 
             this.lbUrlImagen.AutoSize = true;
             this.lbUrlImagen.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUrlImagen.Location = new System.Drawing.Point(258, 64);
+            this.lbUrlImagen.Location = new System.Drawing.Point(188, 57);
             this.lbUrlImagen.Name = "lbUrlImagen";
             this.lbUrlImagen.Size = new System.Drawing.Size(96, 16);
             this.lbUrlImagen.TabIndex = 5;
@@ -91,16 +93,16 @@ namespace GestorDeArticulos
             // pbxImagenes
             // 
             this.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImagenes.Location = new System.Drawing.Point(263, 92);
+            this.pbxImagenes.Location = new System.Drawing.Point(360, 154);
             this.pbxImagenes.Name = "pbxImagenes";
-            this.pbxImagenes.Size = new System.Drawing.Size(420, 299);
+            this.pbxImagenes.Size = new System.Drawing.Size(412, 255);
             this.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenes.TabIndex = 6;
             this.pbxImagenes.TabStop = false;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(608, 61);
+            this.btnConfirmar.Location = new System.Drawing.Point(370, 125);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmar.TabIndex = 7;
@@ -108,11 +110,32 @@ namespace GestorDeArticulos
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
+            // lbArticulo
+            // 
+            this.lbArticulo.AutoSize = true;
+            this.lbArticulo.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArticulo.Location = new System.Drawing.Point(204, 96);
+            this.lbArticulo.Name = "lbArticulo";
+            this.lbArticulo.Size = new System.Drawing.Size(88, 16);
+            this.lbArticulo.TabIndex = 8;
+            this.lbArticulo.Text = "Artículo: ";
+            // 
+            // cboArticulos
+            // 
+            this.cboArticulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboArticulos.FormattingEnabled = true;
+            this.cboArticulos.Location = new System.Drawing.Point(290, 95);
+            this.cboArticulos.Name = "cboArticulos";
+            this.cboArticulos.Size = new System.Drawing.Size(245, 21);
+            this.cboArticulos.TabIndex = 9;
+            // 
             // frmAgregarImagenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cboArticulos);
+            this.Controls.Add(this.lbArticulo);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.pbxImagenes);
             this.Controls.Add(this.lbUrlImagen);
@@ -140,5 +163,7 @@ namespace GestorDeArticulos
         private System.Windows.Forms.Label lbUrlImagen;
         private System.Windows.Forms.PictureBox pbxImagenes;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Label lbArticulo;
+        private System.Windows.Forms.ComboBox cboArticulos;
     }
 }

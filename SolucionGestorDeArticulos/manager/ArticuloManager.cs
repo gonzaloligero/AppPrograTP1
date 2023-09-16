@@ -273,6 +273,8 @@ namespace manager
 
         }
 
+        
+
 
         public bool verificadorDeCodigos(string codigo)
     {

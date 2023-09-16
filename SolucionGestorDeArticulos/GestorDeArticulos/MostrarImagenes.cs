@@ -17,6 +17,8 @@ namespace GestorDeArticulos
     public partial class frmMostrarImagenes : Form
     {
         private List<Articulo> listaArticulo;
+
+
         public frmMostrarImagenes()
         {
             InitializeComponent();
@@ -27,7 +29,7 @@ namespace GestorDeArticulos
             Close();
         }
 
-                private void cargarImagen(string imagen)
+        private void cargarImagen(string imagen)
         {
             try
             {
@@ -41,30 +43,41 @@ namespace GestorDeArticulos
         }
 
 
-
         private void frmMostrarImagenes_Load(object sender, EventArgs e)
         {
             ArticuloManager articuloManager = new ArticuloManager();
+            List<Imagen> seleccion = new List<Imagen>();
             listaArticulo = articuloManager.ListarArticulos();
-            //listaArticulo = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
-            dgvListaArticulos.DataSource = listaArticulo;
-            dgvListaArticulos.Columns[3].Visible = false;
-            dgvListaArticulos.Columns[4].Visible = false;
-            dgvListaArticulos.Columns[5].Visible = false;
-            dgvListaArticulos.Columns[6].Visible = false;
-            dgvListaArticulos.Columns[7].Visible = false;
-            cargarImagen(listaArticulo[0].Imagen);
-          
+
+            cboArticulos.DisplayMember = "Nombre";
+            cboArticulos.ValueMember = "Codigo";
+            cboArticulos.DataSource = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
 
         }
 
-         private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
+        private void dgvListaArticulos_SelectionChanged(object sender, EventArgs e)
         {
             Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen);
         }
 
-        
+       
+        private void cboArticulos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboArticulos.SelectedItem != null)
+            {
+                string codigoSeleccionado = cboArticulos.SelectedValue.ToString();
+
+                List<Articulo> articulosFiltrados = listaArticulo.Where(a => a.Codigo == codigoSeleccionado).ToList();
+
+                dgvListaArticulos.DataSource = articulosFiltrados;
+                dgvListaArticulos.Columns[3].Visible = false;
+                dgvListaArticulos.Columns[4].Visible = false;
+                dgvListaArticulos.Columns[5].Visible = false;
+                dgvListaArticulos.Columns[6].Visible = false;
+                dgvListaArticulos.Columns[7].Visible = false;
+            }
+        }
     }
 
 

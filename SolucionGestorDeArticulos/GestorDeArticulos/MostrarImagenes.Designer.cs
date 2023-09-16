@@ -34,8 +34,8 @@ namespace GestorDeArticulos
             this.dgvListaArticulos = new System.Windows.Forms.DataGridView();
             this.pbxImagenes = new System.Windows.Forms.PictureBox();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.btnSiguiente = new System.Windows.Forms.Button();
-            this.btnAnterior = new System.Windows.Forms.Button();
+            this.cboArticulos = new System.Windows.Forms.ComboBox();
+            this.lbArticulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaArticulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagenes)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@ namespace GestorDeArticulos
             // 
             this.lbMostrarImágenes.AutoSize = true;
             this.lbMostrarImágenes.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMostrarImágenes.Location = new System.Drawing.Point(223, 19);
+            this.lbMostrarImágenes.Location = new System.Drawing.Point(247, 26);
             this.lbMostrarImágenes.Name = "lbMostrarImágenes";
             this.lbMostrarImágenes.Size = new System.Drawing.Size(271, 32);
             this.lbMostrarImágenes.TabIndex = 0;
@@ -53,7 +53,7 @@ namespace GestorDeArticulos
             // dgvListaArticulos
             // 
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaArticulos.Location = new System.Drawing.Point(27, 75);
+            this.dgvListaArticulos.Location = new System.Drawing.Point(27, 129);
             this.dgvListaArticulos.Name = "dgvListaArticulos";
             this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaArticulos.Size = new System.Drawing.Size(344, 268);
@@ -63,7 +63,7 @@ namespace GestorDeArticulos
             // pbxImagenes
             // 
             this.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImagenes.Location = new System.Drawing.Point(413, 75);
+            this.pbxImagenes.Location = new System.Drawing.Point(397, 129);
             this.pbxImagenes.Name = "pbxImagenes";
             this.pbxImagenes.Size = new System.Drawing.Size(350, 268);
             this.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,31 +80,33 @@ namespace GestorDeArticulos
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnSiguiente
+            // cboArticulos
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(688, 349);
-            this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
-            this.btnSiguiente.TabIndex = 4;
-            this.btnSiguiente.Text = "Siguiente";
-            this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.cboArticulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboArticulos.FormattingEnabled = true;
+            this.cboArticulos.Location = new System.Drawing.Point(335, 75);
+            this.cboArticulos.Name = "cboArticulos";
+            this.cboArticulos.Size = new System.Drawing.Size(121, 21);
+            this.cboArticulos.TabIndex = 4;
+            this.cboArticulos.SelectedIndexChanged += new System.EventHandler(this.cboArticulos_SelectedIndexChanged);
             // 
-            // btnAnterior
+            // lbArticulo
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(413, 349);
-            this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(75, 23);
-            this.btnAnterior.TabIndex = 5;
-            this.btnAnterior.Text = "Anterior";
-            this.btnAnterior.UseVisualStyleBackColor = true;
+            this.lbArticulo.AutoSize = true;
+            this.lbArticulo.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbArticulo.Location = new System.Drawing.Point(255, 77);
+            this.lbArticulo.Name = "lbArticulo";
+            this.lbArticulo.Size = new System.Drawing.Size(80, 16);
+            this.lbArticulo.TabIndex = 5;
+            this.lbArticulo.Text = "Artículo:";
             // 
             // frmMostrarImagenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAnterior);
-            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.lbArticulo);
+            this.Controls.Add(this.cboArticulos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pbxImagenes);
             this.Controls.Add(this.dgvListaArticulos);
@@ -126,7 +128,7 @@ namespace GestorDeArticulos
         private System.Windows.Forms.DataGridView dgvListaArticulos;
         private System.Windows.Forms.PictureBox pbxImagenes;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Button btnAnterior;
+        private System.Windows.Forms.ComboBox cboArticulos;
+        private System.Windows.Forms.Label lbArticulo;
     }
 }
