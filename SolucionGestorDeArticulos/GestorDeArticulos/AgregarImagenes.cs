@@ -116,16 +116,9 @@ namespace GestorDeArticulos
         {
             ArticuloManager articuloManager = new ArticuloManager();
             listaArticulo = articuloManager.ListarArticulos();
-            dgvArticulos.DataSource = listaArticulo;
-            //dgvArticulos.Columns[0].Visible = false;
-            dgvArticulos.Columns[0].Visible = false;
-            dgvArticulos.Columns[3].Visible = false;
-            dgvArticulos.Columns[4].Visible = false;
-            dgvArticulos.Columns[5].Visible = false;
-            dgvArticulos.Columns[6].Visible = false;
-            dgvArticulos.Columns[7].Visible = false;
-            
-
+            var articulosAgrupados = listaArticulo.GroupBy(a => a.Id).Select(g => g.First()).ToList();
+            dgvArticulos.DataSource = articulosAgrupados;
+ 
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)

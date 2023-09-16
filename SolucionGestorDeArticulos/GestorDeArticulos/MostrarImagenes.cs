@@ -17,9 +17,6 @@ namespace GestorDeArticulos
     public partial class frmMostrarImagenes : Form
     {
         private List<Articulo> listaArticulo;
-        private SqlConnection conexion;
-        public SqlCommand comando;
-        private SqlDataReader lector;
         public frmMostrarImagenes()
         {
             InitializeComponent();
@@ -30,50 +27,7 @@ namespace GestorDeArticulos
             Close();
         }
 
-        public void setearConsulta(string query)
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = query;
-        }
-
-        public void ejecutarLectura()
-        {
-            comando.Connection = conexion;
-            try
-            {
-                conexion.Open();
-                lector = comando.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-        }
-
-        public void ejecutarAccion()
-        {
-            comando.Connection = conexion;
-
-            try
-            {
-                conexion.Open();
-
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public void setearParametro(string nombre, object valor)
-        {
-            comando.Parameters.AddWithValue(nombre, valor);
-        }
-        private void cargarImagen(string imagen)
+                private void cargarImagen(string imagen)
         {
             try
             {
@@ -86,20 +40,21 @@ namespace GestorDeArticulos
             }
         }
 
-      
+
 
         private void frmMostrarImagenes_Load(object sender, EventArgs e)
         {
             ArticuloManager articuloManager = new ArticuloManager();
             listaArticulo = articuloManager.ListarArticulos();
+            //listaArticulo = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
             dgvListaArticulos.DataSource = listaArticulo;
-            //dgvListaArticulos.Columns[0].Visible = false;
             dgvListaArticulos.Columns[3].Visible = false;
             dgvListaArticulos.Columns[4].Visible = false;
             dgvListaArticulos.Columns[5].Visible = false;
             dgvListaArticulos.Columns[6].Visible = false;
             dgvListaArticulos.Columns[7].Visible = false;
             cargarImagen(listaArticulo[0].Imagen);
+          
 
         }
 
@@ -108,5 +63,9 @@ namespace GestorDeArticulos
             Articulo seleccionado = (Articulo)dgvListaArticulos.CurrentRow.DataBoundItem;
             cargarImagen(seleccionado.Imagen);
         }
+
+        
     }
+
+
 }

@@ -53,8 +53,8 @@ namespace winform_app
             manager.MarcaManager negocio = new manager.MarcaManager();
             Articulo seleccionado = new Articulo();
             ArticuloManager articuloManager = new ArticuloManager();
-            
-            listaArticulo = articuloManager.ListarArticulos();
+            listaArticulo = articuloManager.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+            //listaArticulo = articuloManager.ListarArticulos();
             dgvArticulos.DataSource = listaArticulo;
             dgvArticulos.Columns[6].Visible = false;
             cboCategorias.ValueMember = "Id";
@@ -183,6 +183,11 @@ namespace winform_app
 
 
 
+        }
+
+        private void txtUrlImagen_Leave(object sender, EventArgs e)
+        {
+            cargarImagen(txtUrlImagen.Text);
         }
     }
 }
