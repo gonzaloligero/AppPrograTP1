@@ -323,7 +323,86 @@ namespace manager
             }
         }
 
+        public void modificarArticulo(Articulo articulo)
+        {
+
+            try
+            {
+                setearConsulta("UPDATE ARTICULOS SET Codigo = @Codigo, Nombre = @Nombre, Precio = @Precio, Descripcion = @Descripcion WHERE Id = @Id");
+                setearParametro("@Id", articulo.Id);
+                setearParametro("@Codigo", articulo.Codigo);
+                setearParametro("@Nombre", articulo.Nombre);
+                setearParametro("@Descripcion", articulo.Descripcion);
+                setearParametro("@Precio", articulo.Precio);
+                conexion.Close();
+                ejecutarAccion();
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
        
+        public void modificarCategoriaArticulo(Articulo articulo)
+        {
+            try
+            {
+                setearConsulta("UPDATE ARTICULOS SET IdCategoria = @IdCategoria WHERE Id = @IdArticulo");
+                setearParametro("@IdArticulo", articulo.Id);
+                setearParametro("@IdCategoria", articulo.Categoria.Id);
+                conexion.Close();
+                ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void modificarMarcaArticulo(Articulo articulo)
+        {
+            try
+            {
+                
+                setearConsulta("UPDATE A SET A.IdMarca = @IdMarca FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.Id = @IdArt");
+                setearParametro("@IdArt", articulo.Id);
+                setearParametro("@IdMarca", articulo.Marca.Id);
+                conexion.Close();
+                ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void modificarImagenArticulo(Articulo articulo)
+        {
+            try
+            {
+                setearConsulta("UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE IdArticulo = @IdA");
+                setearParametro("@IdA", articulo.Id);
+                setearParametro("@ImagenUrl", articulo.Imagen);
+                conexion.Close();
+                ejecutarAccion();
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
     } 
     

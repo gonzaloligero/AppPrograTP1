@@ -83,13 +83,102 @@ namespace winform_app
 
         private void btConfirmarModificacion_Click(object sender, EventArgs e)
         {
-            ArticuloManager cargar = new ArticuloManager();
+            ArticuloManager adminArticulos = new ArticuloManager();
             Articulo articuloAModificar = new Articulo();
             articuloAModificar = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            frmAgregar modificar = new frmAgregar(articuloAModificar);
+            bool letraEnPrecio = false;
+
+            try
+            {
+                if (adminArticulos.verificadorDeCodigos(articuloAModificar.Codigo) == true && articuloAModificar.Codigo != txtCodigoArticulo.Text)
+                {
+                    MessageBox.Show("El codigo ya existe. Ingrese otro");
+                }
+                else
+                {
+                    articuloAModificar.Codigo = txtCodigoArticulo.Text;
+                }
+
+                if (string.IsNullOrEmpty(articuloAModificar.Codigo))
+                {
+                    articuloAModificar.Codigo = "";
+                }
+
+                if (cboCategorias.SelectedValue != null)
+                {
+                    articuloAModificar.Categoria.Id = (int)cboCategorias.SelectedValue;
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una categoria");
+                }
+
+                if (cboMarcas.SelectedValue != null)
+                {
+                    articuloAModificar.Marca.Id = (int)cboMarcas.SelectedValue;
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar una marca");
+                }
+
+                if (string.IsNullOrEmpty(txtNombreArticulo.Text))
+                {
+                    MessageBox.Show("El articulo no contiene nombre");
+                }
+                else
+                {
+                    articuloAModificar.Nombre = txtNombreArticulo.Text;
+                }
+
+                if (string.IsNullOrEmpty(txtDescripcion.Text))
+                {
+                    articuloAModificar.Descripcion = "";
+                }
+                else
+                {
+                    articuloAModificar.Descripcion = txtDescripcion.Text;
+                }
+                //VERIFICAR PORQUE EL FOREACH SIGUIENTE DA ERROR
+                //IMAGINO QUE DETECTA EL PUNTO (.) NO COMO NÚMERO Y POR ESO SALTA
+                /*foreach (char caracter in articuloAModificar.Precio.ToString())
+                {
+                    if (!(char.IsNumber(caracter)))
+                    {
+                        letraEnPrecio = true;
+                    }
+                }
+
+                if(letraEnPrecio == true)
+                {
+                    MessageBox.Show("No pueden agregarse letras en el precio. Ingrese sólo números");
+                }
+                else
+                {
+                    articuloAModificar.Precio = int.Parse(txtPrecio.Text);
+                }*/
+
+                articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
+
+                articuloAModificar.Imagen = txtUrlImagen.Text;
+
+                adminArticulos.modificarArticulo(articuloAModificar);
+                adminArticulos.modificarCategoriaArticulo(articuloAModificar);
+                adminArticulos.modificarMarcaArticulo(articuloAModificar);
+                adminArticulos.modificarImagenArticulo(articuloAModificar);
+
+                MessageBox.Show("Articulo modificado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
 
 
-            
+
+
         }
     }
 }

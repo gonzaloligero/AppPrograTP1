@@ -167,5 +167,25 @@ namespace manager
           
         }
 
+        public void modificarMarcaArticulo(Categoria nuevaCategoria)
+        {
+
+            try
+            {
+                setearConsulta("UPDATE CATEGORIAS SET Descripcion = @Descripcion WHERE Id = @Id");
+                setearParametro("@Id", nuevaCategoria.Id);
+                setearParametro("@Descripcion", nuevaCategoria.Descripcion);
+                conexion.Close();
+                ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+
+        }
+
     }
 }

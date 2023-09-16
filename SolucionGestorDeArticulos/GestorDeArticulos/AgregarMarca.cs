@@ -14,7 +14,7 @@ namespace GestorDeArticulos
 {
     public partial class frmAgregarMarca : Form
     {
-        private List<Marca> listaMarcas;
+        
 
         public frmAgregarMarca()
         {
