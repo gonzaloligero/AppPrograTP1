@@ -74,5 +74,6 @@ namespace GestorDeArticulos
             seleccionada = (Categoria)dgvCategorias.CurrentRow.DataBoundItem;
             txtModificarCategoria.Text = seleccionada.Descripcion;
         }
-    }
+
+     }
 }

@@ -349,5 +349,50 @@ namespace winform_app
             ventana.MdiParent = this;
             ventana.Show();
         }
+
+        private void tsmCrearMarca_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmAgregarMarca))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmAgregarMarca ventana = new frmAgregarMarca();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsmListarMarcas_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmListarMarcas))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmListarMarcas ventana = new frmListarMarcas();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsmModificarMarca_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmModificarMarca))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmModificarMarca ventana = new frmModificarMarca();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }

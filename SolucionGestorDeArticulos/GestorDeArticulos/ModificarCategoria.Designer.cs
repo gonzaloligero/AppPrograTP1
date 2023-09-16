@@ -56,6 +56,7 @@ namespace GestorDeArticulos
             this.dgvCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategorias.Size = new System.Drawing.Size(240, 150);
             this.dgvCategorias.TabIndex = 1;
+           
             this.dgvCategorias.SelectionChanged += new System.EventHandler(this.dgvCategorias_SelectionChanged);
             // 
             // btnModificar

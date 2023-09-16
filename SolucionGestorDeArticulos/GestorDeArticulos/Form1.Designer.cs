@@ -275,26 +275,29 @@
             // tsmCrearMarca
             // 
             this.tsmCrearMarca.Name = "tsmCrearMarca";
-            this.tsmCrearMarca.Size = new System.Drawing.Size(214, 22);
-            this.tsmCrearMarca.Text = "Crear marca";
+            this.tsmCrearMarca.Size = new System.Drawing.Size(242, 22);
+            this.tsmCrearMarca.Text = "Agregar Marca";
+            this.tsmCrearMarca.Click += new System.EventHandler(this.tsmCrearMarca_Click);
             // 
             // tsmListarMarcas
             // 
             this.tsmListarMarcas.Name = "tsmListarMarcas";
-            this.tsmListarMarcas.Size = new System.Drawing.Size(214, 22);
-            this.tsmListarMarcas.Text = "Listar todas";
+            this.tsmListarMarcas.Size = new System.Drawing.Size(242, 22);
+            this.tsmListarMarcas.Text = "Listar todas las Marcas";
+            this.tsmListarMarcas.Click += new System.EventHandler(this.tsmListarMarcas_Click);
             // 
             // tsmModificarMarca
             // 
             this.tsmModificarMarca.Name = "tsmModificarMarca";
-            this.tsmModificarMarca.Size = new System.Drawing.Size(214, 22);
-            this.tsmModificarMarca.Text = "Modificar una marca";
+            this.tsmModificarMarca.Size = new System.Drawing.Size(242, 22);
+            this.tsmModificarMarca.Text = "Modificar una Marca";
+            this.tsmModificarMarca.Click += new System.EventHandler(this.tsmModificarMarca_Click);
             // 
             // tsmEliminarMarca
             // 
             this.tsmEliminarMarca.Name = "tsmEliminarMarca";
-            this.tsmEliminarMarca.Size = new System.Drawing.Size(214, 22);
-            this.tsmEliminarMarca.Text = "Eliminar una marca";
+            this.tsmEliminarMarca.Size = new System.Drawing.Size(242, 22);
+            this.tsmEliminarMarca.Text = "Eliminar una Marca";
             // 
             // tsmCategorias
             // 
@@ -311,14 +314,14 @@
             // tsmCrearCategoria
             // 
             this.tsmCrearCategoria.Name = "tsmCrearCategoria";
-            this.tsmCrearCategoria.Size = new System.Drawing.Size(200, 22);
+            this.tsmCrearCategoria.Size = new System.Drawing.Size(214, 22);
             this.tsmCrearCategoria.Text = "Crear categoría";
             this.tsmCrearCategoria.Click += new System.EventHandler(this.tsmCrearCategoria_Click);
             // 
             // tsmListarCategorias
             // 
             this.tsmListarCategorias.Name = "tsmListarCategorias";
-            this.tsmListarCategorias.Size = new System.Drawing.Size(200, 22);
+            this.tsmListarCategorias.Size = new System.Drawing.Size(214, 22);
             this.tsmListarCategorias.Text = "Listar categorías";
             this.tsmListarCategorias.Click += new System.EventHandler(this.tsmListarCategorias_Click);
             // 
@@ -332,7 +335,7 @@
             // tsmBorrarCategoria
             // 
             this.tsmBorrarCategoria.Name = "tsmBorrarCategoria";
-            this.tsmBorrarCategoria.Size = new System.Drawing.Size(200, 22);
+            this.tsmBorrarCategoria.Size = new System.Drawing.Size(214, 22);
             this.tsmBorrarCategoria.Text = "Borrar categoría";
             this.tsmBorrarCategoria.Click += new System.EventHandler(this.tsmBorrarCategoria_Click);
             // 
