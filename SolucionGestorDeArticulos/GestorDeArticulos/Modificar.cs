@@ -139,11 +139,10 @@ namespace winform_app
                 {
                     articuloAModificar.Descripcion = txtDescripcion.Text;
                 }
-                //VERIFICAR PORQUE EL FOREACH SIGUIENTE DA ERROR
-                //IMAGINO QUE DETECTA EL PUNTO (.) NO COMO NÚMERO Y POR ESO SALTA
-                /*foreach (char caracter in articuloAModificar.Precio.ToString())
+                
+                foreach (char caracter in articuloAModificar.Precio.ToString())
                 {
-                    if (!(char.IsNumber(caracter)))
+                    if (!(char.IsNumber(caracter)) && caracter != '.')
                     {
                         letraEnPrecio = true;
                     }
@@ -152,13 +151,14 @@ namespace winform_app
                 if(letraEnPrecio == true)
                 {
                     MessageBox.Show("No pueden agregarse letras en el precio. Ingrese sólo números");
+                    return;
                 }
                 else
                 {
-                    articuloAModificar.Precio = int.Parse(txtPrecio.Text);
-                }*/
+                    articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
+                }
 
-                articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
+                //articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
 
                 articuloAModificar.Imagen = txtUrlImagen.Text;
 
@@ -167,7 +167,11 @@ namespace winform_app
                 adminArticulos.modificarMarcaArticulo(articuloAModificar);
                 adminArticulos.modificarImagenArticulo(articuloAModificar);
 
+               
+                
                 MessageBox.Show("Articulo modificado correctamente");
+                
+                
 
             }
             catch (Exception ex)
