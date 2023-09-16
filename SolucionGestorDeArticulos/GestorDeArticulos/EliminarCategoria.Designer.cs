@@ -41,25 +41,29 @@ namespace GestorDeArticulos
             // 
             this.lbEliminarCategoria.AutoSize = true;
             this.lbEliminarCategoria.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEliminarCategoria.Location = new System.Drawing.Point(12, 23);
+            this.lbEliminarCategoria.Location = new System.Drawing.Point(16, 28);
+            this.lbEliminarCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEliminarCategoria.Name = "lbEliminarCategoria";
-            this.lbEliminarCategoria.Size = new System.Drawing.Size(303, 32);
+            this.lbEliminarCategoria.Size = new System.Drawing.Size(380, 45);
             this.lbEliminarCategoria.TabIndex = 0;
             this.lbEliminarCategoria.Text = "ELIMINAR CATEGORÍA";
             // 
             // dgvCategorias
             // 
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(43, 58);
+            this.dgvCategorias.Location = new System.Drawing.Point(57, 71);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvCategorias.Name = "dgvCategorias";
-            this.dgvCategorias.Size = new System.Drawing.Size(240, 150);
+            this.dgvCategorias.RowHeadersWidth = 51;
+            this.dgvCategorias.Size = new System.Drawing.Size(371, 185);
             this.dgvCategorias.TabIndex = 1;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(73, 229);
+            this.btnEliminar.Location = new System.Drawing.Point(97, 282);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -67,9 +71,10 @@ namespace GestorDeArticulos
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(192, 229);
+            this.btnVolver.Location = new System.Drawing.Point(256, 282);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -77,14 +82,15 @@ namespace GestorDeArticulos
             // 
             // frmEliminarCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 289);
+            this.ClientSize = new System.Drawing.Size(535, 356);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.lbEliminarCategoria);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmEliminarCategoria";
             this.Text = "Eliminar Categoria";
             this.Load += new System.EventHandler(this.frmEliminarCategoria_Load);

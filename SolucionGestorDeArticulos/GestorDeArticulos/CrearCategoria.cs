@@ -33,34 +33,43 @@ namespace GestorDeArticulos
 
         private void btAgregarCategoría_Click(object sender, EventArgs e)
         {
-            Categoria nuevaCategoria = new Categoria();
-            CategoriaManager adminCategorias = new CategoriaManager();
+            Categoria nueva = new Categoria();
+            CategoriaManager manager = new CategoriaManager();
+            List<Categoria> lista = new List<Categoria>();
 
+            lista = manager.ListarCategorias();
 
             try
             {
-                nuevaCategoria.Descripcion = txtNuevaCategoria.Text;
-                if(adminCategorias.verificadorCategorias(nuevaCategoria.Descripcion) == true)
+                nueva.Descripcion = txtNuevaCategoria.Text;
+                if (nueva.Descripcion == "")
                 {
-                    MessageBox.Show("Ya existe una categoria con esa descripcion");
-                }else if (string.IsNullOrEmpty(nuevaCategoria.Descripcion)){
-                    MessageBox.Show("No es posible incluir una categoria vacia");
+                    MessageBox.Show("El campo no puede estar vacio!");
                 }
                 else
                 {
-                    
-                    adminCategorias.agregarCategoria(nuevaCategoria);
-                    MessageBox.Show("Categoria creada con éxito"); 
+                    if (!lista.Any(c => c.Descripcion.Equals(nueva.Descripcion, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        manager.agregarCategoria(nueva);
+                        MessageBox.Show("Agregada");
+                        Close();
+                    }
+                    else { MessageBox.Show("Esa marca ya existe"); }
+
                 }
-                    
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
-          
 
+
+            /*
+
+
+
+            */
         }
+
     }
 }

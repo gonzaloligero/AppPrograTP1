@@ -43,29 +43,35 @@ namespace GestorDeArticulos
 
             string descripcion;
 
-
-
-
-   
             try
             {
                 descripcion = txtMarca.Text;
-
-                bool validar = listaArticulos.Any(item => item.Marca.Descripcion == descripcion);
-
-
-                if (validar)
+                if(descripcion == "")
                 {
-                    MessageBox.Show("Ya existe esa marca");
+                    MessageBox.Show("El campo no puede estar vacio");
                 }
                 else
                 {
-                    seleccionada.Descripcion = descripcion;
-                    adminMarcas.modificarMarca(seleccionada);
-                    MessageBox.Show("Se actualizó la marca");
-                    listaMarcas = adminMarcas.ListarMarcas();
-                    dgvMarcas.DataSource = listaMarcas;
+                    bool validar = listaArticulos.Any(item => item.Marca.Descripcion == descripcion);
+
+
+                    if (validar)
+                    {
+                        MessageBox.Show("Ya existe esa marca");
+                    }
+                    else
+                    {
+                        seleccionada.Descripcion = descripcion;
+                        adminMarcas.modificarMarca(seleccionada);
+                        MessageBox.Show("Se actualizó la marca");
+                        listaMarcas = adminMarcas.ListarMarcas();
+                        dgvMarcas.DataSource = listaMarcas;
+                    }
+
                 }
+
+              
+
 
             }
             catch (Exception ex)

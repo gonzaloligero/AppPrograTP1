@@ -45,7 +45,6 @@ namespace manager
         //***********************************************************************************
         public void agregarMarcas(Marca nueva)
         {
-            AccesoDatos datos = new AccesoDatos();
             try
             {
                 datos.setearConsulta("insert into MARCAS VALUES ('" + nueva.Descripcion + "')");
@@ -93,6 +92,7 @@ namespace manager
 
                 throw ex;
             }
+            finally { datos.cerrarConexion(); }
         }
         //**********************************************************************************************
 

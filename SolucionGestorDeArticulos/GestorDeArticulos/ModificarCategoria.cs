@@ -41,23 +41,38 @@ namespace GestorDeArticulos
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Categoria nuevaCategoria = new Categoria();
-            CategoriaManager adminCategorias = new CategoriaManager();
-            ArticuloManager listaArticulos = new ArticuloManager();
+            CategoriaManager admincategorias = new CategoriaManager();
+
+            ArticuloManager articuloManager = new ArticuloManager();
+            List<Articulo> listaArticulos = articuloManager.ListarArticulos();
+
             string descripcion;
 
             try
             {
                 descripcion = txtModificarCategoria.Text;
-                adminCategorias.verificadorCategorias(descripcion);
-                if(adminCategorias.verificadorCategorias(descripcion) == true)
+                if (descripcion == "")
                 {
-                    MessageBox.Show("Ya existe esa categoria");
+                    MessageBox.Show("El campo no puede estar vacio");
                 }
-                else { seleccionada.Descripcion = descripcion;
-                    adminCategorias.modificarCategoria(seleccionada);
-                    MessageBox.Show("Se actualizó la categoría");
-                    listaCategorias = adminCategorias.ListarCategorias();
-                    dgvCategorias.DataSource = listaCategorias;
+                else
+                {
+                    bool validar = listaArticulos.Any(item => item.Categoria.Descripcion == descripcion);
+
+
+                    if (validar)
+                    {
+                        MessageBox.Show("Ya existe esa categoria");
+                    }
+                    else
+                    {
+                        seleccionada.Descripcion = descripcion;
+                        admincategorias.modificarCategoria(seleccionada);
+                        MessageBox.Show("Se actualizó la marca");
+                        listaCategorias = admincategorias.ListarCategorias();
+                        dgvCategorias.DataSource = listaCategorias;
+                    }
+
                 }
 
             }

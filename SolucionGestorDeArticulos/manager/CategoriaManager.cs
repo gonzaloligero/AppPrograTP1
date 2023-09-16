@@ -11,20 +11,14 @@ namespace manager
 {
     public class CategoriaManager
     {
-        private SqlConnection conexion;
-        public SqlCommand comando;
-        private SqlDataReader lector;
+        //********************************************************************************
+        AccesoDatos datos = new AccesoDatos();
+        //********************************************************************************
 
-        public CategoriaManager()
-        {
-            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
-            comando = new SqlCommand();
-        }
-
+        //**********************************************************************************
         public List<Categoria> ListarCategorias()
         {
             List<Categoria> lista = new List<Categoria>();
-            AccesoDatos datos = new AccesoDatos();
 
             try
             {
@@ -53,28 +47,31 @@ namespace manager
             
         }
 
-        public bool verificadorCategorias(string descripcion)
+        //*******************************************************************************
+        public void agregarCategoria(Categoria nueva)
         {
-            List<Categoria> listaCategorias = new List<Categoria>();
-            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+                datos.setearConsulta("insert into CATEGORIAS VALUES ('" + nueva.Descripcion + "')");
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            finally {datos.cerrarConexion();}
+        }
+        //**********************************************************************************************
+        public void modificarCategoria(Categoria nueva)
+        {
 
             try
             {
-
-                datos.setearConsulta("SELECT COUNT(*) FROM CATEGORIAS WHERE Descripcion = @Descripcion");
-                datos.comando.Parameters.AddWithValue("@Descripcion", descripcion);
-                datos.ejecutarLectura();
-
-                if (datos.Lector.Read())
-                {
-                    int count = datos.Lector.GetInt32(0);
-                    return count > 0;
-                }
-                else
-                {
-                    return false;
-                }
+                datos.setearConsulta("UPDATE CATEGORIAS SET Descripcion = @Descripcion WHERE Id = @Id");
+                datos.setearParametro("@Id", nueva.Id);
+                datos.setearParametro("@Descripcion", nueva.Descripcion);
+                datos.ejecutarAccion();
 
             }
             catch (Exception ex)
@@ -82,110 +79,31 @@ namespace manager
 
                 throw ex;
             }
-        }
-        public void setearConsulta(string query)
-        {
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = query;
-        }
-
-        public void ejecutarLectura()
-        {
-            comando.Connection = conexion;
-            try
-            {
-                conexion.Open();
-                lector = comando.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-        }
-
-        public void ejecutarAccion()
-        {
-            comando.Connection = conexion;
-
-            try
-            {
-                conexion.Open();
-
-                comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-        public void setearParametro(string nombre, object valor)
-        {
-            comando.Parameters.AddWithValue(nombre, valor);
-        }
-        public void agregarCategoria(Categoria nuevaCategoria)
-        {
-            try
-            {
-                setearConsulta("INSERT INTO CATEGORIAS (Descripcion) VALUES (@Descripcion)");
-                setearParametro("@Descripcion", nuevaCategoria.Descripcion);
-                conexion.Close();
-                ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-            finally
-            {
-                conexion.Close();
-            }
-            
-
-        }
-
-        public void modificarCategoria(Categoria nuevaCategoria)
-        {
-
-            try
-            {
-                setearConsulta("UPDATE CATEGORIAS SET Descripcion = @Descripcion WHERE Id = @Id");
-                setearParametro("@Id", nuevaCategoria.Id);
-                setearParametro("@Descripcion", nuevaCategoria.Descripcion);
-                conexion.Close();
-                ejecutarAccion();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            finally { datos.cerrarConexion();}
 
           
         }
-
-        public void modificarMarcaArticulo(Categoria nuevaCategoria)
+        //------------------------------------------------------------------------------------------------
+        public void eliminarCategoria(int id)
         {
-
             try
             {
-                setearConsulta("UPDATE CATEGORIAS SET Descripcion = @Descripcion WHERE Id = @Id");
-                setearParametro("@Id", nuevaCategoria.Id);
-                setearParametro("@Descripcion", nuevaCategoria.Descripcion);
-                conexion.Close();
-                ejecutarAccion();
+                datos.setearConsulta("DELETE FROM CATEGORIAS WHERE Id = @Id");
+                datos.setearParametro("@Id", id);
+                datos.ejecutarAccion();
+
             }
             catch (Exception ex)
             {
 
                 throw ex;
             }
-
-
+            finally { datos.cerrarConexion();}
         }
 
+
     }
+
 }
+
+
