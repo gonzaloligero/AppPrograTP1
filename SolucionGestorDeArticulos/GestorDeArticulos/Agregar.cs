@@ -73,6 +73,7 @@ namespace winform_app
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
                 imagenes.agregarImagen(nuevoArticulo);
+                nuevoArticulo.Imagenes.Add(nuevoArticulo.Imagen);
                 MessageBox.Show("Artículo agregado exitosamente");
                 
             }
@@ -140,6 +141,6 @@ namespace winform_app
             
         }
 
-       
+      
     }
 }

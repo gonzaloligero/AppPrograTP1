@@ -55,6 +55,7 @@ namespace winform_app
             // 
             this.lbAgregarArticulo.AutoSize = true;
             this.lbAgregarArticulo.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAgregarArticulo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbAgregarArticulo.Location = new System.Drawing.Point(254, 9);
             this.lbAgregarArticulo.Name = "lbAgregarArticulo";
             this.lbAgregarArticulo.Size = new System.Drawing.Size(271, 32);
