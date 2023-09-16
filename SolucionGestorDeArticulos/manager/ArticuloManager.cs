@@ -243,7 +243,7 @@ namespace manager
         }
 
         
-        public void agregarImagenes(Articulo nuevoArticulo)
+        public void agregarImagen(Articulo nuevoArticulo)
         {
 
             Articulo articulo = new Articulo();
@@ -252,7 +252,7 @@ namespace manager
             try
             {
                 
-                //int idArticulo = Convert.ToInt32(comando.ExecuteScalar());
+                
                 int idArticulo = articulo.Id;
                 setearConsulta("INSERT INTO IMAGENES (IdArticulo, ImagenUrl) VALUES (@IdArticulo, @ImagenUrl)");
                 setearParametro("@IdArticulo", idArticulo);

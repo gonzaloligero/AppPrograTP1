@@ -113,3 +113,5 @@ C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDe
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.pdb
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmListarMarcas.resources
 C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmModificarMarca.resources
+C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmAgregarImagenes.resources
+C:\Users\Gonzalo\Desktop\AppPrograTP1\AppPrograTP1\AppPrograTP1\SolucionGestorDeArticulos\GestorDeArticulos\obj\Debug\GestorDeArticulos.frmMostrarImagenes.resources

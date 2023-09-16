@@ -61,7 +61,22 @@
             this.tsmListarCategorias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmModificarCategoria = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBorrarCategoria = new System.Windows.Forms.ToolStripMenuItem();
+            this.imágenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarNuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoConImágenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmContacto = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbImagenes = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbAlbum = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator9 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbYouTube = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbInstagram = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator11 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbLinkedinMaxi = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator12 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbLinkedinGonza = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +97,19 @@
             this.toolStripSeparator5,
             this.tsbEliminar,
             this.toolStripSeparator6,
-            this.tsbContacto});
+            this.tsbImagenes,
+            this.toolStripSeparator7,
+            this.tsbAlbum,
+            this.toolStripSeparator8,
+            this.tsbContacto,
+            this.toolStripSeparator9,
+            this.tsbYouTube,
+            this.toolStripSeparator10,
+            this.tsbInstagram,
+            this.toolStripSeparator11,
+            this.tsbLinkedinMaxi,
+            this.toolStripSeparator12,
+            this.tsbLinkedinGonza});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(935, 27);
@@ -196,6 +223,7 @@
             this.tsmArticulos,
             this.tsmMarcas,
             this.tsmCategorias,
+            this.imágenesToolStripMenuItem,
             this.tsmContacto});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -339,6 +367,30 @@
             this.tsmBorrarCategoria.Text = "Borrar categoría";
             this.tsmBorrarCategoria.Click += new System.EventHandler(this.tsmBorrarCategoria_Click);
             // 
+            // imágenesToolStripMenuItem
+            // 
+            this.imágenesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarNuevaToolStripMenuItem,
+            this.listadoConImágenesToolStripMenuItem});
+            this.imágenesToolStripMenuItem.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.imágenesToolStripMenuItem.Name = "imágenesToolStripMenuItem";
+            this.imágenesToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.imágenesToolStripMenuItem.Text = "Imágenes";
+            // 
+            // agregarNuevaToolStripMenuItem
+            // 
+            this.agregarNuevaToolStripMenuItem.Name = "agregarNuevaToolStripMenuItem";
+            this.agregarNuevaToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.agregarNuevaToolStripMenuItem.Text = "Agregar nueva";
+            this.agregarNuevaToolStripMenuItem.Click += new System.EventHandler(this.agregarNuevaToolStripMenuItem_Click);
+            // 
+            // listadoConImágenesToolStripMenuItem
+            // 
+            this.listadoConImágenesToolStripMenuItem.Name = "listadoConImágenesToolStripMenuItem";
+            this.listadoConImágenesToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.listadoConImágenesToolStripMenuItem.Text = "Listado con imágenes";
+            this.listadoConImágenesToolStripMenuItem.Click += new System.EventHandler(this.listadoConImágenesToolStripMenuItem_Click);
+            // 
             // tsmContacto
             // 
             this.tsmContacto.Font = new System.Drawing.Font("Cascadia Mono", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -346,6 +398,96 @@
             this.tsmContacto.Size = new System.Drawing.Size(75, 20);
             this.tsmContacto.Text = "Contacto";
             this.tsmContacto.Click += new System.EventHandler(this.tsmContacto_Click_1);
+            // 
+            // toolStripSeparator7
+            // 
+            this.toolStripSeparator7.Name = "toolStripSeparator7";
+            this.toolStripSeparator7.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbImagenes
+            // 
+            this.tsbImagenes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbImagenes.Image = ((System.Drawing.Image)(resources.GetObject("tsbImagenes.Image")));
+            this.tsbImagenes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbImagenes.Name = "tsbImagenes";
+            this.tsbImagenes.Size = new System.Drawing.Size(24, 24);
+            this.tsbImagenes.Text = "Agregar Imagen";
+            this.tsbImagenes.Click += new System.EventHandler(this.btnImagenes_Click);
+            // 
+            // toolStripSeparator8
+            // 
+            this.toolStripSeparator8.Name = "toolStripSeparator8";
+            this.toolStripSeparator8.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbAlbum
+            // 
+            this.tsbAlbum.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAlbum.Image = ((System.Drawing.Image)(resources.GetObject("tsbAlbum.Image")));
+            this.tsbAlbum.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAlbum.Name = "tsbAlbum";
+            this.tsbAlbum.Size = new System.Drawing.Size(24, 24);
+            this.tsbAlbum.Text = "Album de Imágenes";
+            this.tsbAlbum.Click += new System.EventHandler(this.tsbAlbum_Click);
+            // 
+            // toolStripSeparator9
+            // 
+            this.toolStripSeparator9.Name = "toolStripSeparator9";
+            this.toolStripSeparator9.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbYouTube
+            // 
+            this.tsbYouTube.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbYouTube.Image = ((System.Drawing.Image)(resources.GetObject("tsbYouTube.Image")));
+            this.tsbYouTube.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbYouTube.Name = "tsbYouTube";
+            this.tsbYouTube.Size = new System.Drawing.Size(24, 24);
+            this.tsbYouTube.Text = "YouTube";
+            this.tsbYouTube.Click += new System.EventHandler(this.tsbYouTube_Click);
+            // 
+            // toolStripSeparator10
+            // 
+            this.toolStripSeparator10.Name = "toolStripSeparator10";
+            this.toolStripSeparator10.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbInstagram
+            // 
+            this.tsbInstagram.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbInstagram.Image = ((System.Drawing.Image)(resources.GetObject("tsbInstagram.Image")));
+            this.tsbInstagram.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbInstagram.Name = "tsbInstagram";
+            this.tsbInstagram.Size = new System.Drawing.Size(24, 24);
+            this.tsbInstagram.Text = "Instagram";
+            this.tsbInstagram.Click += new System.EventHandler(this.tsbInstagram_Click);
+            // 
+            // toolStripSeparator11
+            // 
+            this.toolStripSeparator11.Name = "toolStripSeparator11";
+            this.toolStripSeparator11.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbLinkedinMaxi
+            // 
+            this.tsbLinkedinMaxi.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbLinkedinMaxi.Image = ((System.Drawing.Image)(resources.GetObject("tsbLinkedinMaxi.Image")));
+            this.tsbLinkedinMaxi.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLinkedinMaxi.Name = "tsbLinkedinMaxi";
+            this.tsbLinkedinMaxi.Size = new System.Drawing.Size(24, 24);
+            this.tsbLinkedinMaxi.Text = "Linkedin Maximiliano Soria";
+            this.tsbLinkedinMaxi.Click += new System.EventHandler(this.tsbLinkedinMaxi_Click);
+            // 
+            // toolStripSeparator12
+            // 
+            this.toolStripSeparator12.Name = "toolStripSeparator12";
+            this.toolStripSeparator12.Size = new System.Drawing.Size(6, 27);
+            // 
+            // tsbLinkedinGonza
+            // 
+            this.tsbLinkedinGonza.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbLinkedinGonza.Image = ((System.Drawing.Image)(resources.GetObject("tsbLinkedinGonza.Image")));
+            this.tsbLinkedinGonza.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbLinkedinGonza.Name = "tsbLinkedinGonza";
+            this.tsbLinkedinGonza.Size = new System.Drawing.Size(24, 24);
+            this.tsbLinkedinGonza.Text = "Linkedin Gonzalo Ligero";
+            this.tsbLinkedinGonza.Click += new System.EventHandler(this.tsbLinkedinGonza_Click);
             // 
             // frmPantallaPrincipal
             // 
@@ -403,6 +545,21 @@
         private System.Windows.Forms.ToolStripMenuItem tsmEliminarArticulo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton tsbEliminar;
+        private System.Windows.Forms.ToolStripMenuItem imágenesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarNuevaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoConImágenesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripButton tsbImagenes;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
+        private System.Windows.Forms.ToolStripButton tsbAlbum;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator8;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+        private System.Windows.Forms.ToolStripButton tsbYouTube;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator10;
+        private System.Windows.Forms.ToolStripButton tsbInstagram;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator11;
+        private System.Windows.Forms.ToolStripButton tsbLinkedinMaxi;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator12;
+        private System.Windows.Forms.ToolStripButton tsbLinkedinGonza;
     }
 }
 

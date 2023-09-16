@@ -52,6 +52,12 @@
     <Compile Include="Agregar.Designer.cs">
       <DependentUpon>Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarImagenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarImagenes.Designer.cs">
+      <DependentUpon>AgregarImagenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="AgregarMarca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,10 +136,19 @@
     <Compile Include="ModificarMarca.Designer.cs">
       <DependentUpon>ModificarMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="MostrarImagenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MostrarImagenes.Designer.cs">
+      <DependentUpon>MostrarImagenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Agregar.resx">
       <DependentUpon>Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarImagenes.resx">
+      <DependentUpon>AgregarImagenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarMarca.resx">
       <DependentUpon>AgregarMarca.cs</DependentUpon>
@@ -173,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarMarca.resx">
       <DependentUpon>ModificarMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MostrarImagenes.resx">
+      <DependentUpon>MostrarImagenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -72,7 +72,7 @@ namespace winform_app
                 nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
-                imagenes.agregarImagenes(nuevoArticulo);
+                imagenes.agregarImagen(nuevoArticulo);
                 MessageBox.Show("Artículo agregado exitosamente");
                 
             }
@@ -139,5 +139,7 @@ namespace winform_app
             }
             
         }
+
+       
     }
 }

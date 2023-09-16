@@ -394,5 +394,85 @@ namespace winform_app
             ventana.MdiParent = this;
             ventana.Show();
         }
+
+        private void agregarNuevaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmAgregarImagenes))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmAgregarImagenes ventana = new frmAgregarImagenes();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void listadoConImágenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmMostrarImagenes))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmMostrarImagenes ventana = new frmMostrarImagenes();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void btnImagenes_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmAgregarImagenes))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmAgregarImagenes ventana = new frmAgregarImagenes();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsbAlbum_Click(object sender, EventArgs e)
+        {
+            foreach (var item in Application.OpenForms)
+            {
+                if (item.GetType() == typeof(frmMostrarImagenes))
+                {
+                    MessageBox.Show("No es posible abrir otra ventana");
+                    return;
+                }
+            }
+            frmMostrarImagenes ventana = new frmMostrarImagenes();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void tsbYouTube_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("youtube.com/@MaxiPrograma");
+        }
+
+        private void tsbInstagram_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("instagram.com/maxiprograma");
+        }
+
+        private void tsbLinkedinGonza_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("linkedin.com/gonzaloligero");
+        }
+
+        private void tsbLinkedinMaxi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("linkedin.com/maximilianofacundosoria");
+        }
     }
 }
