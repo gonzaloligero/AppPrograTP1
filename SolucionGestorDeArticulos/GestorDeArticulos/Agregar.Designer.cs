@@ -135,6 +135,7 @@ namespace winform_app
             this.txtNombreArticulo.Name = "txtNombreArticulo";
             this.txtNombreArticulo.Size = new System.Drawing.Size(166, 20);
             this.txtNombreArticulo.TabIndex = 1;
+            this.txtNombreArticulo.Leave += new System.EventHandler(this.txtNombreArticulo_Leave);
             // 
             // txtDescripcion
             // 
@@ -149,6 +150,7 @@ namespace winform_app
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(166, 20);
             this.txtPrecio.TabIndex = 5;
+            this.txtPrecio.Leave += new System.EventHandler(this.txtPrecio_Leave);
             // 
             // pbxArticulo
             // 

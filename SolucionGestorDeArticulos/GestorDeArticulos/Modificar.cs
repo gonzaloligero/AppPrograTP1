@@ -111,6 +111,7 @@ namespace winform_app
                 else
                 {
                     MessageBox.Show("Debe seleccionar una categoria");
+                    return;
                 }
 
                 if (cboMarcas.SelectedValue != null)
@@ -120,11 +121,13 @@ namespace winform_app
                 else
                 {
                     MessageBox.Show("Debe seleccionar una marca");
+                    return;
                 }
 
                 if (string.IsNullOrEmpty(txtNombreArticulo.Text))
                 {
                     MessageBox.Show("El articulo no contiene nombre");
+                    return;
                 }
                 else
                 {
@@ -139,23 +142,17 @@ namespace winform_app
                 {
                     articuloAModificar.Descripcion = txtDescripcion.Text;
                 }
-                
-                foreach (char caracter in articuloAModificar.Precio.ToString())
-                {
-                    if (!(char.IsNumber(caracter)) && caracter != '.')
-                    {
-                        letraEnPrecio = true;
-                    }
-                }
 
-                if(letraEnPrecio == true)
+                decimal verificadorNumero;
+
+                if (decimal.TryParse((txtPrecio.Text), out verificadorNumero))
                 {
-                    MessageBox.Show("No pueden agregarse letras en el precio. Ingrese sólo números");
-                    return;
+                    articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
                 }
                 else
                 {
-                    articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
+                    MessageBox.Show("Ingresar sólo números en el precio por favor");
+                    return;
                 }
 
                 //articuloAModificar.Precio = decimal.Parse(txtPrecio.Text);
@@ -171,7 +168,8 @@ namespace winform_app
                 
                 MessageBox.Show("Articulo modificado correctamente");
                 
-                
+                dgvArticulos.DataSource = adminArticulos.ListarArticulos().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+
 
             }
             catch (Exception ex)

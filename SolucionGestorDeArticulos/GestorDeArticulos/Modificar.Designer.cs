@@ -74,9 +74,9 @@
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(135, 261);
+            this.txtUrlImagen.Location = new System.Drawing.Point(178, 260);
             this.txtUrlImagen.Name = "txtUrlImagen";
-            this.txtUrlImagen.Size = new System.Drawing.Size(166, 20);
+            this.txtUrlImagen.Size = new System.Drawing.Size(123, 20);
             this.txtUrlImagen.TabIndex = 35;
             this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
@@ -84,11 +84,11 @@
             // 
             this.lblImagen.AutoSize = true;
             this.lblImagen.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagen.Location = new System.Drawing.Point(27, 262);
+            this.lblImagen.Location = new System.Drawing.Point(6, 261);
             this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(96, 16);
+            this.lblImagen.Size = new System.Drawing.Size(176, 16);
             this.lblImagen.TabIndex = 38;
-            this.lblImagen.Text = "URL Imagen:";
+            this.lblImagen.Text = "URL Imagen principal:";
             // 
             // cboCategorias
             // 

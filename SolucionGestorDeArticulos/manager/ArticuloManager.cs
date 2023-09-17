@@ -371,8 +371,7 @@ namespace manager
         {
             try
             {
-                
-                setearConsulta("UPDATE A SET A.IdMarca = @IdMarca FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id WHERE A.Id = @IdArt");
+                setearConsulta("UPDATE ARTICULOS SET IdMarca = @IdMarca WHERE Id = @IdArticulo");
                 setearParametro("@IdArt", articulo.Id);
                 setearParametro("@IdMarca", articulo.Marca.Id);
                 conexion.Close();
@@ -391,7 +390,8 @@ namespace manager
         {
             try
             {
-                setearConsulta("UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE IdArticulo = @IdA");
+                //setearConsulta("UPDATE TOP 1 IMAGENES SET ImagenUrl = @ImagenUrl WHERE IdArticulo = @IdA");
+                setearConsulta("UPDATE IMAGENES SET ImagenUrl = @ImagenUrl WHERE Id = (SELECT TOP 1 Id FROM IMAGENES WHERE IdArticulo = @IdA)");
                 setearParametro("@IdA", articulo.Id);
                 setearParametro("@ImagenUrl", articulo.Imagen);
                 conexion.Close();

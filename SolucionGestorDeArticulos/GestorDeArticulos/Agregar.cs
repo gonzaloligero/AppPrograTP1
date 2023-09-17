@@ -50,13 +50,20 @@ namespace winform_app
 
                 if (string.IsNullOrEmpty(nuevoArticulo.Codigo))
                 {
-                    nuevoArticulo.Codigo = "";
+                    MessageBox.Show("El campo de código no puede quedar vacío. Ingrese uno por favor");
+                    return;
                 }
                
                 nuevoArticulo.Nombre = txtNombreArticulo.Text;
                 nuevoArticulo.Descripcion = txtDescripcion.Text;
-                
-                if(cboCategorias.SelectedValue != null)
+
+                if (string.IsNullOrEmpty(nuevoArticulo.Nombre))
+                {
+                    MessageBox.Show("No se ha ingresado un nombre al artículo");
+                    return;
+                }
+
+                if (cboCategorias.SelectedValue != null)
                 {
                     nuevoArticulo.Categoria.Id = (int)cboCategorias.SelectedValue;
                 }
@@ -67,9 +74,17 @@ namespace winform_app
                 }
 
                 nuevoArticulo.Imagen = (string)txtUrlImagen.Text;
-                
 
-                nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
+                decimal verificadorNumero;
+                
+                if(decimal.TryParse((txtPrecio.Text),out verificadorNumero)){
+                    nuevoArticulo.Precio = decimal.Parse(txtPrecio.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Ingresar sólo números en el precio por favor");
+                    return;
+                }
 
                 nuevoManager.agregarArticulo(nuevoArticulo);
                 imagenes.agregarImagen(nuevoArticulo);
@@ -137,9 +152,34 @@ namespace winform_app
                 MessageBox.Show("Codigo existente. Ingrese otro");
                 txtCodigoArticulo.Clear();
             }
-            
+
+            if (string.IsNullOrEmpty(txtCodigoArticulo.Text))
+            {
+                MessageBox.Show("El campo de código no puede quedar vacío. Ingrese uno por favor");
+                
+            }
+
+          
         }
 
-       
+        private void txtNombreArticulo_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtNombreArticulo.Text))
+            {
+                MessageBox.Show("No se ha ingresado un nombre al artículo");
+                return;
+            }
+        }
+
+        private void txtPrecio_Leave(object sender, EventArgs e)
+        {
+            decimal verificadorNumero;
+
+            if ((!decimal.TryParse((txtPrecio.Text), out verificadorNumero))){
+                MessageBox.Show("Ingresar sólo números en el precio por favor");
+                return;
+            }
+           
+        }
     }
 }
