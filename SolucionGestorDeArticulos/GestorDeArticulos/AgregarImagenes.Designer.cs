@@ -47,26 +47,32 @@ namespace GestorDeArticulos
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(249, 9);
+            this.label1.Location = new System.Drawing.Point(332, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 32);
+            this.label1.Size = new System.Drawing.Size(340, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "AGREGAR IMÁGENES";
             // 
             // dgvArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(12, 154);
+            this.dgvArticulos.Location = new System.Drawing.Point(13, 190);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.ReadOnly = true;
+            this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(342, 255);
+            this.dgvArticulos.Size = new System.Drawing.Size(469, 314);
             this.dgvArticulos.TabIndex = 2;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(697, 415);
+            this.btnVolver.Location = new System.Drawing.Point(793, 513);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -74,9 +80,10 @@ namespace GestorDeArticulos
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(290, 56);
+            this.txtUrlImagen.Location = new System.Drawing.Point(387, 69);
+            this.txtUrlImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUrlImagen.Name = "txtUrlImagen";
-            this.txtUrlImagen.Size = new System.Drawing.Size(245, 20);
+            this.txtUrlImagen.Size = new System.Drawing.Size(325, 22);
             this.txtUrlImagen.TabIndex = 4;
             this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
@@ -84,27 +91,30 @@ namespace GestorDeArticulos
             // 
             this.lbUrlImagen.AutoSize = true;
             this.lbUrlImagen.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUrlImagen.Location = new System.Drawing.Point(188, 57);
+            this.lbUrlImagen.Location = new System.Drawing.Point(251, 70);
+            this.lbUrlImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUrlImagen.Name = "lbUrlImagen";
-            this.lbUrlImagen.Size = new System.Drawing.Size(96, 16);
+            this.lbUrlImagen.Size = new System.Drawing.Size(120, 22);
             this.lbUrlImagen.TabIndex = 5;
             this.lbUrlImagen.Text = "URL Imagen:";
             // 
             // pbxImagenes
             // 
             this.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImagenes.Location = new System.Drawing.Point(360, 154);
+            this.pbxImagenes.Location = new System.Drawing.Point(523, 191);
+            this.pbxImagenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxImagenes.Name = "pbxImagenes";
-            this.pbxImagenes.Size = new System.Drawing.Size(412, 255);
+            this.pbxImagenes.Size = new System.Drawing.Size(370, 313);
             this.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenes.TabIndex = 6;
             this.pbxImagenes.TabStop = false;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(370, 125);
+            this.btnConfirmar.Location = new System.Drawing.Point(493, 154);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
             this.btnConfirmar.TabIndex = 7;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -114,9 +124,10 @@ namespace GestorDeArticulos
             // 
             this.lbArticulo.AutoSize = true;
             this.lbArticulo.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbArticulo.Location = new System.Drawing.Point(204, 96);
+            this.lbArticulo.Location = new System.Drawing.Point(272, 118);
+            this.lbArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbArticulo.Name = "lbArticulo";
-            this.lbArticulo.Size = new System.Drawing.Size(88, 16);
+            this.lbArticulo.Size = new System.Drawing.Size(110, 22);
             this.lbArticulo.TabIndex = 8;
             this.lbArticulo.Text = "Artículo: ";
             // 
@@ -124,16 +135,17 @@ namespace GestorDeArticulos
             // 
             this.cboArticulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboArticulos.FormattingEnabled = true;
-            this.cboArticulos.Location = new System.Drawing.Point(290, 95);
+            this.cboArticulos.Location = new System.Drawing.Point(387, 117);
+            this.cboArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboArticulos.Name = "cboArticulos";
-            this.cboArticulos.Size = new System.Drawing.Size(245, 21);
+            this.cboArticulos.Size = new System.Drawing.Size(325, 24);
             this.cboArticulos.TabIndex = 9;
             // 
             // frmAgregarImagenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(933, 554);
             this.Controls.Add(this.cboArticulos);
             this.Controls.Add(this.lbArticulo);
             this.Controls.Add(this.btnConfirmar);
@@ -144,6 +156,9 @@ namespace GestorDeArticulos
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(951, 601);
+            this.MinimumSize = new System.Drawing.Size(951, 601);
             this.Name = "frmAgregarImagenes";
             this.Text = "Agregar Imagenes";
             this.Load += new System.EventHandler(this.frmAgregarImagenes_Load);

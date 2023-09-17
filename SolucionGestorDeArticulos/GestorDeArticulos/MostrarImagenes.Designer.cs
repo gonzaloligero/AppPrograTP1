@@ -44,37 +44,44 @@ namespace GestorDeArticulos
             // 
             this.lbMostrarImágenes.AutoSize = true;
             this.lbMostrarImágenes.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMostrarImágenes.Location = new System.Drawing.Point(247, 26);
+            this.lbMostrarImágenes.Location = new System.Drawing.Point(329, 32);
+            this.lbMostrarImágenes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMostrarImágenes.Name = "lbMostrarImágenes";
-            this.lbMostrarImágenes.Size = new System.Drawing.Size(271, 32);
+            this.lbMostrarImágenes.Size = new System.Drawing.Size(340, 45);
             this.lbMostrarImágenes.TabIndex = 0;
             this.lbMostrarImágenes.Text = "MOSTRAR IMÁGENES";
             // 
             // dgvListaArticulos
             // 
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListaArticulos.Location = new System.Drawing.Point(27, 129);
+            this.dgvListaArticulos.Location = new System.Drawing.Point(36, 159);
+            this.dgvListaArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListaArticulos.MultiSelect = false;
             this.dgvListaArticulos.Name = "dgvListaArticulos";
+            this.dgvListaArticulos.ReadOnly = true;
+            this.dgvListaArticulos.RowHeadersWidth = 51;
             this.dgvListaArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaArticulos.Size = new System.Drawing.Size(344, 268);
+            this.dgvListaArticulos.Size = new System.Drawing.Size(528, 330);
             this.dgvListaArticulos.TabIndex = 1;
             this.dgvListaArticulos.SelectionChanged += new System.EventHandler(this.dgvListaArticulos_SelectionChanged);
             // 
             // pbxImagenes
             // 
             this.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxImagenes.Location = new System.Drawing.Point(397, 129);
+            this.pbxImagenes.Location = new System.Drawing.Point(614, 159);
+            this.pbxImagenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pbxImagenes.Name = "pbxImagenes";
-            this.pbxImagenes.Size = new System.Drawing.Size(350, 268);
+            this.pbxImagenes.Size = new System.Drawing.Size(381, 329);
             this.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxImagenes.TabIndex = 2;
             this.pbxImagenes.TabStop = false;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(688, 403);
+            this.btnVolver.Location = new System.Drawing.Point(895, 513);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -84,9 +91,10 @@ namespace GestorDeArticulos
             // 
             this.cboArticulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboArticulos.FormattingEnabled = true;
-            this.cboArticulos.Location = new System.Drawing.Point(335, 75);
+            this.cboArticulos.Location = new System.Drawing.Point(447, 92);
+            this.cboArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboArticulos.Name = "cboArticulos";
-            this.cboArticulos.Size = new System.Drawing.Size(121, 21);
+            this.cboArticulos.Size = new System.Drawing.Size(160, 24);
             this.cboArticulos.TabIndex = 4;
             this.cboArticulos.SelectedIndexChanged += new System.EventHandler(this.cboArticulos_SelectedIndexChanged);
             // 
@@ -94,17 +102,18 @@ namespace GestorDeArticulos
             // 
             this.lbArticulo.AutoSize = true;
             this.lbArticulo.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbArticulo.Location = new System.Drawing.Point(255, 77);
+            this.lbArticulo.Location = new System.Drawing.Point(340, 95);
+            this.lbArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbArticulo.Name = "lbArticulo";
-            this.lbArticulo.Size = new System.Drawing.Size(80, 16);
+            this.lbArticulo.Size = new System.Drawing.Size(100, 22);
             this.lbArticulo.TabIndex = 5;
             this.lbArticulo.Text = "Artículo:";
             // 
             // frmMostrarImagenes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.lbArticulo);
             this.Controls.Add(this.cboArticulos);
             this.Controls.Add(this.btnVolver);
@@ -112,6 +121,9 @@ namespace GestorDeArticulos
             this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.lbMostrarImágenes);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximumSize = new System.Drawing.Size(1085, 601);
+            this.MinimumSize = new System.Drawing.Size(1085, 601);
             this.Name = "frmMostrarImagenes";
             this.Text = "Mostrar Imagenes";
             this.Load += new System.EventHandler(this.frmMostrarImagenes_Load);

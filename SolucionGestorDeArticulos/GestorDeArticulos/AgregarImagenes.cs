@@ -143,12 +143,14 @@ namespace GestorDeArticulos
 
             try
             {
-                seleccionado.Imagen = txtUrlImagen.Text;
-                seleccionado.Id = int.Parse(cboArticulos.Text);
-
-                
-                agregarImagenes(seleccionado);
-                MessageBox.Show("Nueva imagen agregada al articulo");
+                if (txtUrlImagen.Text != "")
+                {
+                    seleccionado.Imagen = txtUrlImagen.Text;
+                    seleccionado.Id = int.Parse(cboArticulos.Text);
+                    agregarImagenes(seleccionado);
+                    MessageBox.Show("Nueva imagen agregada al articulo");
+                }
+                else MessageBox.Show("El campo Url Imagen no puede quedar vacio. ");
             }
             catch (Exception ex)
             {
