@@ -59,12 +59,13 @@
             this.dgvBuscar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBuscar.Size = new System.Drawing.Size(1048, 319);
             this.dgvBuscar.TabIndex = 2;
+            this.dgvBuscar.SelectionChanged += new System.EventHandler(this.dgvBuscar_SelectionChanged);
             // 
             // lbBuscarArticulo
             // 
             this.lbBuscarArticulo.AutoSize = true;
             this.lbBuscarArticulo.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuscarArticulo.Location = new System.Drawing.Point(403, 26);
+            this.lbBuscarArticulo.Location = new System.Drawing.Point(563, 26);
             this.lbBuscarArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbBuscarArticulo.Name = "lbBuscarArticulo";
             this.lbBuscarArticulo.Size = new System.Drawing.Size(320, 45);
@@ -84,17 +85,18 @@
             // 
             // pbxArticulo
             // 
-            this.pbxArticulo.Location = new System.Drawing.Point(1097, 154);
+            this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbxArticulo.Location = new System.Drawing.Point(1093, 154);
             this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(511, 316);
+            this.pbxArticulo.Size = new System.Drawing.Size(347, 316);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 7;
             this.pbxArticulo.TabStop = false;
             // 
             // btVolver
             // 
-            this.btVolver.Location = new System.Drawing.Point(1348, 96);
+            this.btVolver.Location = new System.Drawing.Point(1340, 529);
             this.btVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btVolver.Name = "btVolver";
             this.btVolver.Size = new System.Drawing.Size(100, 28);
@@ -178,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1658, 624);
+            this.ClientSize = new System.Drawing.Size(1460, 624);
             this.Controls.Add(this.llblFiltroAvanzado);
             this.Controls.Add(this.txtFiltroAvanzado);
             this.Controls.Add(this.cboCriterio);

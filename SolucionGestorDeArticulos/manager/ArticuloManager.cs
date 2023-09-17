@@ -420,25 +420,25 @@ namespace manager
                                 break;                           
                         }
                         break;
-                    case "Nombre":
+                    case "Marca":
                         switch (criterio)
                         {
-                            case "Comienza con": consulta += "A.Nombre LIKE '" + filtro + "%' ";
+                            case "Comienza con": consulta += "M.Descripcion LIKE '" + filtro + "%' ";
                                 break;
-                            case "Termina con": consulta += "A.Nombre LIKE '%" + filtro + "'";
+                            case "Termina con": consulta += "M.Descripcion LIKE '%" + filtro + "'";
                                 break;
-                            case "Contiene": consulta += "A.Nombre LIKE '%" + filtro + "%'";
+                            case "Contiene": consulta += "M.Descripcion LIKE '%" + filtro + "%'";
                                 break;
                         }
                         break;
-                    case "Descripcion":
+                    case "Categoria":
                         switch (criterio)
                         {
-                            case "Comienza con": consulta += "A.Descripcion LIKE '" + filtro + "%' ";
+                            case "Comienza con": consulta += "C.Descripcion LIKE '" + filtro + "%' ";
                                 break;
-                            case "Termina con": consulta += "A.Descripcion LIKE '%" + filtro + "'";
+                            case "Termina con": consulta += "C.Descripcion LIKE '%" + filtro + "'";
                                 break;
-                            case "Contiene": consulta += "A.Descripcion LIKE '%" + filtro + "%'";
+                            case "Contiene": consulta += "C.Descripcion LIKE '%" + filtro + "%'";
                                 break;
                         }
                         break;

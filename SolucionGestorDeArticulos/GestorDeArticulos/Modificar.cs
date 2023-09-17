@@ -86,7 +86,7 @@ namespace winform_app
             ArticuloManager adminArticulos = new ArticuloManager();
             Articulo articuloAModificar = new Articulo();
             articuloAModificar = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            bool letraEnPrecio = false;
+            //bool letraEnPrecio = false;
 
             try
             {

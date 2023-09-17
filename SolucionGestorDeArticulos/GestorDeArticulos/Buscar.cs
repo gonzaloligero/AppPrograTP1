@@ -31,35 +31,48 @@ namespace winform_app
             ArticuloManager articuloManager = new ArticuloManager();
             listaArticulo = articuloManager.ListarArticulos();
             dgvBuscar.DataSource = listaArticulo;
+
+            dgvBuscar.Columns[0].Visible = false;
             dgvBuscar.Columns[6].Visible = false;
 
-            cargarImagen(listaArticulo[2].Imagen);
             manager.ArticuloManager negocio = new manager.ArticuloManager();
-            Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
+            Articulo seleccionado = null;
+            if (dgvBuscar.CurrentRow != null)
+            {
+                seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
+            }
 
-            cargarImagen(seleccionado.Imagen);
-
+            if (seleccionado != null)
+            {
+                cargarImagen(seleccionado.Imagen);
+            }
 
             cboCampo.Items.Add("Codigo");
-            cboCampo.Items.Add("Nombre");
-            cboCampo.Items.Add("Descripcion");
+            cboCampo.Items.Add("Marca");
+            cboCampo.Items.Add("Categoria");
 
             cboCriterio.Items.Add("Comienza con");
             cboCriterio.Items.Add("Termina con");
             cboCriterio.Items.Add("Contiene");
 
+            cboCampo.SelectedIndex = 0;
+            cboCriterio.SelectedIndex = 0;
 
         }
 
-            
-        
+
+
 
         private void dgvBuscar_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.Imagen);
+            if (dgvBuscar.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvBuscar.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.Imagen);
+            }
         }
-            
+
+
         private void cargarImagen(string imagen)
         {
             try
