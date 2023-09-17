@@ -26,7 +26,6 @@ namespace manager
             comando = new SqlCommand();
         }
 
-
         public List<Articulo> ListarArticulos()
         {
             List<Articulo> lista = new List<Articulo> ();
@@ -88,7 +87,6 @@ namespace manager
                 datos.cerrarConexion();
             }
         }
-
 
         public List<Articulo> ListarCodigoArticulo()
         {
@@ -494,8 +492,47 @@ namespace manager
             }
 
         }
-    } 
-    
+
+        public List<Articulo> listaParaImagenes()
+        {
+            List<Articulo> listaArticulos = ListarArticulos();
+
+            // Verificar si la lista de artículos no es nula y contiene elementos
+            if (listaArticulos != null && listaArticulos.Count > 0)
+            {
+                // Crear un diccionario para rastrear los artículos por su código
+                Dictionary<string, Articulo> diccionarioArticulos = new Dictionary<string, Articulo>();
+
+                // Iterar a través de la lista de artículos
+                foreach (var articulo in listaArticulos)
+                {
+                    // Verificar si el artículo ya está en el diccionario
+                    if (!diccionarioArticulos.ContainsKey(articulo.Codigo))
+                    {
+                        // Si no está en el diccionario, agregarlo
+                        diccionarioArticulos.Add(articulo.Codigo, articulo);
+                        // Inicializar la lista de imágenes del artículo
+                        articulo.Imagenes = new List<string>();
+                    }
+                    // Agregar la imagen al artículo en el diccionario
+                    diccionarioArticulos[articulo.Codigo].Imagenes.Add(articulo.Imagen);
+                }
+
+                // Convertir el diccionario en una lista y retornarla
+                List<Articulo> listaParaDgv = diccionarioArticulos.Values.ToList();
+                return listaParaDgv;
+            }
+            else
+            {
+                // Manejar el caso en el que la lista esté vacía o sea null
+                return new List<Articulo>(); // Puedes devolver una lista vacía o manejar el caso de otra manera
+            }
+        }
+
+
+
+    }
+
 }
 
 

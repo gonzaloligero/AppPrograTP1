@@ -52,3 +52,12 @@ C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\ma
 C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\manager\obj\Debug\manager.csproj.CopyComplete
 C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\manager\obj\Debug\manager.dll
 C:\Users\erica\Desktop\Proyecto Progra\AppPrograTP1\SolucionGestorDeArticulos\manager\obj\Debug\manager.pdb
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\bin\Debug\manager.dll
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\bin\Debug\manager.pdb
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\bin\Debug\dominio.dll
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\bin\Debug\dominio.pdb
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\obj\Debug\manager.csproj.AssemblyReference.cache
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\obj\Debug\manager.csproj.CoreCompileInputs.cache
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\obj\Debug\manager.csproj.CopyComplete
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\obj\Debug\manager.dll
+C:\Users\erica\Desktop\Para Borrar\Progra3\AppPrograPrueba\SolucionGestorDeArticulos\manager\obj\Debug\manager.pdb
