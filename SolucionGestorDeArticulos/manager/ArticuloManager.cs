@@ -22,7 +22,7 @@ namespace manager
 
         public ArticuloManager()
         {
-            conexion = new SqlConnection("server=.\\SQLEXPRESSLABO; database=CATALOGO_P3_DB; integrated security=true");
+            conexion = new SqlConnection("server=.\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
 
@@ -55,8 +55,6 @@ namespace manager
                         aux.Marca.Descripcion = "" ;
                     }
 
-                    //aux.Marca.Descripcion = (string)datos.Lector["Marca"];
-
                     if (!Convert.IsDBNull(datos.Lector["Categoria"]))
                     {
                         aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
@@ -76,8 +74,6 @@ namespace manager
                     {
 
                     }
-
-                    //aux.Imagen = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
@@ -241,8 +237,7 @@ namespace manager
                 conexion.Close();
             }
         }
-
-        
+ 
         public void agregarImagen(Articulo nuevoArticulo)
         {
 
@@ -272,9 +267,6 @@ namespace manager
             }
 
         }
-
-        
-
 
         public bool verificadorDeCodigos(string codigo)
     {
@@ -406,7 +398,102 @@ namespace manager
             }
         }
 
-        
+        public List<Articulo> filtrar(string campo, string criterio, string filtro)
+        {
+            List<Articulo> lista = new List<Articulo>();
+            AccesoDatos datos = new AccesoDatos();
+            try
+            {
+               
+                string consulta = "SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion AS ArticuloDescripcion, M.Descripcion AS Marca, C.Descripcion AS Categoria, A.Precio, I.ImagenUrl FROM ARTICULOS A, MARCAS M, CATEGORIAS C, IMAGENES I WHERE A.IdMarca = M.Id AND A.IdCategoria = C.Id AND A.Id = I.IdArticulo AND ";
+                
+                switch (campo)
+                {
+                    case "Codigo":
+                        switch (criterio)
+                        {
+                            case "Comienza con": consulta += "A.Codigo LIKE '" + filtro + "%' ";
+                                break;
+                            case "Termina con": consulta += "A.Codigo LIKE '%" + filtro + "'";
+                                break;
+                            case "Contiene": consulta += "A.Codigo LIKE '%" + filtro + "%'";
+                                break;                           
+                        }
+                        break;
+                    case "Nombre":
+                        switch (criterio)
+                        {
+                            case "Comienza con": consulta += "A.Nombre LIKE '" + filtro + "%' ";
+                                break;
+                            case "Termina con": consulta += "A.Nombre LIKE '%" + filtro + "'";
+                                break;
+                            case "Contiene": consulta += "A.Nombre LIKE '%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                    case "Descripcion":
+                        switch (criterio)
+                        {
+                            case "Comienza con": consulta += "A.Descripcion LIKE '" + filtro + "%' ";
+                                break;
+                            case "Termina con": consulta += "A.Descripcion LIKE '%" + filtro + "'";
+                                break;
+                            case "Contiene": consulta += "A.Descripcion LIKE '%" + filtro + "%'";
+                                break;
+                        }
+                        break;
+                }
+               
+
+                datos.setearConsulta(consulta);
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Articulo aux = new Articulo();
+                    aux.Id = (int)datos.Lector["Id"];
+                    aux.Codigo = (string)datos.Lector["Codigo"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Descripcion = (string)datos.Lector["ArticuloDescripcion"];
+
+
+                    if (!Convert.IsDBNull(datos.Lector["Marca"]))
+                    {
+                        aux.Marca.Descripcion = (string)datos.Lector["Marca"];
+                    }
+                    else
+                    {
+                        aux.Marca.Descripcion = "";
+                    }
+
+                    if (!Convert.IsDBNull(datos.Lector["Categoria"]))
+                    {
+                        aux.Categoria.Descripcion = (string)datos.Lector["Categoria"];
+                    }
+                    else
+                    {
+                        aux.Categoria.Descripcion = "https://images.samsung.com/is/image/samsung/co-galaxy-s10-sm-g970-sm-g970fzyjcoo-frontcanaryyellow-thumb-149016542";
+                    }
+
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+
+                    if (!Convert.IsDBNull(datos.Lector["ImagenUrl"]))
+                    {
+                        aux.Imagen = (string)datos.Lector["ImagenUrl"];
+                    }
+
+                    lista.Add(aux);
+                }
+
+            return lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
     } 
     
 }
