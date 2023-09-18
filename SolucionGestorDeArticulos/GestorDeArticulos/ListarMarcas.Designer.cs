@@ -40,7 +40,7 @@ namespace GestorDeArticulos
             // 
             this.lbListarMarcas.AutoSize = true;
             this.lbListarMarcas.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbListarMarcas.Location = new System.Drawing.Point(124, 33);
+            this.lbListarMarcas.Location = new System.Drawing.Point(156, 31);
             this.lbListarMarcas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbListarMarcas.Name = "lbListarMarcas";
             this.lbListarMarcas.Size = new System.Drawing.Size(280, 45);
@@ -50,8 +50,8 @@ namespace GestorDeArticulos
             // dgvListarMarcas
             // 
             this.dgvListarMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListarMarcas.Location = new System.Drawing.Point(115, 90);
-            this.dgvListarMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListarMarcas.Location = new System.Drawing.Point(95, 91);
+            this.dgvListarMarcas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListarMarcas.Name = "dgvListarMarcas";
             this.dgvListarMarcas.ReadOnly = true;
             this.dgvListarMarcas.RowHeadersWidth = 51;
@@ -62,7 +62,7 @@ namespace GestorDeArticulos
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(225, 299);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 2;
@@ -78,8 +78,9 @@ namespace GestorDeArticulos
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvListarMarcas);
             this.Controls.Add(this.lbListarMarcas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmListarMarcas";
             this.Text = "Listar Marcas";
             this.Load += new System.EventHandler(this.frmListarMarcas_Load);

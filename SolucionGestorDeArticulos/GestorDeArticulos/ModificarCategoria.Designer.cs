@@ -42,7 +42,7 @@ namespace GestorDeArticulos
             // 
             this.lbModificarCategoria.AutoSize = true;
             this.lbModificarCategoria.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbModificarCategoria.Location = new System.Drawing.Point(43, 23);
+            this.lbModificarCategoria.Location = new System.Drawing.Point(38, 20);
             this.lbModificarCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbModificarCategoria.Name = "lbModificarCategoria";
             this.lbModificarCategoria.Size = new System.Drawing.Size(400, 45);
@@ -52,8 +52,8 @@ namespace GestorDeArticulos
             // dgvCategorias
             // 
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorias.Location = new System.Drawing.Point(95, 122);
-            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategorias.Location = new System.Drawing.Point(61, 130);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.RowHeadersWidth = 51;
@@ -64,8 +64,8 @@ namespace GestorDeArticulos
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(315, 87);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Location = new System.Drawing.Point(309, 84);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 2;
@@ -75,16 +75,16 @@ namespace GestorDeArticulos
             // 
             // txtModificarCategoria
             // 
-            this.txtModificarCategoria.Location = new System.Drawing.Point(125, 90);
-            this.txtModificarCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtModificarCategoria.Location = new System.Drawing.Point(61, 87);
+            this.txtModificarCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.txtModificarCategoria.Name = "txtModificarCategoria";
-            this.txtModificarCategoria.Size = new System.Drawing.Size(180, 22);
+            this.txtModificarCategoria.Size = new System.Drawing.Size(216, 22);
             this.txtModificarCategoria.TabIndex = 3;
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(315, 326);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Location = new System.Drawing.Point(338, 350);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 4;
@@ -96,14 +96,15 @@ namespace GestorDeArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 391);
+            this.ClientSize = new System.Drawing.Size(461, 391);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.txtModificarCategoria);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.lbModificarCategoria);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmModificarCategoria";
             this.Text = "Modificar Categoria";
             this.Load += new System.EventHandler(this.frmModificarCategoria_Load);

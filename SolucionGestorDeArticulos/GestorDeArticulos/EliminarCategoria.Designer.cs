@@ -41,7 +41,7 @@ namespace GestorDeArticulos
             // 
             this.lbEliminarCategoria.AutoSize = true;
             this.lbEliminarCategoria.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEliminarCategoria.Location = new System.Drawing.Point(16, 28);
+            this.lbEliminarCategoria.Location = new System.Drawing.Point(49, 22);
             this.lbEliminarCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEliminarCategoria.Name = "lbEliminarCategoria";
             this.lbEliminarCategoria.Size = new System.Drawing.Size(380, 45);
@@ -52,7 +52,7 @@ namespace GestorDeArticulos
             // 
             this.dgvCategorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorias.Location = new System.Drawing.Point(57, 71);
-            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCategorias.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCategorias.Name = "dgvCategorias";
             this.dgvCategorias.RowHeadersWidth = 51;
             this.dgvCategorias.Size = new System.Drawing.Size(371, 185);
@@ -61,7 +61,7 @@ namespace GestorDeArticulos
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(97, 282);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace GestorDeArticulos
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(256, 282);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
@@ -89,8 +89,9 @@ namespace GestorDeArticulos
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvCategorias);
             this.Controls.Add(this.lbEliminarCategoria);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEliminarCategoria";
             this.Text = "Eliminar Categoria";
             this.Load += new System.EventHandler(this.frmEliminarCategoria_Load);

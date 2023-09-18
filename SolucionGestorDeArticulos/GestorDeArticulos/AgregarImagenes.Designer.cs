@@ -47,7 +47,7 @@ namespace GestorDeArticulos
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(332, 11);
+            this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(340, 45);
@@ -58,7 +58,7 @@ namespace GestorDeArticulos
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.Location = new System.Drawing.Point(13, 190);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.ReadOnly = true;
@@ -70,7 +70,7 @@ namespace GestorDeArticulos
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(793, 513);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
@@ -80,8 +80,8 @@ namespace GestorDeArticulos
             // 
             // txtUrlImagen
             // 
-            this.txtUrlImagen.Location = new System.Drawing.Point(387, 69);
-            this.txtUrlImagen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUrlImagen.Location = new System.Drawing.Point(368, 69);
+            this.txtUrlImagen.Margin = new System.Windows.Forms.Padding(4);
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(325, 22);
             this.txtUrlImagen.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace GestorDeArticulos
             // 
             this.lbUrlImagen.AutoSize = true;
             this.lbUrlImagen.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUrlImagen.Location = new System.Drawing.Point(251, 70);
+            this.lbUrlImagen.Location = new System.Drawing.Point(215, 68);
             this.lbUrlImagen.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbUrlImagen.Name = "lbUrlImagen";
             this.lbUrlImagen.Size = new System.Drawing.Size(120, 22);
@@ -102,7 +102,7 @@ namespace GestorDeArticulos
             // 
             this.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxImagenes.Location = new System.Drawing.Point(523, 191);
-            this.pbxImagenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxImagenes.Margin = new System.Windows.Forms.Padding(4);
             this.pbxImagenes.Name = "pbxImagenes";
             this.pbxImagenes.Size = new System.Drawing.Size(370, 313);
             this.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,10 +111,10 @@ namespace GestorDeArticulos
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(493, 154);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConfirmar.Location = new System.Drawing.Point(793, 79);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
+            this.btnConfirmar.Size = new System.Drawing.Size(100, 45);
             this.btnConfirmar.TabIndex = 7;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -124,7 +124,7 @@ namespace GestorDeArticulos
             // 
             this.lbArticulo.AutoSize = true;
             this.lbArticulo.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbArticulo.Location = new System.Drawing.Point(272, 118);
+            this.lbArticulo.Location = new System.Drawing.Point(235, 116);
             this.lbArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbArticulo.Name = "lbArticulo";
             this.lbArticulo.Size = new System.Drawing.Size(110, 22);
@@ -135,8 +135,8 @@ namespace GestorDeArticulos
             // 
             this.cboArticulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboArticulos.FormattingEnabled = true;
-            this.cboArticulos.Location = new System.Drawing.Point(387, 117);
-            this.cboArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboArticulos.Location = new System.Drawing.Point(368, 116);
+            this.cboArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.cboArticulos.Name = "cboArticulos";
             this.cboArticulos.Size = new System.Drawing.Size(325, 24);
             this.cboArticulos.TabIndex = 9;
@@ -155,8 +155,9 @@ namespace GestorDeArticulos
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(951, 601);
             this.MinimumSize = new System.Drawing.Size(951, 601);
             this.Name = "frmAgregarImagenes";

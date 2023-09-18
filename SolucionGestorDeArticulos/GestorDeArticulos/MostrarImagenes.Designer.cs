@@ -55,7 +55,7 @@ namespace GestorDeArticulos
             // 
             this.dgvListaArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaArticulos.Location = new System.Drawing.Point(36, 159);
-            this.dgvListaArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvListaArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvListaArticulos.MultiSelect = false;
             this.dgvListaArticulos.Name = "dgvListaArticulos";
             this.dgvListaArticulos.ReadOnly = true;
@@ -69,7 +69,7 @@ namespace GestorDeArticulos
             // 
             this.pbxImagenes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbxImagenes.Location = new System.Drawing.Point(614, 159);
-            this.pbxImagenes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbxImagenes.Margin = new System.Windows.Forms.Padding(4);
             this.pbxImagenes.Name = "pbxImagenes";
             this.pbxImagenes.Size = new System.Drawing.Size(381, 329);
             this.pbxImagenes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,7 +79,7 @@ namespace GestorDeArticulos
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(895, 513);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
@@ -92,7 +92,7 @@ namespace GestorDeArticulos
             this.cboArticulos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboArticulos.FormattingEnabled = true;
             this.cboArticulos.Location = new System.Drawing.Point(447, 92);
-            this.cboArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.cboArticulos.Name = "cboArticulos";
             this.cboArticulos.Size = new System.Drawing.Size(160, 24);
             this.cboArticulos.TabIndex = 4;
@@ -120,8 +120,9 @@ namespace GestorDeArticulos
             this.Controls.Add(this.pbxImagenes);
             this.Controls.Add(this.dgvListaArticulos);
             this.Controls.Add(this.lbMostrarImágenes);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximumSize = new System.Drawing.Size(1085, 601);
             this.MinimumSize = new System.Drawing.Size(1085, 601);
             this.Name = "frmMostrarImagenes";

@@ -40,24 +40,27 @@ namespace GestorDeArticulos
             // 
             this.lbAgregarMarca.AutoSize = true;
             this.lbAgregarMarca.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAgregarMarca.Location = new System.Drawing.Point(65, 49);
+            this.lbAgregarMarca.Location = new System.Drawing.Point(87, 60);
+            this.lbAgregarMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAgregarMarca.Name = "lbAgregarMarca";
-            this.lbAgregarMarca.Size = new System.Drawing.Size(223, 32);
+            this.lbAgregarMarca.Size = new System.Drawing.Size(280, 45);
             this.lbAgregarMarca.TabIndex = 0;
             this.lbAgregarMarca.Text = "AGREGAR MARCA";
             // 
             // txtAgregarMarca
             // 
-            this.txtAgregarMarca.Location = new System.Drawing.Point(94, 104);
+            this.txtAgregarMarca.Location = new System.Drawing.Point(125, 128);
+            this.txtAgregarMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAgregarMarca.Name = "txtAgregarMarca";
-            this.txtAgregarMarca.Size = new System.Drawing.Size(100, 20);
+            this.txtAgregarMarca.Size = new System.Drawing.Size(132, 22);
             this.txtAgregarMarca.TabIndex = 1;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(200, 102);
+            this.btnAgregar.Location = new System.Drawing.Point(267, 126);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -65,9 +68,10 @@ namespace GestorDeArticulos
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(149, 179);
+            this.btnVolver.Location = new System.Drawing.Point(199, 220);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -75,14 +79,16 @@ namespace GestorDeArticulos
             // 
             // frmAgregarMarca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 256);
+            this.ClientSize = new System.Drawing.Size(476, 315);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtAgregarMarca);
             this.Controls.Add(this.lbAgregarMarca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmAgregarMarca";
             this.Text = "Agregar Marca";
             this.Load += new System.EventHandler(this.frmAgregarMarca_Load);

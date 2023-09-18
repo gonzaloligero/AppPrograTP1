@@ -28,6 +28,7 @@ namespace winform_app
             ArticuloManager articuloManager = new ArticuloManager();
             listaArticulo = articuloManager.listaParaImagenes();
             dgvArticulos.DataSource = articuloManager.listaParaImagenes().GroupBy(a => a.Codigo).Select(group => group.First()).ToList();
+            dgvArticulos.Columns[0].Visible = false;
             dgvArticulos.Columns[6].Visible = false;
             cargarImagen(listaArticulo[0].Imagen);
         }
@@ -39,10 +40,16 @@ namespace winform_app
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            int cant = seleccionado.Imagenes.Count();
-           // MessageBox.Show(cant.ToString());
-            cargarImagen(seleccionado.Imagen);
+            if (dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+                if (seleccionado != null && seleccionado.Imagenes != null)
+                {
+                    int cant = seleccionado.Imagenes.Count();
+                    cargarImagen(seleccionado.Imagen);
+                }
+            }
         }
         private void cargarImagen(string imagen)
         {
@@ -88,22 +95,18 @@ namespace winform_app
 
             
             if (totalImagenes > 0)
-            {
-                
+            {               
                 indiceImagenActual--;
-
                 
                 if (indiceImagenActual < 0)
                 {
                     indiceImagenActual = totalImagenes - 1; 
                 }
-
-                
+               
                 cargarImagen(seleccionado.Imagenes[indiceImagenActual]);
             }
             else
-            {
-         
+            {        
                 MessageBox.Show("No hay imágenes disponibles para este artículo.");
             }
         }

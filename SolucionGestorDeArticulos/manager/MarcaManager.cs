@@ -10,9 +10,9 @@ namespace manager
     public class MarcaManager
     {
 
-        //**********************************************************************************
+
         AccesoDatos datos = new AccesoDatos();
-        //*********************************************************************************
+
         public List<Marca> ListarMarcas()
         {
             List<Marca> lista = new List<Marca>();
@@ -42,7 +42,7 @@ namespace manager
             }
 
         }
-        //***********************************************************************************
+
         public void agregarMarcas(Marca nueva)
         {
             try
@@ -58,7 +58,6 @@ namespace manager
             finally { datos.cerrarConexion(); }
 
         }
-        //***************************************************************************************
 
         public void modificarMarca(Marca nuevaMarca)
         {
@@ -77,7 +76,7 @@ namespace manager
 
 
         }
-        //********************************************************************************************
+
         public void eliminarMarca(int id)
         {
             try
@@ -94,7 +93,7 @@ namespace manager
             }
             finally { datos.cerrarConexion(); }
         }
-        //**********************************************************************************************
+
 
 
     }

@@ -74,6 +74,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEliminarMarca);
             this.Controls.Add(this.dgvEliminarMarca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmEliminarMarca";
             this.Text = "Eliminar Marca";
             this.Load += new System.EventHandler(this.frmEliminarMarca_Load);

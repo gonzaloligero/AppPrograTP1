@@ -40,22 +40,22 @@
             // 
             this.dgvEliminar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEliminar.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvEliminar.Location = new System.Drawing.Point(47, 69);
-            this.dgvEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEliminar.Location = new System.Drawing.Point(30, 88);
+            this.dgvEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvEliminar.MultiSelect = false;
             this.dgvEliminar.Name = "dgvEliminar";
             this.dgvEliminar.RowHeadersWidth = 51;
             this.dgvEliminar.RowTemplate.Height = 24;
             this.dgvEliminar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEliminar.Size = new System.Drawing.Size(728, 241);
+            this.dgvEliminar.Size = new System.Drawing.Size(887, 297);
             this.dgvEliminar.TabIndex = 0;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(601, 327);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(654, 402);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(80, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(107, 28);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -63,9 +63,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(700, 327);
+            this.btnVolver.Location = new System.Drawing.Point(817, 402);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -75,23 +76,25 @@
             // 
             this.lbEliminarArticulo.AutoSize = true;
             this.lbEliminarArticulo.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEliminarArticulo.Location = new System.Drawing.Point(256, 22);
+            this.lbEliminarArticulo.Location = new System.Drawing.Point(260, 23);
+            this.lbEliminarArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbEliminarArticulo.Name = "lbEliminarArticulo";
-            this.lbEliminarArticulo.Size = new System.Drawing.Size(287, 32);
+            this.lbEliminarArticulo.Size = new System.Drawing.Size(360, 45);
             this.lbEliminarArticulo.TabIndex = 6;
             this.lbEliminarArticulo.Text = "Eliminar Artículo";
             // 
             // frmEliminar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 366);
+            this.ClientSize = new System.Drawing.Size(964, 450);
             this.Controls.Add(this.lbEliminarArticulo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.dgvEliminar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEliminar";
             this.Text = "Eliminar Artículo";
             this.Load += new System.EventHandler(this.frmEliminar_Load);

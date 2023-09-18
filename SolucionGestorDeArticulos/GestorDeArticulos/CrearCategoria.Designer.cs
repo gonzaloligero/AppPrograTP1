@@ -41,9 +41,10 @@ namespace GestorDeArticulos
             // 
             this.lbCrearCategoria.AutoSize = true;
             this.lbCrearCategoria.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCrearCategoria.Location = new System.Drawing.Point(100, 106);
+            this.lbCrearCategoria.Location = new System.Drawing.Point(106, 24);
+            this.lbCrearCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCrearCategoria.Name = "lbCrearCategoria";
-            this.lbCrearCategoria.Size = new System.Drawing.Size(255, 32);
+            this.lbCrearCategoria.Size = new System.Drawing.Size(320, 45);
             this.lbCrearCategoria.TabIndex = 0;
             this.lbCrearCategoria.Text = "CREAR CATEGORÍA";
             // 
@@ -51,24 +52,27 @@ namespace GestorDeArticulos
             // 
             this.lbDescripcionCategoria.AutoSize = true;
             this.lbDescripcionCategoria.Font = new System.Drawing.Font("Cascadia Mono", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescripcionCategoria.Location = new System.Drawing.Point(54, 152);
+            this.lbDescripcionCategoria.Location = new System.Drawing.Point(53, 97);
+            this.lbDescripcionCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDescripcionCategoria.Name = "lbDescripcionCategoria";
-            this.lbDescripcionCategoria.Size = new System.Drawing.Size(112, 16);
+            this.lbDescripcionCategoria.Size = new System.Drawing.Size(140, 22);
             this.lbDescripcionCategoria.TabIndex = 1;
             this.lbDescripcionCategoria.Text = "Descripción: ";
             // 
             // txtNuevaCategoria
             // 
-            this.txtNuevaCategoria.Location = new System.Drawing.Point(154, 150);
+            this.txtNuevaCategoria.Location = new System.Drawing.Point(201, 97);
+            this.txtNuevaCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNuevaCategoria.Name = "txtNuevaCategoria";
-            this.txtNuevaCategoria.Size = new System.Drawing.Size(109, 20);
+            this.txtNuevaCategoria.Size = new System.Drawing.Size(144, 22);
             this.txtNuevaCategoria.TabIndex = 2;
             // 
             // btAgregarCategoría
             // 
-            this.btAgregarCategoría.Location = new System.Drawing.Point(280, 148);
+            this.btAgregarCategoría.Location = new System.Drawing.Point(394, 95);
+            this.btAgregarCategoría.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btAgregarCategoría.Name = "btAgregarCategoría";
-            this.btAgregarCategoría.Size = new System.Drawing.Size(75, 23);
+            this.btAgregarCategoría.Size = new System.Drawing.Size(100, 28);
             this.btAgregarCategoría.TabIndex = 4;
             this.btAgregarCategoría.Text = "Crear";
             this.btAgregarCategoría.UseVisualStyleBackColor = true;
@@ -76,9 +80,10 @@ namespace GestorDeArticulos
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(280, 310);
+            this.btnVolver.Location = new System.Drawing.Point(394, 176);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 5;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -86,15 +91,17 @@ namespace GestorDeArticulos
             // 
             // frmCrearCategoria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 345);
+            this.ClientSize = new System.Drawing.Size(517, 229);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btAgregarCategoría);
             this.Controls.Add(this.txtNuevaCategoria);
             this.Controls.Add(this.lbDescripcionCategoria);
             this.Controls.Add(this.lbCrearCategoria);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCrearCategoria";
             this.Text = "Crear Categoria";
             this.Load += new System.EventHandler(this.frmCrearCategoria_Load);

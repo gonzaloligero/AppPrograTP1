@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetallar));
             this.lbDetallarArticulo = new System.Windows.Forms.Label();
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
@@ -44,9 +45,10 @@
             // 
             this.lbDetallarArticulo.AutoSize = true;
             this.lbDetallarArticulo.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDetallarArticulo.Location = new System.Drawing.Point(202, 24);
+            this.lbDetallarArticulo.Location = new System.Drawing.Point(269, 30);
+            this.lbDetallarArticulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbDetallarArticulo.Name = "lbDetallarArticulo";
-            this.lbDetallarArticulo.Size = new System.Drawing.Size(287, 32);
+            this.lbDetallarArticulo.Size = new System.Drawing.Size(360, 45);
             this.lbDetallarArticulo.TabIndex = 0;
             this.lbDetallarArticulo.Text = "Detallar Artículo";
             // 
@@ -54,17 +56,20 @@
             // 
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvArticulos.Location = new System.Drawing.Point(3, 59);
+            this.dgvArticulos.Location = new System.Drawing.Point(13, 88);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArticulos.Name = "dgvArticulos";
+            this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArticulos.Size = new System.Drawing.Size(250, 285);
+            this.dgvArticulos.Size = new System.Drawing.Size(363, 351);
             this.dgvArticulos.TabIndex = 1;
             // 
             // btnDetallar
             // 
-            this.btnDetallar.Location = new System.Drawing.Point(73, 365);
+            this.btnDetallar.Location = new System.Drawing.Point(30, 494);
+            this.btnDetallar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDetallar.Name = "btnDetallar";
-            this.btnDetallar.Size = new System.Drawing.Size(75, 23);
+            this.btnDetallar.Size = new System.Drawing.Size(100, 28);
             this.btnDetallar.TabIndex = 2;
             this.btnDetallar.Text = "Ver detalle";
             this.btnDetallar.UseVisualStyleBackColor = true;
@@ -72,9 +77,10 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(735, 412);
+            this.btnVolver.Location = new System.Drawing.Point(787, 690);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(75, 23);
+            this.btnVolver.Size = new System.Drawing.Size(100, 28);
             this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -82,35 +88,47 @@
             // 
             // dgvDetalle
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalle.Location = new System.Drawing.Point(271, 59);
+            this.dgvDetalle.Location = new System.Drawing.Point(13, 558);
+            this.dgvDetalle.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDetalle.Name = "dgvDetalle";
-            this.dgvDetalle.Size = new System.Drawing.Size(539, 82);
+            this.dgvDetalle.RowHeadersWidth = 51;
+            this.dgvDetalle.Size = new System.Drawing.Size(874, 101);
             this.dgvDetalle.TabIndex = 4;
             // 
             // pbxArticulo
             // 
             this.pbxArticulo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbxArticulo.Location = new System.Drawing.Point(271, 147);
+            this.pbxArticulo.Location = new System.Drawing.Point(497, 88);
+            this.pbxArticulo.Margin = new System.Windows.Forms.Padding(4);
             this.pbxArticulo.Name = "pbxArticulo";
-            this.pbxArticulo.Size = new System.Drawing.Size(539, 259);
+            this.pbxArticulo.Size = new System.Drawing.Size(390, 351);
             this.pbxArticulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbxArticulo.TabIndex = 5;
             this.pbxArticulo.TabStop = false;
             // 
             // frmDetallar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 447);
+            this.ClientSize = new System.Drawing.Size(915, 731);
             this.Controls.Add(this.pbxArticulo);
             this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnDetallar);
             this.Controls.Add(this.dgvArticulos);
             this.Controls.Add(this.lbDetallarArticulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDetallar";
             this.Text = "Detallar artículos";
             this.Load += new System.EventHandler(this.frmDetallar_Load);

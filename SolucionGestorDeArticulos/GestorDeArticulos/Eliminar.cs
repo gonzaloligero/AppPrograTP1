@@ -25,9 +25,10 @@ namespace GestorDeArticulos
         private void frmEliminar_Load(object sender, EventArgs e)
         {
             ArticuloManager articuloManager = new ArticuloManager();
-            listaArticulo = articuloManager.ListarArticulos();
+            listaArticulo = articuloManager.listaParaImagenes();
             dgvEliminar.DataSource = listaArticulo;
-            dgvEliminar.Columns[5].Visible = false;
+            dgvEliminar.Columns[0].Visible = false;
+            dgvEliminar.Columns[6].Visible = false;
             //cargar(listaArticulo[0].Imagen);
         }
 

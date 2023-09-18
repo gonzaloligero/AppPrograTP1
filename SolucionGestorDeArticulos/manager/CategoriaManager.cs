@@ -11,11 +11,9 @@ namespace manager
 {
     public class CategoriaManager
     {
-        //********************************************************************************
-        AccesoDatos datos = new AccesoDatos();
-        //********************************************************************************
 
-        //**********************************************************************************
+        AccesoDatos datos = new AccesoDatos();
+
         public List<Categoria> ListarCategorias()
         {
             List<Categoria> lista = new List<Categoria>();
@@ -47,7 +45,6 @@ namespace manager
             
         }
 
-        //*******************************************************************************
         public void agregarCategoria(Categoria nueva)
         {
             try
@@ -62,7 +59,6 @@ namespace manager
             }
             finally {datos.cerrarConexion();}
         }
-        //**********************************************************************************************
         public void modificarCategoria(Categoria nueva)
         {
 
@@ -83,7 +79,7 @@ namespace manager
 
           
         }
-        //------------------------------------------------------------------------------------------------
+
         public void eliminarCategoria(int id)
         {
             try

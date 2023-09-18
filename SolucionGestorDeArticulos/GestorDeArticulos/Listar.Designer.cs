@@ -44,7 +44,7 @@
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(35, 68);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(4);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
@@ -57,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cascadia Mono", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 25);
+            this.label1.Location = new System.Drawing.Point(296, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(340, 45);
@@ -66,8 +66,8 @@
             // 
             // btVolver
             // 
-            this.btVolver.Location = new System.Drawing.Point(459, 522);
-            this.btVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btVolver.Location = new System.Drawing.Point(412, 522);
+            this.btVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btVolver.Name = "btVolver";
             this.btVolver.Size = new System.Drawing.Size(100, 28);
             this.btVolver.TabIndex = 2;
@@ -117,6 +117,7 @@
             this.Controls.Add(this.btVolver);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvArticulos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmListar";

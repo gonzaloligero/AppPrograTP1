@@ -51,7 +51,7 @@ namespace GestorDeArticulos
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(153, 98);
+            this.txtMarca.Location = new System.Drawing.Point(100, 99);
             this.txtMarca.Margin = new System.Windows.Forms.Padding(4);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(132, 22);
@@ -59,7 +59,7 @@ namespace GestorDeArticulos
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(295, 96);
+            this.btnModificar.Location = new System.Drawing.Point(312, 93);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 28);
@@ -71,7 +71,7 @@ namespace GestorDeArticulos
             // dgvMarcas
             // 
             this.dgvMarcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMarcas.Location = new System.Drawing.Point(141, 132);
+            this.dgvMarcas.Location = new System.Drawing.Point(100, 148);
             this.dgvMarcas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
@@ -83,7 +83,7 @@ namespace GestorDeArticulos
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(295, 311);
+            this.btnVolver.Location = new System.Drawing.Point(403, 364);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(100, 28);
@@ -96,12 +96,13 @@ namespace GestorDeArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 369);
+            this.ClientSize = new System.Drawing.Size(516, 405);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.txtMarca);
             this.Controls.Add(this.lbModificarMarca);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmModificarMarca";

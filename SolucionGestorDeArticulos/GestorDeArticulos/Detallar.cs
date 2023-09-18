@@ -36,6 +36,7 @@ namespace winform_app
             dgvArticulos.Columns["Imagen"].Visible = false;
             dgvArticulos.Columns["Id"].Visible = false;
             dgvArticulos.Columns["Precio"].Visible = false;
+
         }
 
         private void btnDetallar_Click(object sender, EventArgs e)
@@ -44,6 +45,9 @@ namespace winform_app
             Articulo articuloElegido = (Articulo)selectedRow.DataBoundItem;
             dgvDetalle.DataSource = new List<Articulo> { articuloElegido };
             pbxArticulo.ImageLocation = articuloElegido.Imagen;
+            dgvDetalle.Columns["Id"].Visible = false;
+            dgvDetalle.Columns["Imagen"].Visible = false;
         }
+
     }
 }
